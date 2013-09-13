@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        <!--
+        #box{ float:left; width:800px;height:100px;background: #B6C5C2}
+        #left{ float:left; width:50%;height:100px;background: #ccd8ea}
+        #right{ width:50%; height:100px;background: #ff0000;margin-left: 50%;*margin: 0}
+        *html #left{ margin-right:-3px; /*这句是关键*/}
+        -->
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var i = 100;
+            setTimeout(function(){
+                left.style.opacity =  i * 0.01;
+                if(i-->0){
+                    setTimeout(arguments.callee,100);
+                }
+            },2000);
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="left">left is light</div>
+        <div id="right">right is red</div><!--当做环绕理解，chrome背景和left重叠-->
+    </div>
+</body>
+</html>
+

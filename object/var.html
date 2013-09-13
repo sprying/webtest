@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="oob.a.js"></script>
+    <script type="text/javascript" src="oob.b.js"></script>
+    <script type="text/javascript" src="oob.c.js"></script>
+    <script type="text/javascript">
+        var oobtxq = Object.getOwnPropertyDescriptor(window,'oob');
+        var fff = 2;
+        window.ffa = 3;
+        ffb = 4;
+        this.ffc =4;
+        var ffftx = Object.getOwnPropertyDescriptor(window,'fff');
+        var ffatx = Object.getOwnPropertyDescriptor(window,'ffa');
+        var ffbtx = Object.getOwnPropertyDescriptor(window,'ffb');
+        var ffctx = Object.getOwnPropertyDescriptor(window,'ffc');
+        delete fff;
+        delete ffa;
+        delete ffb;
+        delete ffc;
+
+        var oob = this.oob || {};
+        oob.x = {
+            y:2
+        };
+        var oobtxh = Object.getOwnPropertyDescriptor(window,'oob');
+
+        // delete使用
+        var o ={};//ie8下用window或其它dom object
+        Object.defineProperty(o,'abc',{value:123,configurable:false});
+        delete o.a //IE8此处抛出异常.
+        console.log(o.abc);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

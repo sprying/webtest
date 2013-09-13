@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button value="click" id="click"></button>
+</body>
+</html>
+<script type="text/javascript">
+    var clickDom = document.getElementById("click");
+    var clickFns = function(e){
+        alert(this.value);
+    }
+    clickDom.addEventListener("click",clickFns);
+    clickDom.addEventListener("click",clickFns)
+</script>

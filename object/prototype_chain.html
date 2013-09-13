@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        /*原型式继承，引用始终被共享*/
+        var x2 = {
+            arr :[1,2]
+        };
+        var x3 = inherit(x2);
+        x3.arr.push([3,4]);
+        var x4 = inherit(x2);
+        console.log(x4.arr);
+
+        if(Object.getPrototypeOf(x3) === x2)
+            console.log('1');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

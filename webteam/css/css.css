@@ -1,0 +1,164 @@
+﻿body {
+    margin:0;
+}
+.allWrapper {
+    width:920px;
+    margin:0 auto;
+    font-family:"Microsoft YaHei";
+    position:relative;
+}
+.photosWrapper{
+    margin:100px auto 0 auto;
+    width:800px;
+    height:200px;
+    overflow:hidden;
+}
+.photosWrapper .photoBlock {
+    float:left;
+    width:200px;
+    height:200px;
+    margin-right:100px;
+    border-radius:50px;
+    border:none;
+    background-size: 200px 200px;
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+.photosWrapper .last {
+    margin:0;
+}
+.textWrapper {
+    height:300px;
+    border:1px solid #00aeef;
+    border-radius:50px;
+    box-shadow:1px 1px 5px #00aeef ;
+    margin:20px auto 0 auto;
+    padding:30px;
+    color:#1313c1;
+    font-size:18px;
+    font-weight:bold;
+    display:none;
+}
+.questionWrapper {
+    color:#169a2d;
+}
+.questionWrapper p {
+    word-break:break-all;
+}
+.shakingCloud {
+    position:absolute;
+    top:-450px;
+    right:-200px;
+    background:url(../imgs/cloud.png) no-repeat bottom center;  
+    height:250px;
+    width:200px;
+    -webkit-animation:swing 1s infinite ease-in-out;
+    -webkit-transform-origin:top;
+}
+@keyframes swing {
+    0%{transform:rotate(-3deg)}
+    50%{transform:rotate(3deg)}
+    100%{transform:rotate(-3deg)}
+}
+@-webkit-keyframes swing {
+    0%{-webkit-transform:rotate(-3deg)}
+    50%{-webkit-transform:rotate(3deg)}
+    100%{-webkit-transform:rotate(-3deg)}
+}
+.shakingCloud span {
+    position:absolute;
+    bottom:41px;
+    left:72px;
+    width:60px;
+    height:30px;
+    text-align:center;
+    font-size:27px;
+    font-weight:bold;
+    color:#f00;
+}
+.ours {
+    margin:0 auto;
+    display:none;
+}
+.browserLogoWrapper {
+    padding-left:10px;
+    overflow:hidden;
+}
+.browserLogoWrapper li {
+    float:left;
+    position:relative;
+    margin-right:50px;
+    width:120px;
+    height:200px;
+    list-style:none;
+    background:url(../imgs/cloud-long.png) no-repeat top center;
+    -webkit-animation:swing 3s infinite ease-in-out;
+    -webkit-transform-origin:top;
+}
+.browserLogoWrapper .long {
+    height:250px;
+}
+.browserLogoWrapper li img {
+    width:120px;
+    height:120px;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+}
+.ourWords {
+    color:#1544dd;
+    font-size:25px;
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+}
+.ourWords p {
+    display:none;
+}
+.kidding {
+    margin-top:200px;
+    color:#095ec7;
+    font-size:60px;
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+    display:none;
+}
+.rockets {
+    position:absolute;
+    top:-400px;
+    left:200px;
+    height:220px;
+    width:600px;
+    color:#e0c809;
+    font-size:30px;
+    font-style:italic;
+    font-weight:bold;
+}
+.rockets img {
+    float:left;
+    width:300px;
+    height:200px;
+}
+.photoForAll {
+    display:block;
+    height:500px;
+	width:900px;
+    margin:10px auto 0 auto;
+    border-radius:50px;
+    display:none;
+}
+.cover {
+    font-size:30px;
+    color:#ce0606;
+    margin:200px auto 0 auto;
+    text-align:center;
+    font-weight:bold;
+}
+.cover strong {
+    font-size:100px;
+    background:-webkit-linear-gradient(left,#f00,#ff0 25%,#0f0 40%,#0ff 55%,#00f);
+    -webkit-background-clip:text;/*只有webkit内核支持text的剪切模式*/
+    color:transparent;
+    text-shadow: 1px 1px 200px #15d6f1;
+}

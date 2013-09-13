@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+          $(function(){
+              $("#btn").click(function(){
+                  var $inp = $("<input>").attr({
+                      type:'text', value:"aa", "class":"ui-folder-input"
+                  });
+                  $(document.body).append($inp);
+/*
+                  input.focus();
+                  input.select();
+*/
+                  if($inp[0].createTextRange){
+                      var range = $inp[0].createTextRange();
+                      range.select();
+                  }else{
+                      $inp[0].focus();
+                      $inp[0].setSelectionRange(0,2);
+                  }
+              });
+
+              var input = document.createElement('input');
+              input.setAttribute('type', 'text');
+              input.setAttribute('value', 'test1');
+              $("#iDiv")[0].appendChild(input);
+              if(input.createTextRange){
+//                  var range = input.createTextRange();
+//                  range.select();
+                  input.focus();
+                  input.select();
+              }else{
+//                  input.focus();
+//                  input.setSelectionRange(0,2);
+                  input.focus();
+                  input.select();
+              }
+          });
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="button">
+     <div id="iDiv" style="width: 200px;height: 100px;background-color: #9f9f9f"></div>
+</body>
+</html>

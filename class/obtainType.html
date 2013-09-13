@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        function Range(){};
+        Range.prototype = {
+            a:1
+        };
+
+        function Set(){}
+        Set.prototype.s = function(){};
+
+        /**
+         * 返回：null NaN undefined string number boolean
+         * function Array String Object（包括一些自定义类型） 自定义类型
+         */
+        var type =function(o){
+            /**
+             * 获取参数类型
+             * 对象直接量、Object.create、自定义构造函数的类属性皆为Object;
+             * 识别出原生类型 （内置构造函数和宿主对象）
+             */
+            function classOf(obj){
+                return Object.prototype.toString.call(obj).slice(8, -1);
+            }
+
+            /**
+             * 返回函数的名字，可能为空串；不是函数，返回null
+             */
+            Function.prototype.getName = function () {
+                if ("name" in this) return this.name;
+                return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
+            };
+            var t, c, n;
+            // 处理null值特殊情形
+            if (o === null) return "null";
+            // NaN：和自身值不相等
+            if (o !== o) return "NaN";
+            // 识别出原生值类型和函数、undefined
+            if ((t = typeof o) !== "object") return t;
+            // 识别出原生类型
+            if ((c = classOf(o)) !== "Object") return c;
+            // 返回自定义类型构造函数名字
+            if (o.constructor && typeof o.constructor === "function" &&
+                    (n = o.constructor.getName()))
+                return n;
+            return "Object";
+        };
+    </script>
+</head>
+<body>
+   <div id="aa"></div>
+</body>
+</html>
+<script type="text/javascript">
+    console.log(type([]));
+    console.log(Object.getPrototypeOf($('#aa')));
+    console.log(Object.getPrototypeOf(new Range()));
+    console.log($('#aa') instanceof jQuery);
+    console.log(new Range() instanceof Range);
+    console.log(type(2));
+    console.log(type(undefined));
+    console.log(type(new String('a')));
+    console.log(type(new Range()));
+    console.log(type(new Set()));
+    console.log(type(new Date()));
+    console.log(type(Window.alert));
+    console.log(jQuery.isPlainObject(new Range()));
+    console.log(jQuery.isEmptyObject({fn:function(){}}))
+</script>

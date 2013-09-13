@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function consFns(){
+            var fns = [];
+            for(var  i= 0;i<10;i++){
+                fns[i] = function() {return i;}
+            }
+            return fns;
+        }
+        console.log(consFns()[5]());
+
+        var name = "The Window";
+        var object = {
+            name:"My Object",
+            getNameFunc: function(){
+                var that = this;
+                return function(){
+                    return that.name;
+                };
+            }
+        };
+        alert(object.getNameFunc()());
+        var method = object.getNameFunc;
+        alert(method()()); // The Window
+
+         var story = {
+             progress:"unknown",
+             start: function(){
+                 this.progress = "start";
+             }
+         }
+        var start = story.start;
+        start();
+        console.log(story.progress); //unknown
+
+        // 外部定义的函数，在一函数中被返回并执行，执行时，并无闭包功能
+        function inside() {
+            return x;
+        }
+        function outside(){
+            var x = 1;
+            return inside;
+        }
+        var xx = outside()();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

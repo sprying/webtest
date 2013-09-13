@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="./style_default.css">
+    <style type="text/css">
+        <!--
+        .nsrxxTcc th {
+            white-space: nowrap;
+        }
+        .nsrxxTcc td{
+            text-align: center;
+        }
+        .nsrxxTcc .overClr {
+            background: #ecedef;
+        }
+
+        .nsrxxTcc .selCol {
+            background: #dfe8f6;
+        }
+
+        .nsrxxTcc .raCls {
+            padding: 0;
+        }
+
+        .nsrxxTcc label {
+            width: 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .raCls input {
+            cursor: pointer;
+        }
+        .nsrxxTcc .list_title{
+            display: none;
+        }
+
+        -->
+    </style>
+    <script type="text/javascript" src="./ymPrompt.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="./frame_api.js"></script>
+    <script type="text/javascript" src="./report-function.js"></script>
+    <script type="text/javascript" src="./tcc.js"></script>
+    <script type="text/javascript">
+        function strlen(str) {
+            var len = 0;
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charCodeAt(i);
+                //单字节加1
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                    len++;
+                }
+                else {
+                    len += 2;
+                }
+            }
+            return len;
+        }
+        $(function(){
+            $.alertNsrxx({
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="page">
+    <div class="log"></div>
+    <ul id="navigation">
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+</div>
+
+</body>
+</html>

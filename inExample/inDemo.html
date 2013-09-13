@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="in.js" autoload="true"></script>
+    <script type="text/javascript">
+        $(function(){
+
+        })
+        In.config('serial',false);
+        In.add("a",{path:'a.js',type:'js',charset:'utf-8',rely:['b','c']});
+        In.add("b",{path:'b.js',type:'js',charset:'utf-8'});
+        In.add("c",{path:'c.js',type:'js',charset:'utf-8'});
+        In.add("d",{path:'d.js',type:'js',charset:'utf-8',rely:['a','e']});
+        In.add("e",{path:'e.js',type:'js',charset:'utf-8'});
+        //真正的加载顺序为 mod1 || mod2 || function -> function[callback]
+        var demo=In('d','e','a','b','c',function() {
+            console.log('我跟mod1和mod2是并行的关系');
+        },function() {
+            console.log('我是回调函数，他们都加载完毕才会触发我');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

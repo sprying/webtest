@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        /**
+         * 一般的类定义
+         * @param name
+         * @constructor
+         */
+        function Person(name){
+            this.name = name;
+            this.sayInstance = function(){
+                console.log("the method in the instance");
+            }
+        }
+        Person.prototype.say = function say(){
+            console.log("prototyping method of saying");
+        };
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Person.prototype.country = "China";
+        var person1 = new Person("fangyc");
+        person1.age = 25;
+        console.log(person1.hasOwnProperty("name")) ; //true
+        console.log(person1.hasOwnProperty("sayInstance")) ;//true
+        console.log(person1.hasOwnProperty("age")) ;//true
+        console.log(person1.hasOwnProperty("country"));  //false
+        console.log(person1.hasOwnProperty("sayName"));  //false
+        var array1 = new Array();
+
+        /**
+         * 简单形式声明类型
+         * @constructor
+         */
+        function Person1(){
+
+        }
+        Person1.prototype = {
+            constructor: Person1
+            country:"China"
+        }
+        var person11 = new Person1();
+
+        /**
+         * 原型式继承 引用类型的属性会被共享
+         * @param o
+         * @returns {object.F}
+         */
+        function object(o){
+            function F(){}
+            F.prototype = o;
+            return new F();
+        }
+        var person = {
+            name:"Nicholas",
+            friends:["Shelby","Court","Van"]
+        };
+
+        var anotherPerson = object(person);
+        anotherPerson.name = "Greg";
+        anotherPerson.friends.push("Rob");
+
+        var yetAnotherPerson = object(person);
+        yetAnotherPerson.name = "Linda";
+        yetAnotherPerson.friends.push("Barbie");
+        yetAnotherPerson.friends=["Barbie"]; // 定义了yetAnotherPerson新的friends属性
+
+        // 最终结果与yetAnotherPerson相同
+        var definePerson = Object.create(person,{name:{value:"objectCreate"},friends:{value:["reference properties","mygoodfriend"]}});
+
+        /**
+         * 继承
+         * @constructor
+         */
+        function SuperType(){
+            this.property = true;
+        }
+        SuperType.prototype.superMethod = function(){
+
+        }
+        function SupType(){
+            this.supProperty =false;
+        }
+        SupType.prototype = new SuperType();
+        var supType = new SupType();
+
+        /**
+         * 组合
+         * 借用了构造函数
+         * @constructor
+         */
+        function CnsType(){
+            SuperType.call(this);
+            this.subProperty = true;
+        }
+        var borCns = new CnsType();
+
+        CnsType.prototype = new SuperType();
+        CnsType.prototype.cnsType = function(){};
+        var combinationInherit = new CnsType();
+
+        /**
+         * 寄生组合继承
+         * @constructor
+         */
+        function LowType(){
+             SuperType.call(this);
+            this.lowProperty = true;
+        }
+        function inheritPrototype(subType,superType){
+            var prototype1 = object(superType.prototype);
+            prototype1.constructor = subType;
+            subType.prototype = prototype1;
+        }
+        inheritPrototype(LowType,SuperType);
+        LowType.prototype.lowMethod = function(){};
+        var lowType = new LowType();
+
+        /**
+         * 原型对象中途切换
+         * @type {Person}
+         */
+        var person11  = new Person("fangyc");
+        Person.prototype = {
+            key:"new Person's prototype"
+        };
+        var person22 = new Person("sprying");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

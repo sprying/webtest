@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<!--ababa1bababa1baba-->
+<input value="ababa1bababa1baba" id="besearched"/>
+<input value="顺序查找a1" onclick=myfindAsc("a1") type="button">
+<input value="倒序查找a1" onclick=myfindDesc("a1") type="button">
+<script language ='javascript'>
+//var rng = document.body.createTextRange();
+var rng = document.getElementById("besearched").createTextRange();
+var	cloneRng = rng.duplicate();
+function myfindDesc(text){
+	if(rng.isEqual(cloneRng)){
+		rng.collapse(false);
+	}else{
+		rng.collapse();
+	}
+	if(rng.findText(text,2,1)){
+		rng.select();
+	}else{
+		rng.setEndPoint("StartToStart",cloneRng);//与下句顺序不能倒过来
+		rng.setEndPoint("EndToStart",cloneRng);
+		rng.select();
+	}
+}
+
+function myfindAsc(text){
+	if(rng.isEqual(cloneRng)){
+		rng.collapse();
+	}else{
+		rng.collapse(false);
+	}
+	if(rng.findText(text)){
+		rng.select();
+	}else{
+		rng.setEndPoint("EndToEnd",cloneRng);//与下句顺序不能倒过来
+		rng.setEndPoint("StartToEnd",cloneRng);
+		rng.select();
+	}
+}
+</script>
+</BODY>
+</HTML>
+

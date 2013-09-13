@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../../scripts/extra.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 12px;
+            color: #000000;
+            font-style: italic;
+            line-height: normal;
+            font-weight: bold;
+            text-decoration: underline;
+            height: 2000px;
+            display: block;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        var tagNames = document.getElementsByTagName("div");
+        addEvent("load", window, function () {
+            var browserInfo = (function () {
+                var targDom = document.getElementById("hangDiv");
+                var floatCont = ['<b>水平滚动条：</b>',
+                    '',//1
+                    'px<br>',
+                    '<b>垂直滚动条：</b>',
+                    '',//4
+                    'px<br>',
+                    '<b>窗口宽度：</b>',
+                    '',//7
+                    'px<br>',
+                    '<b>窗口高度：</b>',
+                    '',//10
+                    'px']
+                return{
+                    getScroll: function () {
+                        var rollBar = getScrollOffsets();
+                        floatCont[1] = rollBar.x;
+                        floatCont[4] = rollBar.y;
+                        targDom.innerHTML = floatCont.join('');
+                    },
+                    getClient: function () {
+                        var clientSize = getViewportSize();
+                        floatCont[7] = clientSize.w;
+                        floatCont[10] = clientSize.h;
+                        console.log('top: '+window.document.documentElement.clientWidth
+                                +'left: '+window.document.documentElement.clientLeft);
+                        targDom.innerHTML = floatCont.join('');
+                    }
+                }
+            })();
+            window.onscroll = function () {
+                clearTimeout(timeScroll);
+                var timeScroll = setTimeout(browserInfo.getScroll, 50);
+            };
+            browserInfo.getScroll();
+            window.onresize = function () {
+                clearTimeout(timefns);
+                var timefns = setTimeout(browserInfo.getClient, 100);
+            };
+            browserInfo.getClient();
+        });
+    </script>
+</head>
+<body>
+<div id="container" style="width: 1700px;position: relative">
+    <style type="text/css">
+        #winWrap{
+            position: absolute;right: 0;display: block;width: 200px;height: 80px;
+            background-color: #b2d7b8;margin-top: 10px;margin-right: 10px;overflow: auto;
+
+        }
+        #hangDiv{
+            border-radius: 10px;
+            box-shadow: 0 0 7px 20px #00FF80;
+            position: fixed;
+            z-index: 10;
+            right: 50px;
+            bottom: 55px;
+            background-color: #00FF80;
+            width: 150px;
+            height: 160px;
+            filter: alpha(Opacity=100);
+            opacity: 0.5;
+            padding: 10px;
+        }
+    </style>
+    <div id="winWrap" style="">
+        <input type="button" value="popAlert">pppppppppppp pppppppp pppppaa aaaa aww wwww wwwwwww wwwwww wwwww wwww wwwww
+        wwwwwwwwww wwwwwwww wwwwwwwwww wwwwwwwwww wwwwwww wwwwwwww wwwww wwwwwwwwwwwww wwwwwwwww aaaa aaaaaaa
+    </div>
+    <div id="hangDiv"></div>
+</div>
+</body>
+</html>

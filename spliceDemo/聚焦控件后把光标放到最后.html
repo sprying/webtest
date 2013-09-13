@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<script language="javascript">
+function setFocus()
+{
+var obj = event.srcElement;
+var txt =obj.createTextRange();
+txt.moveStart('character',obj.value.length-2);
+txt.collapse(true);
+txt.select();
+}
+</script>
+<input type="text" value="http://toto369.net" onfocus="setFocus()">
+
+</BODY>
+</HTML>

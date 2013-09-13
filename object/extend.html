@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        /* 拷贝对象属性的特性测试通过拷贝后效果*/
+        // 测试一
+        var qq = {x:3};
+        qq.extend(p);
+        var keys = Object.keys(qq);
+        console.log(keys);
+        // 测试二
+        function cons(){
+            this.a =1;
+            var b =2;
+        };
+        cons.prototype = {}
+        cons.prototype.extend(p); //p的属性被扩展到cons原型上
+        var qqq = new cons();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

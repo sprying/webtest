@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            // 键盘事件和修改键组合应用
+             EventUtil.addHandler(document,'keydown',function(e){
+                 if(e.ctrlKey && e.keyCode == 121){
+                     console.log('Ctrl + F10');
+                 }
+             });
+            window.addEventListener("load",function(event){
+
+            });
+            // 取消事件的默认行为
+            EventUtil.addHandler(document,'keydown',function(e){
+                if(e.keyCode == 122){
+                    EventUtil.preventDefault(e);
+                }
+            });
+            tbody.onclick = null;
+
+            /**
+             * 绑定鼠标事件
+             */
+            var btn = document.getElementById("myBtn"),
+             _btnFns = function (event) {
+                event = EventUtil.getEvent(event);
+                console.log(EventUtil.getTarget(event).value + "第" +event.detail +"次点击鼠标");
+                EventUtil.stopPropagation(event);
+            };
+            EventUtil.addHandler(btn, "click", _btnFns);
+            //EventUtil.removeHandler(btn, "click", btnFns);
+
+            // 取消链接事件的默认行为
+            EventUtil.addHandler(document.getElementsByTagName("a")[0], "click", function (event) {
+                EventUtil.preventDefault(EventUtil.getEvent(event));
+            });
+
+            /**
+             * UI事件 load/unload/resize/scroll
+             */
+            var image = document.createElement("img");
+            image.style.width = 170+"px";
+            image.style.height = 221+"px";
+            image.id = "timg";
+            EventUtil.addHandler(image, 'load', function (event) {
+                event = EventUtil.getEvent(event);
+                var obj = EventUtil.getTarget(event);
+                console.log(obj.src);
+            });
+            // 指定src时，图片就开始加载
+            image.src = '../images/121.jpg';
+            document.body.appendChild(image);
+
+            /**
+             * 图像预加载
+             */
+            var imgObj = new Image();
+            EventUtil.addHandler(imgObj,'load',function(event){
+                console.log('Image loaded');
+            });
+            imgObj.src = 'http://imgsrc.baidu.com/forum/pic/item/3b26ab18972bd40711fb6a887b899e510fb3098c.jpg';
+
+            /**
+             * 鼠标修改键
+             */
+            var div = document.getElementById("myDiv");
+            EventUtil.addHandler(div,"click",function(event){
+                event =  EventUtil.getEvent(event);
+
+                var keys = new Array();
+                if(event.shiftKey){
+                    keys.push("shift");
+                }
+                if(event.ctrlKey){
+                    keys.push("ctrl");
+                }
+                if(event.altKey){
+                    keys.push("alt");
+                }
+                if(event.metaKey){
+                    keys.push("meta");
+                }
+                console.log("Keys: "+ keys.join(','));
+            });
+
+            /**
+             * mouseout/mouseover的相关元素
+             */
+            var innerDiv = document.getElementById("tbody");
+            var timeOut = '';
+            EventUtil.addHandler(innerDiv,"mouseout",function(event){
+                clearTimeout(timeOut);
+                timeOut = setTimeout(function(){
+                    event = EventUtil.getEvent(event);
+                    var target = EventUtil.getTarget(event);
+                    var relatedTarget = EventUtil.getRelatedTarget(event);
+                    console.log("Moused out of " + target.id + " to " + relatedTarget.id);
+                },100)
+            });
+
+            /**
+             * 鼠标按钮+屏蔽菜单
+             */
+            var clickMouse = document.getElementById("clickMouse");
+            EventUtil.addHandler(clickMouse,'contextmenu',function(event){
+                event = EventUtil.getEvent(event);
+                EventUtil.preventDefault(event);
+            });
+            EventUtil.addHandler(clickMouse,"mousedown",function(){
+                event = EventUtil.getEvent(event);
+                console.log("Button Type: " + EventUtil.getButton(event));
+            });
+
+            /**
+             * 键盘的键码
+             */
+            var editContent = document.getElementById("editContent");
+            EventUtil.addHandler(editContent,"keyup",function(event){
+                event = EventUtil.getEvent(event);
+                writing.innerHTML = event.keyCode;
+            });
+
+            /**
+             * 鼠标滚轮
+             */
+            function wheelFns(event){
+                 event = EventUtil.getEvent(event);
+                console.log(EventUtil.getWheelDelta(event));
+            }
+            EventUtil.addHandler(document,'mousewheel',wheelFns);
+            EventUtil.addHandler(window,'DOMMouseScroll',wheelFns);
+
+            EventUtil.addHandler(window,'hashchange',function(event){
+                alert("Current hash: " + location.hash);
+            });
+
+            /**
+             * 模拟事件触发
+             */
+            var imitate = document.getElementById("imitateEvent");
+            EventUtil.addHandler(imitate,'click',function(event){
+                event = EventUtil.getEvent(event);
+                var target = EventUtil.getTarget(event);
+                target.innerText = '模拟点击事件';
+            })
+            EventUtil.addHandler(imitate,'mouseover',function(event){
+                event = EventUtil.getEvent(event);
+                var target = EventUtil.getTarget(event);
+                if(!ie){
+                    var newEvent = document.createEvent('MouseEvents');
+                    newEvent.initMouseEvent('click',true,true,document.defaultView,0,0,0,0,0,
+                            false,false,false,false,0,null);
+                    target.dispatchEvent(newEvent);
+                }else{
+                    var newEvent = document.createEventObject();
+
+                    newEvent.screenX = 100;
+                    newEvent.screenY = 0;
+                    newEvent.clientX = 0;
+                    newEvent.clientY = 0;
+                    newEvent.ctrlKey = false;
+                    newEvent.altKey = false;
+                    newEvent.shiftKey = false;
+                    newEvent.button = 0;
+                    target.fireEvent("onclick",newEvent);
+                }
+            })
+        }
+
+        // beforeunload事件
+        EventUtil.addHandler(window,"beforeunload",function(event){
+            event = EventUtil.getEvent(event);
+            var message = "I'm really going to miss you if you go."
+            event.returnValue = message;
+            return message;
+        })
+    </script>
+</head>
+<body onclick='alert("click the body");' id="tbody">
+<P style="display: inline-block;vertical-align: middle;padding: 2px;margin: 2px">按ctrl+f10将触发输出事件</P>
+<p>阻止浏览器f11默认行为</p>
+<input type="button" id="myBtn" value="Bubble">
+<a href="http://www.baidu.com" id="ta">测试默认事件取消</a>
+<div id="myDiv" style="width: 200px;height: 50px;background-color: #0055aa;">
+    <div id="innerDiv" style="width: 140px;height: 30px;background-color: #008200; margin: 10px 30px;">测试mouseout/mouseover的相关元素</div>
+</div>
+<div id="clickMouse" style="width: 140px;height: 30px;background-color:#F0F2F7;padding-top: 5px;padding-left: 5px;">测试鼠标单击键</div>
+<textarea id="editContent"></textarea>
+<div id="writing"></div>
+<div id="imitateEvent" style="background-color: #9f9f9f">模拟点击前</div>
+</body>
+</html>

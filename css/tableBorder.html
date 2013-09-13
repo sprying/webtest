@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+         .lists {
+            margin: 0 auto;
+            background: #000;
+        }
+         .lists tr {
+             line-height: 22px;
+             height: 22px;
+         }
+         .lists th {
+             background-color: #F7F7F7;
+             font-size: 12px;
+             font-weight: normal;
+             padding: 0 10px;
+             white-space: nowrap;
+         }
+         .lists td {
+             white-space: nowrap;
+             font-size: 12px;
+             background-color: #fff;
+             overflow: hidden;
+             padding: 0 2px 0 5px;
+         }
+         .tableinput {
+             border: none;
+             color: blue;
+             height: 100%;
+             background: transparent;
+             float: left;
+             width: 95%;
+         }
+         .editinput {
+             border: none;
+             background: transparent;
+             float: left;
+             width: 100%;
+             margin: 0;
+             color: blue;
+         }
+    </style>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="lists bl br bb">
+    <tbody><tr>
+        <th style="">减除费用</th>
+        <td class="jcfy" style="">
+            <input class="tableinput number" id="jcfy" type="text" name="sbxxVO.zxsbMxVOList[@].jcfy">
+        </td>
+        <th style="">准予扣除的捐赠额</th>
+        <td class="zykcdjze" style="">
+            <input class="tableinput number" id="zykcdjze" type="text" name="sbxxVO.zxsbMxVOList[@].zykcjze">
+        </td>
+        <th style="">应纳税所得额</th>
+        <td class="ynssde" style="">
+            <input class="tableinput number errormessage2" id="ynssde" type="text" name="sbxxVO.zxsbMxVOList[@].ynssde">
+            <label class="error" style="display:none" generated="true">应纳税所得额不能为空。</label>
+        </td>
+        <th style=""><span class="red_font">*</span>税率</th>
+        <td class="zspmDm" style="">
+            <select class="editselect errormessage2" id="zspmDm" name="sbxxVO.zxsbMxVOList[@].zszmDm">
+                <option value="">-请选择-</option>
+            </select>
+            <label class="error" style="display:none" generated="true">税率不能为空，请选择。</label>
+            <input type="hidden" name="sbxxVO.zxsbMxVOList[@].sl" value="" id="sl">
+        </td>
+    </tr>
+    <tr>
+        <th style="">速算扣除数</th>
+        <td class="sskcs" style="">
+            <input type="text" name="sbxxVO.zxsbMxVOList[@].sskcs" value="" readonly="readonly" id="sskcs" class="tableinput">
+        </td>
+        <th style="">应纳税额</th>
+        <td class="ynse" style=""><input name="sbxxVO.zxsbMxVOList[@].ynse" class="tableinput number" id="ynse" type="text"></td>
+        <th style="">减免税额</th>
+        <td class="jmse" style=""><input name="sbxxVO.zxsbMxVOList[@].jmse" class="tableinput number" id="jmse" type="text"></td>
+        <th style="">已缴税额</th>
+        <td class="yjse" style=""><input name="sbxxVO.zxsbMxVOList[@].yjse" class="tableinput number" id="yjse" type="text"></td>
+    </tr>
+    <tr>
+        <th style="">应补（退）税额</th>
+        <td class="ybtse" style=""><input type="text" name="sbxxVO.zxsbMxVOList[@].ybtse" value="" id="ybtse" class="tableinput errormessage2" style="text-align:right"><label class="error" style="display:none" generated="true">应补退税额不能为空。</label></td>
+        <th style="">&nbsp;</th>
+        <td style="">&nbsp;</td>
+        <th style="">&nbsp;</th>
+        <td style="">&nbsp;</td>
+        <th style="">&nbsp;</th>
+        <td style="">&nbsp;</td>
+    </tr>
+    </tbody></table>
+</body>
+</html>

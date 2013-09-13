@@ -1,0 +1,69 @@
+<html>
+<head>
+    <script type='text/javascript'>
+        function getIds() {
+            var elem = document.getElementsByTagName("tr");
+            for (var i = 0; i < elem.length; i++) {
+                if (elem[i].id) {
+                    console.error(elem[i].id);
+                }
+            }
+        }
+
+        function changeIds() {
+            var elem = document.getElementsByTagName("tr");
+            for (var i = 0; i < elem.length; i++) {
+                if (elem[i].id) {
+                    index = Number(elem[i].rowIndex) + 1;
+                    elem[i].id = "tabsf_" + index + elem[i].id;
+                }
+            }
+            console.warn('change');
+        }
+    </script>
+    <style type="text/css">
+        table,th,td{
+            border: 1px solid #000000;
+        }
+        table{
+            border-collapse:collapse;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table id="tabsf">
+    <tbody>
+    <tr id="tabsf_1">
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr id="tabsf_2">
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr id="tabsf_5">
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr id="tabsf_3">
+        <td>7</td>
+        <td>8</td>
+    </tr>
+    <tr id="tabsf_4">
+        <td>9</td>
+        <td>10</td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <tr>
+        <td><input type="button" name="hach" value="getIds" onclick="getIds()"/></td>
+        <td><input type="button" name="hach" value="Change Ids" onclick="changeIds()"/></td>
+    </tr>
+</table>
+</body>
+</html>
+</code>

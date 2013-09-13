@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <script type="text/javascript">
+        /* 存储器属性应用*/
+        var serrialnum = {
+            $n:0,
+            get next(){
+                return this.$n++;
+            },
+            set next(n){
+                if(n >= this.$n) this.$n = n;
+                else throw "序列号的值不能比当前小";
+            }
+        }
+        serrialnum.next;
+        serrialnum.next;
+        serrialnum.next=3;
+
+        /* 存储器属性应用*/
+        var p = {
+            x: 1.0,
+            y: 1.0,
+            get r() {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            },
+            set r(newvalue) {
+                var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y);
+                var ratio = newvalue / oldvalue;
+                this.x *= ratio;
+                this.y *= ratio;
+            },
+            get theta() {
+                return Math.atan2(this.y, this.x);
+            }
+        };
+        p.x =3, p.y=4;
+        console.log(p.r);
+        p.r = 10;
+        console.log(p.x);
+
+        // 不会改变原型值
+        var q1 = inherit(p);
+        q1.x = 1,q1.y = 1;
+        console.log(q1.r);
+        console.log(q1.theta);
+
+        // Object.keys后，存储器属性如数据属性一般无异
+        var keys = Object.keys(p);
+        console.log(keys);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

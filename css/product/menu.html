@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AspectGaming lottery system_home_terms</title>
+
+    <style type="text/css">
+        ul{ list-style:none; margin:0; padding:0;}
+        ul li{ list-style:none;}
+        #nav{width:600px; height:40px; border:1px red solid; }
+        #nav li{ float:left; width:150px; position:relative;}
+
+        ul#nav li a {display:block;height:34px;  border:1px #ccc solid;}
+
+        ul#memus { width:150px;height:0;overflow:hidden; position: absolute; z-index:1000; border:1px #09C solid;}
+        .temp{ width:600px; height:60px;background-color:#F93; position:relative;}
+        .temp p{ position:absolute; background-color: #69C;}
+        .bo{width:600px; height:60px;background-color:#969;}
+    </style>
+    <script type="text/javascript" src="../../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".sys-link").click(function(){
+                if($("#memus").height()==0){
+                    $("#memus").animate({height: '208px'}, 500);
+                }else{
+                    $("#memus").animate({height: '0px'}, 500);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="container" class="container">
+    <ul id="nav">
+        <li><a href="#" class="home-link">Home</a></li>
+        <li class="sys">
+            <a href="#" class="sys-link">System Management</a>
+
+            <ul id="memus" class="">
+                <li class="select"><a href="#">Chains</a></li>
+                <li class="select"><a href="#">Retailers</a></li>
+                <li class="select"><a href="#">Games</a></li>
+                <li class="select"><a href="#">Machines</a></li>
+                <li class="select"><a href="#">Drawings</a></li>
+                <li class="select"><a href="#">Tickets</a></li>
+                <li class="select"><a href="#">User Access</a></li>
+                <li class="select"><a href="#">Reports</a></li>
+            </ul>
+
+        </li>
+    </ul>
+    <div class="temp">
+        <p>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss </p>
+    </div>
+    <div class="bo"></div>
+    解决方案 http://blog.csdn.net/elim051/article/details/6133623
+</div>
+</body>
+</html>

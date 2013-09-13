@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        #wrap{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            background: #f59c82;
+            overflow: auto;
+            border: 1px solid #000000;
+            *position: relative;
+        }
+        #inner{
+            width: 401px;
+            height: 450px;
+            background: #49ff46;
+            margin: 10px;
+            padding: 10px;
+            overflow: auto;
+            border: 1px solid #000000;
+            *position: relative;
+        }
+        #pic{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            left: 300px;
+            top: 250px;
+            margin: 10px;
+            padding: 20px;
+            background: #0000ff;
+            border: 1px solid #000000;
+        }
+        #showView{
+            margin: 300px 0 0 0;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #bottom{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: #DDDDDD;
+            height: 35px;
+            width: 100%;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            box-shadow: 0px -2px 30px 5px #888888;
+        }
+        #btn{
+            background: #ff0000;
+            margin: 3px auto;
+            text-align: center;
+            width: 80px;
+            height: 28px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            box-shadow: -3px -2px 30px 2px #888888 inset;
+            /*padding-top: 5px;*/
+            line-height: 28px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        #btn:hover{
+            opacity: 1;
+        }
+    </style>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="../../scripts/firebug-lite/build/firebug-lite.js"></script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <script type="text/javascript" src="../../scripts/firebug-lite/build/firebug-lite.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap">
+    <div id="inner">
+        <div id="pic">
+            <div id="showView">123</div>
+        </div>
+    </div>
+</div>
+<div id="bottom">
+    <div id="btn" onclick="doScroll();">显示红色</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    function getElementPostion(e){
+        var x =0,y=0;
+        while(e != null){
+            x += e.offsetLeft + e.clientTop;
+            y += e.offsetTop + e.clientLeft;
+            e = e.offsetParent;
+        }
+        return {left:x,top:y}
+    }
+    function getElementPos(elt){
+        var x = 0,y = 0,e =elt;
+        if(e!=null){
+            x += e.offsetLeft;
+            y += e.offsetTop;
+            e = e.offsetParent;
+        }
+        for(; e !=null; e = e.offsetParent){
+            x += e.offsetLeft + e.clientTop;
+            y += e.offsetTop + e.clientLeft;
+        }
+        for(var e =elt.parentNode; e!=null && e.nodeType ==1;e= e.parentNode){
+            x -= e.scrollLeft;
+            y -= e.scrollTop;
+        }
+        return {left:x,top:y};
+    }
+    window.onload = function(){
+        var i = 1;
+        btn.onclick = function(){
+            if(i ===1){
+                doScroll();
+                btn.innerText = '复位';
+                i = 0;
+            }else{
+                resetScroll();
+                btn.innerText = '显示红色';
+                i = 1;
+            }
+        }
+    }
+    function doScroll(){
+        inner.scrollLeft=getElementPostion(showView).left-getElementPostion(inner).left;
+        inner.scrollTop=getElementPostion(showView).top-getElementPostion(inner).top;
+        wrap.scrollLeft=getElementPostion(inner).left-getElementPostion(wrap).left;
+        wrap.scrollTop=getElementPostion(inner).top-getElementPostion(wrap).top;
+        wrap.scrollLeft=getElementPostion(inner).left-getElementPostion(wrap).left+getElementPos(showView).left-getElementPos(wrap).left;
+        wrap.scrollTop=getElementPostion(inner).top-getElementPostion(wrap).top+getElementPos(showView).top-getElementPos(wrap).top;
+    }
+    function resetScroll(){
+        wrap.scrollTop = wrap.scrollLeft = inner.scrollLeft = inner.scrollTop = 0;
+    }
+</script>

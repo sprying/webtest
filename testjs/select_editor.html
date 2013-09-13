@@ -1,0 +1,25 @@
+<HTML><HEAD> 
+<TITLE>moveToPoint Example</TITLE> 
+<script for=document event=onclick> 
+var r 
+if(window.event.srcElement.isTextEdit) 
+{ 
+r=window.event.srcElement.createTextRange(); }
+else{ 
+var el=window.event.srcElement.parentTextEdit; 
+r=el.createTextRange(); }
+
+r.moveToPoint(window.event.x, window.event.y); 
+r.expand("word"); 
+r.select(); 
+</script> 
+</HEAD> 
+<BODY>
+
+<H1 id=myH1>Click on a word and it will highlight</H1>
+
+<TEXTAREA> 
+There's text in this element too that you could click on 
+</TEXTAREA>
+
+</BODY></HTML>

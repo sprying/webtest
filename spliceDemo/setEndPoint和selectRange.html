@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+
+ <BODY>
+  <div   nowrap   CONTENTEDITABLE   onmouseup="getCursorPos();">0123456789</div>   
+  <script>   
+          function   getCursorPos(){   
+                  var   pos=-1;   
+                  var   sText=document.selection.createRange();
+                  var   tempText=document.body.createTextRange();;   
+                  sText.setEndPoint("EndToStart",tempText);   
+                  //pos=tempText.text.length;   
+                  //alert(pos); 
+				  //sText.collapse(false);
+                  sText.select();   
+          }   
+  </script>
+ </BODY>
+</HTML>

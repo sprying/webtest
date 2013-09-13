@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="../../scripts/jquery-1.4.4.js"></script>
+<script type="text/javascript">
+var templ = '<div class="nsrxxTcc">\
+<div class="list_title"><div class="head">纳税人信息列表</div></div>\
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="formlist" class="list">\
+	<tbody><tr>\
+		<th width="5%"></th>\
+		<th>登记机关</th>\
+		<th style="width:150px">登记日期</th>\
+		<th>纳税人识别号</th>\
+		<th>纳税人名称</th>\
+		<th>组织机构代码</th>\
+		<th>税务登记类型</th>\
+		<th>临时税务登记类型</th>\
+		<th>纳税人状态</th>\
+		<th>登记注册类型</th>\
+		<th>行业</th>\
+		<th>注册地址行政区划</th>\
+		<th>注册所在地</th>\
+		<th>生产经营地址行政区划</th>\
+		<th style="width:150px">生产经营地址</th>\
+		<th>法定代表人姓名</th>\
+		<th>法定代表人证件名称</th>\
+		<th>法定代表人证件号码</th>\
+		<th>街道乡镇</th>\
+		<th>单位隶属关系</th>\
+		<th>主管税务机关</th>\
+		<th>主管税务所（科、分局）</th>\
+		<th>税收管理员</th>\
+		<th>代扣代缴</th>\
+		<th>委托代征</th>\
+		<th><div class="jyfw" id="jyfwTh" style="width: 2265px;">经营范围</div></th>\
+		<th>国家（地区）</th><th>增值税企业类型</th>\
+	</tr></tbody>\
+	<tbody id="mypzxx"><repeat><tr>\
+		<td><input type="radio" name="target_nsr" value="${nsrdzdah}"></td>\
+		<td>${djjgMc}</td>\
+		<td>${djrq}</td>\
+		<td>${nsrsbh}</td>\
+		<td>${nsrmc}</td>\
+		<td>${zzjgDm}</td>\
+		<td>${swdjlxMc}</td>\
+		<td>${lsSwdjlxMc}</td>\
+		<td>${nsrztMc}</td>\
+		<td>${djzclxMc}</td>\
+		<td>${hyMc}</td>\
+		<td>${zcdzXzqhSzMc}</td>\
+		<td>${zcszd}</td>\
+		<td>${scjydzZxqhSzMc}</td>\
+		<td>${scjydz}</td>\
+		<td>${fddbrXm}</td>\
+		<td>${fddbrSfzjzlMc}</td>\
+		<td>${fddbrSfzjHm}</td>\
+		<td>${jdxzMc}</td>\
+		<td>${dwLsgxMc}</td>\
+		<td>${zgSwjgMc}</td>\
+		<td>${zgSwskfjMc}</td>\
+		<td>${ssglyMc}</td>\
+		<td>${dkdjBz}</td>\
+		<td>${wtdzBz}</td>\
+		<td><div class="jyfw">${jyfw}</div></td>\
+		<td>${gjhdqszMc}</td>\
+		<td>${zzsqylxMc}</td>\
+	</tr></repeat></tbody>\
+</table>\
+<div class="list_btdiv" style="width:100%"><input type="button" value="确定" id="select_btn" class="bts_public"></div></div>'
+var nsrJson = [
+    {
+        "bsrMc": "秦芹",
+        "cwfzrLxdh": "",
+        "cwfzrxm": "吴冕",
+        "djjgDm": "",
+        "djjgMc": "",
+        "djrq": "2007-01-01 00:00:00",
+        "djzclxDm": "159",
+        "djzclxMc": "其他有限责任公司",
+        "dkdjBz": "Y",
+        "dwLsgxDm": "51",
+        "dwLsgxMc": "区",
+        "fddbrDzyx": "",
+        "fddbrGddh": "61888766",
+        "fddbrSfzjHm": "510229196401200013",
+        "fddbrSfzjzlMc": "居民身份证",
+        "fddbrSfzjzlMcDm": "201",
+        "fddbrXm": "陈其",
+        "fddbrYddh": "61888766",
+        "fpbl": "",
+        "gdGhlxDm": "2",
+        "gdsBz": "2",
+        "gjhdqszDm": "",
+        "gjhdqszMc": "",
+        "hasQx": false,
+        "hjszd": "",
+        "hyDm": "4910",
+        "hyMc": "电气安装",
+        "hyf1Dm": "",
+        "hyf2Dm": "",
+        "hyf3Dm": "",
+        "jdxzDm": "500106003",
+        "jdxzMc": "渝碚路街道",
+        "jfrztDm": "",
+        "jyfw": "房屋建筑工程施工总承包壹级；建筑装修装饰工程专业承包壹级；;送变电工程专业承包壹级；市政公用工程施工总承包贰级；土石方工程专业承包壹级；建筑幕墙工程专业承包贰级；环保工程专业承包贰级；钢结构工程专业承包贰级；水利水电机电设备安装工程专业承包叁级；水工隧洞工程专业承包叁级。（凭相关资质证书执业）；工程技术咨询服务。（按专项审批的范围及期限从事经营）*",
+        "lrrDm": "25001061152",
+        "lrrq": "2006-11-17 00:00:00",
+        "lsSwdjlxDm": "",
+        "lsSwdjlxMc": "",
+        "nsrdzdah": "12500100003001410952",
+        "nsrmc": "重庆市送变电工程有限公司",
+        "nsrsbh": "500106203093112",
+        "nsrztDm": "03",
+        "nsrztMc": "正常",
+        "nsrztZc": false,
+        "sbSwjgDm": "",
+        "sbSwjgMc": "",
+        "sbSwskfjDm": "",
+        "sbSwskfjMc": "",
+        "sbdjrq": "",
+        "sbdjxh": "",
+        "sbztDm": "0",
+        "scjydLxdh": "61888723",
+        "scjydYzbm": "400030",
+        "scjydz": "沙坪坝区沙坪坝南街60号附99、100号",
+        "scjydzZxqhSzDm": "500106",
+        "scjydzZxqhSzMc": "重庆市沙坪坝区",
+        "sfztDm": "2",
+        "sgy_dm": "",
+        "sjgsdq": "25001",
+        "sjgsrq": "",
+        "ssdabh": "100130000001839042",
+        "ssglyDm": "25001061146",
+        "ssglyMc": "刘国丽",
+        "swdjlxDm": "1",
+        "swdjlxMc": "单位纳税人登记",
+        "tipField": "",
+        "tzuuid": "",
+        "tzze": "0",
+        "wtdzBz": "Y",
+        "xgrDm": "25001060166",
+        "xgrq": "2012-05-10 09:22:59",
+        "xlhbz": "",
+        "zcdLxdh": "61888723",
+        "zcdYzbm": "400030",
+        "zcdzXzqhSzDm": "500106",
+        "zcdzXzqhSzMc": "重庆市沙坪坝区",
+        "zcszd": "沙坪坝区沙坪坝南街60号附99、100号",
+        "zczb": "88000000",
+        "zgSwjgDm": "25001060000",
+        "zgSwjgMc": "重庆市沙坪坝区地方税务局",
+        "zgSwskfjDm": "25001060400",
+        "zgSwskfjMc": "重庆市沙坪坝区地税局渝碚路税务所",
+        "zzjgDm": "203093112",
+        "zzjgMc": "",
+        "zzsqylxDm": "",
+        "zzsqylxMc": ""
+    },
+    {
+        "bsrMc": "周静",
+        "cwfzrLxdh": "",
+        "cwfzrxm": "周静",
+        "djjgDm": "",
+        "djjgMc": "",
+        "djrq": "2011-11-02 00:00:00",
+        "djzclxDm": "159",
+        "djzclxMc": "其他有限责任公司",
+        "dkdjBz": "Y",
+        "dwLsgxDm": "51",
+        "dwLsgxMc": "区",
+        "fddbrDzyx": "",
+        "fddbrGddh": "13983989990",
+        "fddbrSfzjHm": "510229196401200013",
+        "fddbrSfzjzlMc": "居民身份证",
+        "fddbrSfzjzlMcDm": "201",
+        "fddbrXm": "陈其",
+        "fddbrYddh": "13983989990",
+        "fpbl": "",
+        "gdGhlxDm": "2",
+        "gdsBz": "2",
+        "gjhdqszDm": "",
+        "gjhdqszMc": "",
+        "hasQx": false,
+        "hjszd": "",
+        "hyDm": "4910",
+        "hyMc": "电气安装",
+        "hyf1Dm": "",
+        "hyf2Dm": "",
+        "hyf3Dm": "",
+        "jdxzDm": "500106017",
+        "jdxzMc": "西永街道",
+        "jfrztDm": "",
+        "jyfw": "",
+        "lrrDm": "X          ",
+        "lrrq": "2011-11-02 15:55:05",
+        "lsSwdjlxDm": "",
+        "lsSwdjlxMc": "",
+        "nsrdzdah": "12500100003001938905",
+        "nsrmc": "重庆市送变电工程有限公司",
+        "nsrsbh": "500106203093112",
+        "nsrztDm": "09",
+        "nsrztMc": "报验",
+        "nsrztZc": false,
+        "sbSwjgDm": "",
+        "sbSwjgMc": "",
+        "sbSwskfjDm": "",
+        "sbSwskfjMc": "",
+        "sbdjrq": "",
+        "sbdjxh": "",
+        "sbztDm": "0",
+        "scjydLxdh": "",
+        "scjydYzbm": "",
+        "scjydz": "重庆市沙坪坝区",
+        "scjydzZxqhSzDm": "500902",
+        "scjydzZxqhSzMc": "重庆市直属局",
+        "sfztDm": "2",
+        "sgy_dm": "",
+        "sjgsdq": "25009",
+        "sjgsrq": "",
+        "ssdabh": "100130000002704859",
+        "ssglyDm": "25009020803",
+        "ssglyMc": "廖小玲",
+        "swdjlxDm": "4",
+        "swdjlxMc": "外埠纳税人经营地报验登记",
+        "tipField": "",
+        "tzuuid": "",
+        "tzze": "",
+        "wtdzBz": "N",
+        "xgrDm": "987654321  ",
+        "xgrq": "2011-12-22 15:17:59",
+        "xlhbz": "",
+        "zcdLxdh": "",
+        "zcdYzbm": "",
+        "zcdzXzqhSzDm": "500106",
+        "zcdzXzqhSzMc": "重庆市沙坪坝区",
+        "zcszd": "西永微电园研发楼B4",
+        "zczb": "",
+        "zgSwjgDm": "25009020000",
+        "zgSwjgMc": "重庆市地方税务局重点税源管理局",
+        "zgSwskfjDm": "25009020800",
+        "zgSwskfjMc": "重点税源管理局西永园区税务所",
+        "zzjgDm": "203093112",
+        "zzjgMc": "",
+        "zzsqylxDm": "",
+        "zzsqylxMc": ""
+    }
+];
+function tempFactory(template, jsonList) {
+    var res = /([\w\W]*)\<repeat\>([\w\W]*)\<\/repeat\>([\w\W]*)/.exec(templ);
+    var tempArray = [], temp;
+    for (var i = 0, l = jsonList.length; i < l; i++) {
+        var nsrxx = jsonList[i];
+        temp = res[2];
+        for (var pro in nsrxx) {
+            var reg = new RegExp('\\$\\{' + pro + '\\}');
+            if (pro == 'djrq') {
+                temp = temp.replace(reg, nsrxx[pro].split(' ')[0]);
+            } else if (pro == 'dkdjBz' || pro == 'wtdzBz') {
+                temp = temp.replace(reg, nsrxx[pro] == "Y" ? "是" : "否");
+            } else {
+                temp = temp.replace(reg, nsrxx[pro]);
+            }
+        }
+        tempArray.push(temp);
+    }
+    return res[1] + '' + tempArray.join('') + '' + res[3];
+}
+res = tempFactory(templ, nsrJson);
+</script>
+</head>
+<body>
+
+</body>
+</html>

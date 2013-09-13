@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        (function(window, undefined) {
+            var readyList = [],
+                    isReady = 0,
+                    readyBound = false,
+                    init,
+                    bindReady,
+                    readyWait = 1;
+            init = function(wait) { // A third-party is pushing the ready event forwards
+                if (wait === true) {
+                    readyWait--;
+                } // Make sure that the DOM is not already loaded
+                if (!readyWait || (wait !== true && !isReady)) { // Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
+                    // 确保body元素存在，这个操作是防止IE的bug
+                    if (!document.body) {
+                        return setTimeout(init, 1);
+                    } // dom渲染完成标志设置为true
+                    isReady = true; // If a normal DOM Ready event fired, decrement, and wait if need be
+                    if (wait !== true && --readyWait > 0) {
+                        return;
+                    } // 绑定的渲染完成后的执行函数
+                    if (readyList) { // 全部执行
+                        var fn, i = 0,
+                                ready = readyList; // 重置
+                        readyList = null;
+                        while ((fn = ready[i++])) {
+                            fn.call(document);
+                        }
+                    }
+                }
+            }; // 初始化readyList事件处理函数队列
+            // 兼容不同浏览对绑定事件的区别
+            bindReady = function() {
+                if (readyBound) {
+                    return;
+                }
+                readyBound = true; // $(document).ready()的嵌套调用时
+                // readyState: "uninitalized"、"loading"、"interactive"、"complete" 、"loaded"
+                if (document.readyState === "complete") { // 让它异步执行，使这个ready能延迟
+                    return setTimeout(init, 1);
+                } // Mozilla, Opera and webkit
+                // 兼容事件，通过检测浏览器的功能特性，而非嗅探浏览器
+                if (document.addEventListener) { // 使用事件回调函数
+                    document.addEventListener("DOMContentLoaded",
+                            function() {
+                                document.removeEventListener("DOMContentLoaded", arguments.callee, false);
+                                init();
+                            },
+                            false); // 绑定回调到load,使之能一定执行
+                    window.addEventListener("load", init, false); // IE
+                } else if (document.attachEvent) { // 确保在load之前触发onreadystatechange,
+                    // 针对iframe情况，可能有延迟
+                    document.attachEvent("onreadystatechange",
+                            function() { // Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
+                                if (document.readyState === "complete") {
+                                    document.detachEvent("onreadystatechange", arguments.callee);
+                                    init();
+                                }
+                            }); // 绑定回调到一定执行能load事件
+                    window.attachEvent("onload", init); // 如果是IE且非iframe情况下
+                    // 持续的检查，看看文档是否已准备
+                    var toplevel = false;
+                    try {
+                        toplevel = window.frameElement == null;
+                    } catch(e) {}
+                    (function() {
+                        if (document.documentElement.doScroll && toplevel) {
+                            if (isReady) {
+                                return;
+                            }
+                            try { // If IE is used, use the trick by Diego Perini
+                                // http://javascript.nwbox.com/IEContentLoaded/
+                                document.documentElement.doScroll("left");
+                            } catch(e) {
+                                setTimeout(arguments.callee, 1);
+                                return;
+                            } // 执行在等待的函数
+                            init();
+                        }
+                    })();
+                }
+            };
+            window.ready = function(fn) { // 绑定上监听事件
+                bindReady(); // 如果dom已经渲染
+                if (isReady) { // 立即执行
+                    fn.call(document); // 否则，保存到缓冲队列，等上面的监听事件触发时，再全部执行
+                } else if (readyList) { // 将回调增加到队列中
+                    readyList.push(fn);
+                }
+            };
+        })(window);
+        ready(function(){
+            var inp = document.getElementById('inp');
+            console.log(inp.nodeName);
+        });
+        ready(function(){
+            console.log('second ready');
+            ready(function(){
+                console.log('in the second ready')
+            })
+        })
+    </script>
+</head>
+<body>
+  <input type="text" id="inp"/>
+</body>
+</html>
+        <script type="text/javascript">
+            ready(function(){
+                console.log('third ready');
+            });
+        </script>

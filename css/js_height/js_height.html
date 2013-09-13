@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        <!--
+        #box {background-color:#eee; }
+        #box p {margin-top: 20px;margin-bottom: 20px; text-align:center; }
+        -->
+    </style>
+    <script type="text/javascript">
+        function changeH(){
+            var nodes = document.getElementsByTagName("p");
+            nodes[0].offsetHeight = 200;
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <p id="pj">p对象中的内容</p>
+</div>
+<button id="btn" type="button" value="改变高度" onclick="changeH();">ChangeHeight</button>
+</body>
+</html>

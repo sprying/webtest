@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        function f(){
+            a = 1;  //全局变量a赋值为1
+            var b = 2; //局部变量b赋值为2
+        }
+        try{
+            alert(a);
+        }
+        catch(e){
+            console.log(e.message); //变量a未定义
+        }
+        f();//调用函数
+        console.log(a);    //1
+    </script>
+</head>
+<body>
+
+</body>
+</html>

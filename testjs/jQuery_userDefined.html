@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+(function () {
+    function UUID() {
+        this.id = this.createUUID();
+    }
+
+    UUID.prototype.valueOf = function () {
+        return this.id;
+    }
+    UUID.prototype.toString = function () {
+        return this.id;
+    }
+    UUID.prototype.createUUID = function () {
+        var dg = new Date(1582, 10, 15, 0, 0, 0, 0);
+        var dc = new Date();
+        var t = dc.getTime() - dg.getTime();
+        var tl = UUID.getIntegerBits(t, 0, 31);
+        var tm = UUID.getIntegerBits(t, 32, 47);
+        var thv = UUID.getIntegerBits(t, 48, 59) + '1'; // version 1, security version is 2
+        var csar = UUID.getIntegerBits(UUID.rand(4095), 0, 7);
+        var csl = UUID.getIntegerBits(UUID.rand(4095), 0, 7);
+
+        var n = UUID.getIntegerBits(UUID.rand(8191), 0, 7) +
+                UUID.getIntegerBits(UUID.rand(8191), 8, 15) +
+                UUID.getIntegerBits(UUID.rand(8191), 0, 7) +
+                UUID.getIntegerBits(UUID.rand(8191), 8, 15) +
+                UUID.getIntegerBits(UUID.rand(8191), 0, 15); // this last number is two octets long
+        return tl + tm + thv + csar + csl + n;
+    }
+    UUID.getIntegerBits = function (val, start, end) {
+        var base16 = UUID.returnBase(val, 16);
+        var quadArray = new Array();
+        var quadString = '';
+        var i = 0;
+        for (i = 0; i < base16.length; i++) {
+            quadArray.push(base16.substring(i, i + 1));
+        }
+        for (i = Math.floor(start / 4); i <= Math.floor(end / 4); i++) {
+            if (!quadArray[i] || quadArray[i] == '')
+                quadString += '0';
+            else
+                quadString += quadArray[i];
+        }
+        return quadString;
+    }
+    UUID.returnBase = function (number, base) {
+        return (number).toString(base).toUpperCase();
+    }
+    UUID.rand = function (max) {
+        return Math.floor(Math.random() * (max + 1));
+    }
+    window.UUID = UUID;
+})();
+(function ($, udf) {
+    var ns = ".inputEvent ",
+    // A bunch of data strings that we use regularly
+            dataBnd = "bound.inputEvent",
+            dataVal = "value.inputEvent",
+            dataDlg = "delegated.inputEvent",
+    // Set up our list of events
+            bindTo = [
+                "input", "textInput", "propertychange", "paste", "cut", "keydown", "drop",
+                ""].join(ns),
+    // Events required for delegate, mostly for IE support
+            dlgtTo = ["focusin", "mouseover", "dragstart", ""].join(ns),
+    // Elements supporting text input, not including contentEditable
+            supported = {
+                TEXTAREA: udf,
+                INPUT: udf
+            },
+    // Events that fire before input value is updated
+            delay = {
+                paste: udf,
+                cut: udf,
+                keydown: udf,
+                drop: udf,
+                textInput: udf
+            };
+
+    $.event.special.txtinput = {
+        setup: function (data, namespaces, handler) {
+            var triggerTimer,
+                    bndCount,
+                    changeTimer,
+            // Get references to the element
+                    elem = this,
+                    $elem = $(this),
+                    triggered = false;
+
+            if (elem.tagName in supported) {
+                bndCount = $.data(elem, dataBnd) || 0;
+
+                if (!bndCount)
+                    $elem.bind(bindTo, handler);
+
+                $.data(elem, dataBnd, ++bndCount);
+                $.data(elem, dataVal, elem.value);
+            } else {
+                $elem.bind(dlgtTo, function (e) {
+                    var target = e.target;
+                    if (target.tagName in supported && !$.data(elem, dataDlg)) {
+                        bndCount = $.data(target, dataBnd) || 0;
+
+                        if (!bndCount)
+                            target.bind(bindTo, handler);
+
+                        // make sure we increase the count only once for each bound ancestor
+                        $.data(elem, dataDlg, true);
+                        $.data(target, dataBnd, ++bndCount);
+                        $.data(target, dataVal, target.value);
+                    }
+                });
+            }
+            function handler(e) {
+                var elem = e.target;
+
+                // Clear previous timers because we only need to know about 1 change
+                window.clearTimeout(timer),
+                        timer = null;
+
+                // Return if we've already triggered the event
+                if (triggered)
+                    return;
+
+                // paste, cut, keydown and drop all fire before the value is updated
+                if (e.type in delay && !timer) {
+                    // ...so we need to delay them until after the event has fired
+                    timer = window.setTimeout(function () {
+                        if (elem.value !== $.data(elem, dataVal)) {
+                            $(elem).trigger("txtinput");
+                            $.data(elem, dataVal, elem.value);
+                        }
+                    }, 0);
+                } else if (e.type == "propertychange") {
+                    if (e.originalEvent.propertyName == "value") {
+                        $(elem).trigger("txtinput");
+                        $.data(elem, dataVal, elem.value);
+                        triggered = true;
+                        window.setTimeout(function () {
+                            triggered = false;
+                        }, 0);
+                    }
+                } else {
+                    $(elem).trigger("txtinput");
+                    $.data(elem, dataVal, elem.value);
+                    triggered = true;
+                    window.setTimeout(function () {
+                        triggered = false;
+                    }, 0);
+                }
+            }
+        },
+        teardown: function () {
+            var elem = $(this);
+            elem.unbind(dlgtTo);
+            elem.find("input, textarea").andSelf().each(function () {
+                bndCount = $.data(this, dataBnd, ($.data(this, dataBnd) || 1) - 1);
+
+                if (!bndCount)
+                    elem.unbind(bindTo);
+            });
+        }
+    };
+
+    // Setup our jQuery shorthand method
+    $.fn.input = function (handler) {
+        return handler ? this.bind("txtinput", handler) : this.trigger("txtinput");
+    }
+})(jQuery);
+jQuery.fn.extend({
+    inputTip: function (msg) {
+        var arr =[48,32,49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70, 71, 72, 73,
+            74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 96, 97, 98,
+            99, 100, 101, 102, 103, 104, 105, 106, 107, 109, 110, 111, 186, 187, 189, 190, 191, 192, 219, 220, 221,229]
+
+        var msg = msg || '请输入内容';
+        $(this).val(msg);
+        var clickFns = function () {
+            var $this = $(this);
+            $this.css('color', '#ccc');
+            if (this.createTextRange) {
+                var appText = this.createTextRange();
+                appText.collapse();
+                appText.select();
+            } else if (this.setSelectionRange) {
+                this.focus();
+                this.setSelectionRange(0, 0);
+            }
+        };
+        var blurFns = function () {
+            $(this).css('color', '#000');
+        }
+        var keyPressFns = function (e) {
+            if(arr.indexOf(e.keyCode) !== -1) {
+                $(this).css('color', '#000').val('');
+                $(this).unbind('keydown', keyPressFns);
+                $(this).unbind('click', clickFns);
+            }
+            if(e.keyCode== 37||e.keyCode== 38||e.keyCode== 39||e.keyCode== 40)
+                if (e.preventDefault)
+                    e.preventDefault();
+                else
+                    e.returnValue = false;
+            console.log(e.keyCode)
+        };
+        var keyupFns = function () {
+            var $this = $(this);
+            if ($this.val() == '') {
+                $this.bind({click: clickFns, keydown: keyPressFns, blur: blurFns});
+                $this.val(msg);
+                $this.trigger('click');
+            }
+        };
+        $(this).bind(
+                {
+                    click: clickFns,
+                    keydown: keyPressFns,
+                    blur: blurFns,
+                    keyup: keyupFns
+                }
+        );
+    }
+});
+</script>
+</head>
+<body>
+<input type="text" id="textInp">
+tip:<input type="text" id="tip" value="11"><br/>
+tip2:<input type="text" id="tip2" value="11"><br/>
+<input onkeydown="if(event.keyCode==13)event.keyCode=9" > <input style="ime-mode:disabled" onkeydown="if(event.keyCode==13)event.keyCode=9" onKeyPress="if ((event.keyCode<48 || event.keyCode>57)) event.returnValue=false"> </body>
+<input onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"> </html>
+<script type="text/javascript">
+    var i = 0;
+    var __inputFns = function (event) {
+        console.log(this.value);
+    };
+    $('#textInp').bind({input: __inputFns});
+    document.onkeydown = (function (e) {
+        if (e.ctrlKey && (e.keyCode || e.which) === 122) {
+            $('#textInp').unbind('input', __inputFns);
+        }
+    });
+    $('#tip2').inputTip('aaaa');
+    var tip = document.getElementById("tip");
+    tip.setSelectionRange(0,0);
+    /*tip.onclick = function(event){
+//        event.returnValue=false;
+       console.log('click');
+    };
+    tip.addEventListener('mousedown',function(event){
+        console.log('mousedown');
+        tip.focus();
+        tip.setSelectionRange(0,0);
+        event.preventDefault();
+    })*/
+    tip.onclick = function(){
+        console.log('click');
+        tip.setSelectionRange(0,0);
+        this.focus();
+    }
+    tip.onmousedown = function(){
+        console.log('mousedown')
+        $(this).trigger('click')
+    }
+    tip.onmouseup = function(){
+        console.log('mouseup');
+    }
+    tip.onblur = function(){
+        console.log('blur');
+    }
+    tip.onfocus = function(event){
+        event.preventDefault()
+        console.log('focus');
+    }
+</script>

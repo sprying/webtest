@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        // 判断当前是否是严格模式
+        var strict = (function(){return !this;});
+       console.log(strict?"当前为严格模式":"当前为非严格模式")
+
+        var x=1;
+        aa();
+        /**
+         * @desc  is
+         */
+        function aa (){
+            var x = 2;
+            eval((function(){
+                //var x =3;
+                alert(x);
+            })());
+        };
+
+        var foo = function(a){
+            eval(a);
+        };
+        //foo("return;");//没有语义的代码片段不能在eval中执行
+
+        var geval = eval;
+        var x = "global", y = "global";
+        function f(){
+            var x = "local";
+            eval("x += ' changed';");
+            return x;
+        }
+        function g(){
+            var y ="local";
+            geval("y +=' changed';");
+            return y;
+        }
+        console.log(f(),x);
+        console.log(g(),y);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+<body>
+
+</body>
+</html>     <script type="text/javascript">
+    if(window.localStorage){
+        localStorage.setItem('x',1)
+        localStorage.lastRead =(new Date()).toUTCString();
+        localStorage.obj = JSON.stringify({
+            x:5,
+            y:function(){
+                return 6;
+            }
+        });
+        setTimeout(function(){
+            var lastRead = new Date(Date.parse(localStorage.lastRead));
+            console.log(lastRead);
+            var obj = JSON.parse(localStorage.obj);
+        },0);
+        console.log(localStorage.getItem('x'));
+        for(var i = 0,l=localStorage.length;i<l;i++){
+            var name = localStorage.key(i);
+            var value = localStorage.getItem(name);
+        }
+        localStorage.removeItem('x');
+        //        localStorage.clear();
+    }
+    function cookieStorage(maxage, path){
+        var cookie = (function(){
+            var cookie = {};
+            var all = document.cookie;
+            if(all  === ""){
+                return cookie;
+            }
+            var list = all.split("; ");
+            for(var i = 0,l = list.length;i<l;i++){
+                var cookieItem = list[i];
+                var p = cookieItem.indexOf("=");
+                var name = cookieItem.substring(0,p);
+                var value = cookieItem.substring(p+1);
+                value =decodeURIComponent(value);
+                cookie[name] = value;
+            }
+            return cookie;
+        })();
+        var keys = [];
+        for(var key in cookie){
+            keys.push(key);
+        }
+        this.length = keys.length;
+        this.key = function(n){
+            if(n<0 || n >= keys.length) return null;
+            return keys[n];
+        };
+        this.getItem = function(key){
+            return cookie[key] || null;
+        };
+        this.setItem = function(key,value){
+            if(!(key in cookie)){
+                keys.push(key);
+                this.length++;
+            }
+            cookie[key] = value;
+            var newCookie = key + "=" + encodeURIComponent(value);
+            if(maxage) newCookie += "; max-age=" + maxage;
+            if(path) newCookie += "; path=" + path;
+            document.cookie = newCookie;
+        };
+        this.removeItem = function(key){
+            if(!(key in cookie)) return;
+            delete cookie[key];
+            for(var i = 0,l=keys.length;i<l;i++){
+                if(keys[i] === key){
+                    keys.splice(i,1);
+                    break;
+                }
+            }
+            document.cookie = key + "=;max-age = 0";
+        }
+        this.clear = function(){
+            for(var i = 0,l =keys.length;i<l;i++){
+                document.cookie = keys[i] +="=;max-age =0";
+            }
+            keys = [];
+            cookie = {};
+            this.length = 0;
+        }
+    }
+    var useCookie = new cookieStorage();
+    useCookie.setItem('1',123);
+    useCookie.setItem('2',234);
+    useCookie.removeItem('1');
+    //useCookie.clear();
+    if(document.all){
+        console.log("我是IE");
+    }
+
+    function UserDataStorage(/*number,optional*/maxage){
+        var memory = document.createElement('div');
+        memory.style.display ='none';
+        memory.style.behavior = "url('#default#userData')";
+        document.body.appendChild(memory);
+
+        if(maxage){
+            var now = new Date().getTime();
+            var expires = now + maxage * 1000;
+            memory.expires = new Date(expires).toUTCString();
+        }
+        memory.load("UserDataStorage");
+        this.getItem = function(key){
+            return memory.getAttribute(key)||null;
+        };
+        this.setItem = function(key,value){
+            memory.setAttribute(key,value);
+            memory.save(UserDataStorage);
+        };
+        this.removeItem = function(key){
+            memory.removeAttribute(key);
+            memory.save(UserDataStorage);
+        }
+    };
+    if(document.all){
+        var userDataStorage = new UserDataStorage();
+        userDataStorage.setItem('x','1');
+        console.log(userDataStorage.getItem('x'));
+    }
+</script>

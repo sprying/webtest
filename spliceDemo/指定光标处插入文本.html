@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>指定光标处插入文本 </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ <BODY>
+  <form   name="form1">   
+  <textarea   name="txt1">01234567890</textarea>   
+  <input   name="txt2"   value="abc">   
+  <input   type="button"   value="insert"   onclick="document.form1.txt1.focus();
+                                                  document.selection.createRange().text   =   document.form1.txt2.value;">   
+  </form>
+ </BODY>
+</HTML>

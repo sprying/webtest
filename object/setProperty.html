@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        /*调用Object.defineProperty，缺省的特性，默认值都为false*/
+        var p = {};
+        Object.defineProperty(p,"y",{value:1,writable:false});
+        var propertyAttributes = Object.getOwnPropertyDescriptor(p,'y');
+        var q = inherit(p);
+        q.x = 2;
+        q.y = 3;//writable:false，无法重赋值
+        // 原型的三特性都为false,属性创建成功,继承对象创建成功
+        Object.defineProperty(q,'y',{configurable:true});
+        var qqqq = Object.create(p,{y:{value:4}});
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

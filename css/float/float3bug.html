@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ie 3px像素问题解决</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style>
+        .a {
+            float: left;
+            height: 110px;
+            width: 286px;
+            background-color: Blue;
+        }
+        p {
+            border: 1px solid #000;
+        }
+        * html p {
+            height: 1%;
+            margin-left: 0;
+        }
+        * html .a {
+            margin-right: -3px;
+        }
+        * html img.a {
+            margin: 0 -3px;
+            ma\\rgin: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>当我们想让一段文字出现在一个布局块的右边的时候，我们会让布局块向左浮动，然后把段落设置左布局块宽度大小的左空白。比如左布局块是.a{float:left;height:
+        110px;width: 286px;background-color:Blue;}，我们就设置p{margin-left: 286px;border: 1px
+        solid #000;}，其中背景颜色和边框都是测试用的，不是必要的样式设置。在Firefox下可能没问题，但在IE下，你会发现布局块右边的段落离左边框有px的空白，这就是一个bug。如图
+    </p>
+    <p>为了解决这个bug，我们首先用* html p{height: 1%;}来针对IE下的段落进行样式覆盖，因为IE的html元素有个匿名的父元素，所以用*
+        html加你要选择的选择器就可以专门针对IE来设置一些样式了。IE有布局的概念，默认只有table等元素才会拥有布局，p等标签是没有拥有布局的，但是如果给p标签设置了heigh，那么p标签就拥有布局了，这样以来，布局块右边的段落文字离自己的左边框就没有px的空白了。因为现在p拥有了布局，它就会被限制为一个矩形，这时候它会自动出现在左布局块的右边，这时候我们要覆盖以前为段落设置的像素的左空白，我们最终要设置*
+        html p{height: 1%;margin-left:0;}但是很快你就会发现布局块右边的段落的左边框离布局块有px的空白，这个空白是左边的布局块的空白，这又是一个bug，如图2</p>
+    <p>为了解决这个bug，我们需要给左浮动布局块设置负值的右空白，增加样式* html .a{margin-right:
+        -3px;}，这样如果左浮动布局块不是图片的话已经完美解决了。如果左边的浮动有图片的话，IE的不同版本的处理不一样，windows下的ie5.x对会给图片的左右两边都增加px的空白，而ie6不对图片增加额外的空白，所以经过上面的样式设置后，ie6下的段落会向左错位px，如图。这就一连串bug了，往往开发程序就是这样，修复了旧bug，引入了新bug。</p>
+    <p>为了解决上面的bug，我们还要用到一个技巧来为ie5和ie6单独的设置图片的左浮动样式，这里要用到一个ie5转义字符的bug。完整的样式是这样的：* html
+        img.a{margin: 0 -3px;ma"rgin:0;}，首先我们用* html img.a来选取所有IE浏览器下的带有a类的img元素，然后我们先用margin:0
+        -3px;设置上下空白为，左右空白均为-3像素，这个主要是针对ie5(windows)的，因为ie5对浮动图片左右都添加不必要的px空白。然后紧接着用ma"rgin:0;来覆盖上面的设置，因为IE5下不会忽略转移字符，所以它不认识这个样式设置，直接就忽略了，而IE6认识，就覆盖了上面一句的样式设置，左右空白为了。</p>
+    <p>最后一步，为了让FF和IE下显示一直，我们吧最初在p元素上设置的margin-left:286px;去掉，因为不去掉的话，所有的段落还是都向左右像素的左空白，而IE下因为重写了样式而没有这些空白。最终我们解决了所有的问题。如图。</p>
+    <div class="a"></div>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动块，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <div style="clear: both"></div>
+    <img src="http://www.baidu.com/img/bdlogo.gif" class="a"/>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+    <p>演示文本环绕左浮动图片，并且解决ie 3px bug，兼容ie 5/6,ff。</p>
+</body>
+</html>
+

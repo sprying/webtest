@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        function remove1(){
+            $('select>option').remove();
+        }
+    </script>
+
+</head>
+<body>
+<input type="button" value = "remove" onclick="remove1();"/>
+<select>
+    <option value="11" selected="selected">11</option>
+    <option value="22">22</option>
+</select>
+</body>
+</html>

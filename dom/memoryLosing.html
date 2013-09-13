@@ -1,0 +1,70 @@
+<html>
+<head>
+    <script language="javascript">
+        function aa(){
+            console.log('I love you forever!');
+        }
+        var tt =aa;
+        var cc =document.createElement;
+        function MemoryFix(){
+            var garbageBox=document.createElement("div");
+            garbageBox.style.display="none";
+            document.body.appendChild(garbageBox);
+            var createElement=document.createElement;
+            document.createElement=function(){
+                var obj=Function.prototype.apply.apply(createElement,[document,arguments]);
+                garbageBox.appendChild(obj);
+                return obj;
+            }
+        }
+        function LeakMemory()
+        {
+            var hostElement = document.getElementById("hostElement");
+            // Do it a lot, look at Task Manager for memory response  
+            for(var i = 0; i < 5000; i++)
+            {
+                var parentDiv =
+                        document.createElement("<div onClick='foo()'>");
+                var childDiv =
+                        document.createElement("<div onClick='foo()'>");
+                // This will leak a temporary object  
+                parentDiv.appendChild(childDiv);
+                hostElement.appendChild(parentDiv);
+                hostElement.removeChild(parentDiv);
+                parentDiv.removeChild(childDiv);
+                parentDiv = null;
+                childDiv = null;
+            }
+            hostElement = null;
+        }
+        function CleanMemory()
+        {
+            var hostElement = document.getElementById("hostElement");
+            // Do it a lot, look at Task Manager for memory response 
+            for(var i = 0; i < 5000; i++)
+            {
+                var parentDiv =
+                        document.createElement("<div onClick='foo()'>");
+                var childDiv =
+                        document.createElement("<div onClick='foo()'>");
+                // Changing the order is important, this won't leak 
+                hostElement.appendChild(parentDiv);
+                parentDiv.appendChild(childDiv);
+                hostElement.removeChild(parentDiv);
+                parentDiv.removeChild(childDiv);
+                parentDiv = null;
+                childDiv = null;
+            }
+            hostElement = null;
+        }
+    </script>
+</head>
+<body>
+<button onclick="LeakMemory()">Memory Leaking Insert</button>
+<button onclick="CleanMemory()">Clean Insert</button>
+<div id="hostElement"></div>
+</body>
+<script type="text/javascript">
+    MemoryFix();
+</script>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        /**
+         * 稀疏数组
+         * @type {Array}
+         */
+        var sparseArr = [1,"hello","beDeleted",null,3,undefined];
+        var aa = sparseArr[2];
+        delete sparseArr[2];
+        console.log("2 in sparseArr: ",2 in sparseArr);//false
+
+        var arr = new Array(4);
+        console.log(arr[2]+""+(2 in arr)+""+arr[5]);//undefined undefined undefined
+
+
+        /**
+         * 数组循环
+         */
+        for(var i = 0,len = sparseArr.length;i<len;i++){
+            /*if(!sparseArr[i])//排除null undefined 不存在的元素������
+             continue;
+             if(sparseArr[i] === undefined){//排除undefined
+             continue;
+             }*/
+            if(!(i in sparseArr))//排除不存在元素������
+                continue;
+        }
+
+        var a1 = [,,,];
+        var a2 = new Array(3);
+        var a3 = [1,2,3];
+        console.log( 0 in a1); //false 稀疏数组
+        console.log( 0 in a2); //false 稀疏数组
+        console.log( 0 in a3);
+        delete a3[0];
+        console.log( 0 in a3);
+
+
+        /**
+         * 数组方法的使用 splice、concat、forEach、reduce
+         */
+        var data =[1,2,3,4,5];
+        data.tag = false;
+        var newData = data.concat([1,2]);
+        var del_rtn = [].splice.apply(data,(data.length+','+'0,'+data.toString()).split(/\s*,\s*/));
+        var sum =0;
+        data.forEach(function(x){sum += x;});
+        console.log("sum:",sum);
+        data.forEach(function(x,i,a){
+            a[i]= x+1;
+        })
+        console.log(data);
+
+        var a = [1,2,3,4,5];
+        var sum = a.reduce(function(x,y){return x+y;});
+        var product = a.reduce(function(x,y){return x*y}, 1);
+        var max = a.reduce(function(x,y){return x>y?x:y;});
+        console.log("sum:%d\nproduct:%d\nmax:%d",sum,product,max);
+
+        /**
+         * 类数组 不能直接调用数组方法
+         * @type {{0: string, 1: string, 2: string, length: string}}
+         */
+        var a ={"0":"a","1":"b","2":"c",length:"3"};
+        console.log(Array.prototype.join.call(a,"+"));
+        // 转化成数组
+        var transToArray = [].slice.call(a,0);//或Array.prototype.slice.call(a,0)
+        var rtn_arr = Array.prototype.map.call(a,function(x){
+            return x.toUpperCase();
+        });
+
+        Array.join = Array.join||function(a,sep){
+            return Array.prototype.join.call(a,sep);
+        }
+        var bb ={"0":"a","1":"b","2":"c",length:"3"};
+        console.log(Array.join(bb,"+"));
+
+        /**
+         * 判断是否为数组
+         */
+        var isArray = Function.isArray || function (o) {
+            return typeof o === "object" &&
+                    Object.prototype.toString.call(o) === "[object Array]";
+        }
+        console.log(isArray([]));
+
+
+        /**
+         * 模拟ES5，扩展ES3的map方法
+         * @type {*|Function}
+         */
+        Array.prototype.map = Array.prototype.map || function (callback, thisArg) {
+            var T, A, k;
+            if (this == null) {
+                throw new TypeError(" this is null or not defined");
+            }
+            // 1.将O赋值为调用map方法的数组.
+            var O = Object(this);
+            // 2.将len赋值为数组O的长度.
+            var len = O.length >>> 0;
+            // 4.如果callback不是函数,则抛出TypeError异常.
+            if ({}.toString.call(callback) != "[object Function]") {
+                throw new TypeError(callback + " is not a function");
+            }
+            // 5. 如果参数thisArg有值,则将T赋值为thisArg;否则T为undefined.
+            if (thisArg) {
+                T = thisArg;
+            }
+            // 6. 创建新数组A,长度为原数组O长度len
+            A = new Array(len);
+            // 7. 将k赋值为0
+            k = 0;
+            // 8. 当 k < len 时,执行循环.
+            while (k < len) {
+                var kValue, mappedValue;
+                //遍历O,k为原数组索引
+                if (k in O) {
+                    //kValue为索引k对应的值.
+                    kValue = O[ k ];
+                    // 执行callback,this指向T,参数有三个.分别是kValue:值,k:索引,O:原数组.
+                    mappedValue = callback.call(T, kValue, k, O);
+                    // 返回值添加到新书组A中.
+                    A[ k ] = mappedValue;
+                }
+                // k自增1
+                k++;
+            }
+            // 9. 返回新数组A
+            return A;
+        };
+        /**
+         * 模拟ES5，扩展ES3的filter方法
+         * @type {*|Function}
+         */
+        Array.prototype.filter=Array.prototype.filter || function(fun /*, thisp */)
+            {
+                "use strict";
+
+                if (this == null)
+                    throw new TypeError();
+
+                var t = Object(this);
+                var len = t.length >>> 0;
+                if (typeof fun != "function")
+                    throw new TypeError();
+
+                var res = [];
+                var thisp = arguments[1];
+                for (var i = 0; i < len; i++)
+                {
+                    if (i in t)
+                    {
+                        var val = t[i]; // in case fun mutates this
+                        if (fun.call(thisp, val, i, t))
+                            res.push(val);
+                    }
+                }
+                return res;
+            };
+        var a= [0,1,2,1,0];
+        a.indexOf(1); // => 1:a[1]是1
+        a.lastIndexOf(1) // => 3:a[3]是1
+        a.indexOf(3) // =>-1: 没有值为3的元素
+        function findAll(a,x){
+            var result = [],
+                    len = a.length,
+                    pos = 0;
+            while(pos<len){
+                pos = a.indexOf(x,pos);
+                if(pos === -1){
+                    break;
+                }
+                pos++;
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        function outProperties(obj){
+            var str = [];
+            if(obj != Object(obj)){
+                alert('请传入Js对象');
+            }
+            for(var pro in obj){
+                if(typeof  obj[pro] == "object"){
+                    str.push(arguments.callee.call(null,obj[pro]));
+                }else{
+                    str.push(pro+':'+obj[pro]);
+                }
+            }
+            return str.join(',');
+        }
+        var $ = {};
+        ($.grsds || ($.grsds = {}))&& ($.grsds.alertNsrxx = {});
+        $.grsds.alertNsrxx.default = {
+            fn:function(){},
+            bfAfter:"before",
+            filter:"N"
+        }
+        console.log(outProperties($));
+    </script>
+    <title></title>
+</head>
+<body>
+
+
+</body>
+</html>

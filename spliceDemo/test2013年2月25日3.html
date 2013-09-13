@@ -1,0 +1,20 @@
+<html  >
+<head>
+<title>标题页</title>
+</head>
+<body>
+<script type="text/javascript"> 
+function sl(o, m, n){ 
+var rt = o.createTextRange(); 
+rt.collapse(); 
+rt.select();//光标置最前 
+var r = document.selection.createRange(); 
+r.collapse(false); 
+r.moveStart("character", m);//从m位开始 
+r.moveEnd("character", n);//选取n位 
+r.select(); 
+} 
+</script> 
+<input name="a" value="123456789"><input type=button value="select" onclick="sl(a,2,5)"> 
+</body>
+</html>

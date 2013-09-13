@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="a.js"></script>
+    <script type="text/javascript">
+        var  before_x = 2;
+    </script>
+    <script type="text/javascript">
+        var middle_x =3;
+        // 页面head中js执行完毕后，执行队列（页面尾部的js，定时器回调、事件回调，究竟哪个先执行，这个随机的）;
+        setTimeout(function(){
+            console.log("Timeout:"+(ax+before_x+middle_x+middle_y+bx+cx+domLoad_x+inner_x));
+        },0);
+        var inter = setInterval(function(){
+            console.log("Interval:"+(ax+before_x+middle_x+middle_y+bx+inner_x+domLoad_x+cx));
+            clearInterval(inter);
+        },1)
+        var middle_y =1;
+    </script>
+    <script type="text/javascript" src="b.js"></script>
+</head>
+<body>
+     <input type="text" id="inp_click" onclick="inner_x =1;for(var i=0;i<1000000;i++){inner_x++};console.log('clickEvent:'+inner_x);">
+</body>
+</html>
+<script type="text/javascript" src="c.js"></script>
+        <script type="text/javascript">
+            var start_time = new Date().getTime();
+            for(var i= 1;i<1000000;i++){
+
+            }
+            var end_time = new Date().getTime();
+            console.log('after the html,wait:'+(end_time-start_time));
+            var inp = document.getElementById("inp_click");
+            var event = document.createEvent("MouseEvent");
+            event.initMouseEvent("click",true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+            inp.dispatchEvent(event);
+            var domLoad_x = 4;
+        </script>

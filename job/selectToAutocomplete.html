@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="./jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="./jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css">
+</head>
+<body>
+            <select id="ywlxlb">
+                <option value="1234" ywdx="1,2,3,4">1,2,3,4业务对象</option>
+                <option value="1334" ywdx="1,3,3,4">1,3,3,4业务对象</option>
+                <option value="13" ywdx="1,3">1,3业务对象</option>
+                <option value="1" ywdx="1">1业务对象</option>
+                <option value="3" ywdx="3">3企业业务对象</option>
+                <option value="" ywdx="">空业务对象</option>
+            </select>
+</body>
+<script type="text/javascript">
+    var source =[];
+    $('#ywlxlb option').each(function(index){
+        source.push('{"label":"'+$(this).text()+'","value":"'+$(this).val()+'"}');
+    });
+    $('#ywlxlb').css('display','none').before('<input type="text" id="autoFill">');
+    source = '['+source.join(',')+']';
+    source = $.parseJSON(source);
+    $('#autoFill').autocomplete({
+        source:source,
+        autoFocus:true,
+        minLength: 0,
+        minChars:0
+    });
+</script>
+</html>

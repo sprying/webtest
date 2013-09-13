@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>获取qq空间收藏音乐</title>
+
+    <script type="text/javascript">var h='';
+    function jsonCallback(data)
+    {
+
+        for(var i=0;i<data.SongList.length;i++)
+        {
+            h+=(i+1)+'--歌曲名称:'+'<span style="color:#f00">'+data.SongList[i].songname+'</span>&nbsp;&nbsp;&nbsp;&nbsp;歌手名称:'+data.SongList[i].singername+'</br>';
+        }
+        document.getElementsByTagName('body')[0].innerHTML=h;
+    }
+    function getMusic()
+    {
+        var qqNum=document.getElementById('text').value;
+        var url='http://qzone-music.qq.com/fcg-bin/fcg_music_fav_getinfo.fcg?dirinfo=0&dirid=1&uin='+parseInt(qqNum)+'&p=0.519638272547262&g_tk=12842dd34856';
+        createJs(url);
+    }
+    </script>
+    <script type="text/javascript">
+        function createJs(url)
+        {
+            var os=document.createElement('script');
+            os.type='text/javascript';
+            os.src=url;
+
+            var head=document.getElementsByTagName('head')[0];
+            head.appendChild(os);
+        }
+
+    </script>
+</head>
+
+<body>
+<input type="text" id="text" size="40">
+<input type="button" value="go" onclick="getMusic()" />
+</body>
+</html>

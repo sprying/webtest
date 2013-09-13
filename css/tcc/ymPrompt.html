@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="ymPrompt.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="./primaryCopy/report-function.js"></script>
+    <link type="text/css" rel="stylesheet" href="./style_default.css">
+    <link rel="stylesheet" href="./skin/qq/ymPrompt.css">
+    <style type="text/css">
+        <!--
+        .nsrxxTcc th {
+            white-space: nowrap;
+        }
+        .nsrxxTcc td{
+            word-break: keep-all;
+            text-align: center;
+        }
+        .nsrxxTcc .overClor {
+            background: #ecedef;
+        }
+
+        .nsrxxTcc .selCol {
+            background: #dfe8f6;
+        }
+
+        .nsrxxTcc .raCls {
+            padding: 0;
+        }
+
+        .nsrxxTcc label {
+            width: 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .raCls input {
+            cursor: pointer;
+        }
+        #bottom{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: #DDDDDD;
+            height: 35px;
+            width: 100%;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            box-shadow: 0px -2px 30px 5px #888888;
+        }
+        #showTcc{
+            background: #ff0000;
+            margin: 3px auto;
+            text-align: center;
+            width: 80px;
+            height: 28px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            box-shadow: -3px -2px 30px 2px #888888 inset;
+            /*padding-top: 5px;*/
+            line-height: 28px;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        #showTcc:hover{
+            opacity: 1;
+        }
+
+        -->
+    </style>
+    <script type="text/javascript">
+        function strlen(str) {
+            var len = 0;
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charCodeAt(i);
+                //单字节加1
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                    len++;
+                }
+                else {
+                    len += 2;
+                }
+            }
+            return len;
+        }
+        $(function () {
+            var maxLen = 0;
+            $('.jyfw').each(function (index, e) {
+                var l = strlen($(this).text());
+                l > maxLen ? maxLen = l : '';
+            })
+            $('#jyfwTh').css('width', maxLen * 6.5 + 3);
+            $(document).bind('mouseover', function (e) {
+                var timer;
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function () {
+                    var $targTr = $(e.target).closest('tr'),
+                            trS = 0;
+                    $('.nsrxxTcc tr').removeClass('overClor');
+                    if ($targTr.is('.nsrxxTcc tr')) {
+                        trS = $targTr.prevAll().size() + 1;
+                        $('.nsrxxTcc tr:nth-child('+trS+')').addClass('overClor');
+                    }
+                }, 100)
+            });
+            $('.nsrxxTcc :radio').live('click', function (e) {
+                var $this = $(this),
+                        trS = 0,
+                        $targTr;
+                if ($this.is(':checked')) {
+                    $targTr = $this.closest('tr');
+                    trS = $targTr.prevAll().size() + 1;
+                    $('.nsrxxTcc tr').removeClass('selCol');
+                    $('.nsrxxTcc tr:nth-child('+trS+')').addClass('selCol');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var doDemo = document.createDocumentFragment();
+        $(function(){
+            function aa(){
+                doDemo.appendChild(document.getElementById('divContent').cloneNode(true));
+                $('#container').empty();
+                ymPrompt.win({
+                    message: winHtml,
+                    title: '纳税人详细信息',
+                    width: 800,
+                    height: 400,
+                    handler:function(){
+                        $('#container')[0].appendChild(doDemo);
+                    }
+                });
+                setTimeout(function(){
+                    fixedFns();
+                },25);
+            }
+            document.getElementById('showTcc').onclick = aa;
+        })
+    </script>
+</head>
+<body>
+<div id="container">
+<div class="nsrxxTcc" style="width: 794px;" id="divContent">
+    <div class="list_title">
+        <div class="head">纳税人信息列表</div>
+    </div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="list" freezeRowNum='1' freezeColumnNum='1' id="ddtable">
+        <tbody>
+        <tr>
+            <th></th>
+            <th>登记机关</th>
+            <th style="width:150px">登记日期</th>
+            <th>纳税人识别号</th>
+            <th>纳税人名称</th>
+            <th>组织机构代码</th>
+            <th>税务登记类型</th>
+            <th>临时税务登记类型</th>
+            <th>纳税人状态</th>
+            <th>登记注册类型</th>
+            <th>行业</th>
+            <th>注册地址行政区划</th>
+            <th>注册所在地</th>
+            <th>生产经营地址行政区划</th>
+            <th style="width:150px">生产经营地址</th>
+            <th>法定代表人姓名</th>
+            <th>法定代表人证件名称</th>
+            <th>法定代表人证件号码</th>
+            <th>街道乡镇</th>
+            <th>单位隶属关系</th>
+            <th>主管税务机关</th>
+            <th>主管税务所（科、分局）</th>
+            <th>税收管理员</th>
+            <th>代扣代缴</th>
+            <th>委托代征</th>
+            <th>
+                <div class="jyfw" id="jyfwTh">经营范围</div>
+            </th>
+            <th>国家（地区）</th>
+            <th>增值税企业类型</th>
+        </tr>
+        </tbody>
+        <tbody id="mypzxx">
+        <tr>
+            <td class="raCls"><label for="radio1"><input type="radio" id="radio1" name="target_nsr"
+                                                         value="12500100000000023702"></label></td>
+            <td></td>
+            <td>2000-01-01</td>
+            <td>500109</td>
+            <td>陈德均</td>
+            <td></td>
+            <td>个体经营纳税人登记</td>
+            <td></td>
+            <td>正常</td>
+            <td>内资个体</td>
+            <td>其他金属制日用品制造</td>
+            <td></td>
+            <td>偏岩栽田村</td>
+            <td>重庆市市辖区北碚区</td>
+            <td>偏岩栽田村</td>
+            <td>陈德均</td>
+            <td>居民身份证</td>
+            <td>510224</td>
+            <td>500109011</td>
+            <td>镇</td>
+            <td>北碚区地方税务局</td>
+            <td>北碚区局静观税务所</td>
+            <td>肖洋</td>
+            <td>是</td>
+            <td>否</td>
+            <td>
+                <div class="jyfw" style="">铁器加工零售</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="raCls"><label for="radio2"><input type="radio" id="radio2" name="target_nsr"
+                                                         value="12500100000000022244"></label></td>
+            <td></td>
+            <td>2000-01-01</td>
+            <td>500109</td>
+            <td>朱勤敏</td>
+            <td></td>
+            <td>个体经营纳税人登记</td>
+            <td></td>
+            <td>正常</td>
+            <td>内资个体</td>
+            <td>其他未列明零售业</td>
+            <td></td>
+            <td>偏岩街道</td>
+            <td>重庆市市辖区北碚区</td>
+            <td>偏岩街道</td>
+            <td>朱勤敏</td>
+            <td>居民身份证</td>
+            <td>510224</td>
+            <td>500109011</td>
+            <td>镇</td>
+            <td>北碚区地方税务局</td>
+            <td>北碚区局静观税务所</td>
+            <td>肖洋</td>
+            <td>是</td>
+            <td>否</td>
+            <td>
+                <div class="jyfw" style="">鲜肉销售</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="raCls"><label for="radio3"><input type="radio" id="radio3" name="target_nsr"
+                                                         value="12500100000000022246"></label></td>
+            <td></td>
+            <td>2000-01-01</td>
+            <td>500109</td>
+            <td>孙光刚</td>
+            <td></td>
+            <td>个体经营纳税人登记</td>
+            <td></td>
+            <td>正常</td>
+            <td>内资个体</td>
+            <td>其他未列明零售业</td>
+            <td></td>
+            <td>偏岩响水村</td>
+            <td>重庆市市辖区北碚区</td>
+            <td>偏岩响水村</td>
+            <td>孙光刚</td>
+            <td>居民身份证</td>
+            <td>510224</td>
+            <td>500109011</td>
+            <td>镇</td>
+            <td>北碚区地方税务局</td>
+            <td>北碚区局静观税务所</td>
+            <td>肖洋</td>
+            <td>是</td>
+            <td>否</td>
+            <td>
+                <div class="jyfw" style="">鲜肉销售</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="raCls"><label for="radio4"><input type="radio" id="radio4" name="target_nsr"
+                                                         value="12500100000000022248"></label></td>
+            <td></td>
+            <td>2000-01-01</td>
+            <td>500109</td>
+            <td>唐光荣</td>
+            <td></td>
+            <td>个体经营纳税人登记</td>
+            <td></td>
+            <td>正常</td>
+            <td>内资个体</td>
+            <td>其他未列明零售业</td>
+            <td></td>
+            <td>偏岩石寨村</td>
+            <td>重庆市市辖区北碚区</td>
+            <td>偏岩石寨村</td>
+            <td>唐光荣</td>
+            <td>居民身份证</td>
+            <td>500109</td>
+            <td>500109011</td>
+            <td>镇</td>
+            <td>北碚区地方税务局</td>
+            <td>北碚区局静观税务所</td>
+            <td>肖洋</td>
+            <td>是</td>
+            <td>否</td>
+            <td>
+                <div class="jyfw" style="">鲜肉零售</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="list_btdiv"><input type="button" value="确定" id="select_btn" class="bts_public"></div>
+</div>
+</div>
+<div id="bottom">
+    <div id="showTcc">将表格弹出</div>
+</div>
+
+</body>
+</html>

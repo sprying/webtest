@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        /*@cc_on
+          @if (@_jscript)
+            alert(1);
+          @end
+          @*/
+        /*@cc_on
+         @if (@_jscript)
+         alert(1);
+         @else*/
+        alert('You are not using Internet Explorer');
+         /*@end
+         @*/
+        function init(){
+            alert('in IE,dom is already');
+        }
+        // for Internet Explorer (using conditional comments)
+        /*@cc_on
+         @if (@_win32)
+         document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
+         var script = document.getElementById("__ie_onload");
+         script.onreadystatechange = function() {
+         if (this.readyState == "complete") {
+         init(); // call the onload handler
+         }
+         };
+         @end @*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

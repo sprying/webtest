@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.4.4.js"></script>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <th>业务对象：</th>
+        <td>
+            <select id="ywlxlb">
+                <option value="1234" ywdx="1,2,3,4">1,2,3,4业务对象</option>
+                <option value="1334" ywdx="1,3,3,4">1,3,3,4业务对象</option>
+                <option value="13" ywdx="1,3">1,3业务对象</option>
+                <option value="1" ywdx="1">1业务对象</option>
+                <option value="3" ywdx="3">3企业业务对象</option>
+                <option value="" ywdx="">空业务对象</option>
+            </select>
+        </td>
+        <th>纳税人识别号：</th>
+        <td><input type="text" value="" id="cxnsrsbh"></td>
+    </tr>
+    <tr>
+        <th>身份证件类型：</th>
+        <td><input type="text" value="" id="cxsfzjlx"></td>
+        <th>身份证件号码：</th>
+        <td><input type="text" value="" id="cxsfzjhm"></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <button type="button" onclick="if((!cxnsrsbh.value&&!cxsfzjlx.value&&!cxsfzjhm.value)){return;};query();" value="查询">查询</button>
+        </td>
+    </tr>
+    </tbody>
+    <tbody id="nsrHtml">
+
+    </tbody>
+</table>
+</body>
+<script type="text/javascript">
+    function tcc_queryZrr() {
+        console.log(tcc_queryZrr.name);
+        console.log('后台返回附件列表');
+        console.log('后台返回自然人信息html');
+        $('#nsrHtml').html('自然人从后台获取html');
+    }
+    function buildNsrxxHTML(fieldBq,nsrsbhBq,nsrsbh,nsrmcBq,nsrmc){
+        console.log(buildNsrxxHTML.name);
+        var aa = '<tr>\
+                <td colspan=\"4\">\
+        <fieldset style=\"margin: 10px 50px\">\
+                <legend>'+fieldBq+'</legend>\
+        <table width=\"100%\" border=\"0\" "\
+                + "cellspacing=\"0\" cellpadding=\"0\" class=\"nsrxx_view\">\
+                <tr>\
+        <th align=\"right\" nowrap=\"nowrap\" id=\"nsrsbh_bq_xs\">'+nsrsbhBq+'</th>\
+        <td width=\"21%\">'+nsrsbh+'</td>\
+        <th align=\"right\" nowrap=\"nowrap\" id=\"nsrmc_bq_xs\">'+nsrmcBq+'</th>\
+        <td width=\"57%\">'+nsrmc+'</td>\
+                </tr>\
+                </table>\
+                </fieldset>\
+                </td>\
+        </tr>';
+        $('#nsrHtml').html(aa);
+    }
+    function getFlzl(){
+        console.log(getFlzl.name);
+    }
+    function tcc_queryQy(query_res,isRepeatRequest) {
+        console.log(tcc_queryQy.name)
+        // 查询成功
+        if(query_res){
+            getFlzl();
+            buildNsrxxHTML('纳税人登记信息','纳税人识别号','34082319890224','纳税人名称','方迎春');
+            //查询失败，再查自然人
+        }else if(isRepeatRequest){
+            console.log('查询企业信息为空，继续查自然人信息');
+            tcc_queryZrr();
+        }
+    }
+    function query() {
+        var inp_ywdx = $('#ywlxlb').find('option:selected').attr('ywdx');
+        var arr_ywdx = inp_ywdx.split(','), temp_arr = [];
+        for (var i = 0, len = arr_ywdx.length; i < len; i++) {
+            if (temp_arr.indexOf(arr_ywdx[i]) === -1) {
+                temp_arr.push(arr_ywdx[i]);
+            }
+        }
+        var nsrsbh = $("#cxnsrsbh").val();
+        var sfzjlx = $("#cxsfzjlx").val();
+        var sfzjhm = $("#cxsfzjhm").val();
+        if((!!nsrsbh && !sfzjlx && !!sfzjhm || (!nsrsbh && !!sfzjlx && !sfzjhm))){
+            return;
+        }else if (temp_arr.indexOf('1') !== -1 && temp_arr.length == 1) {
+            tcc_queryZrr();
+        } else if (temp_arr.indexOf('3') !== -1 && temp_arr.length == 1) {
+            tcc_queryQy(true,false);//只查企业
+        } else if (!nsrsbh && !!sfzjlx && !!sfzjhm) {//识别号空，身份证件类型和号码有值
+            tcc_queryZrr();
+        } else if((temp_arr.indexOf('1') == -1)){
+            tcc_queryQy(true,false);
+        } else{
+            tcc_queryQy(false,true);//企业查不到，再查自然人
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Makes "field" always required. Nothing and blanks are invalid.</title>
+    <link rel="stylesheet" href="css/site-demos.css">
+
+</head>
+<body>
+<form id="myform">
+    <label for="field">Required: </label>
+    <input type="text" class="left" id="field" name="field">
+    <br/>
+    <input type="submit" value="Validate!">
+</form>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.validate.js"></script><script>
+    // just for the demos, avoids form submit
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
+    $( "#myform" ).validate({
+        rules: {
+            field: {
+                required: true,
+                rangelength: [2, 6]
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript" src="../job/tempJs/jquery.validate.js"></script>
+    <script type="text/javascript" src="../job/tempJs/jdls_gs_grid.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var bd = $('#tbo').jdlsGrid({
+
+            });
+        });
+    </script>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>行数</th>
+        <th>输入框</th>
+        <th>复选项1</th>
+        <th>复选项2</th>
+        <th>下拉</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="tbo">
+    <tr>
+        <td>1</td>
+        <td><input type="text" name="input1"></td>
+        <td><input type="checkbox" name="vehicle1" value="Bike" />bike</td>
+        <td><input type="checkbox" name="vehicle1" value="Car" />car</td>
+        <td>
+            <select id="select1" name="select1">
+                <option value="">请选择</option>
+                <option value="china">中国</option>
+            </select>
+        </td>
+        <td><a href="javascript://" class="addRow">添加</a> &nbsp;
+            <a href="javascript://" class="removeRow">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

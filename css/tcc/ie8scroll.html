@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="../../scripts/jquery-1.4.4.js"></script>
+
+</head>
+<body>
+    <div id="wrapDiv" style="width: 500px;height: 300px;overflow: auto">
+        <div style="width: 900px;height: 600px;"></div>
+    </div>
+    <div id="console" style="width: 300px;">
+<script type="text/javascript">
+    $('#wrapDiv').scroll(function(){
+              $('#console').html(this.scrollLeft+','+this.scrollTop)
+            });
+</script>
+</body>
+</html>

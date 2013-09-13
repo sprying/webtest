@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        // this的理解
+        (function(){
+            var _tt = function(){
+                console.log(this.x);
+                try{
+                    console.log(this.y);//无法访问，undefined
+                }catch (ex){
+                    console && console.error(ex);
+                }
+                try{
+                    //console.log(y);//无法访问 ,直接报错
+                }catch (ex){
+                    console && console.error(ex.toString());
+                }
+            }
+            var DemoClass = function(){
+                var y = 2; // 只是个局部变量
+                this.x = 1;
+                _tt.call(this);
+            }
+            DemoClass.prototype={
+                constructor: DemoClass,
+                demoFns:function(){
+                    this.h = 4;//调用方法时，为实例新增一属性
+                    var z =2;
+                    console.log(this.x+z);
+                }
+            }
+            var demoObj = new DemoClass();
+            demoObj.demoFns();
+        })();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

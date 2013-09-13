@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        function strlen(str){
+            var len = 0;
+            for (var i=0; i<str.length; i++) {
+                var c = str.charCodeAt(i);
+                //单字节加1
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60<=c && c<=0xff9f)) {
+                    len++;
+                }
+                else {
+                    len+=2;
+                }
+            }
+            return len;
+        }
+        var chinaeseStr = "我是你，are you?";
+        var str = "how are you?";
+        var china_len = strlen(chinaeseStr)/*16*/,china_len_l = chinaeseStr.length;/*12*/
+        var str_len = strlen(str)/*12*/,str_len_l = str.length;/*12*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

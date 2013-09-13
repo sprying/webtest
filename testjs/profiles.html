@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#btn-add').click(function(){
+                $('.ul').prepend('<li><a href="javascript:;">text</a></li>');
+            });
+        });$(function(){
+            $('.ul').on('click', 'a', function(e){
+                alert('click event');
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn-add">Create Element</button>
+<ul class="ul">
+    <li><a href="javascript:;">text</a></li>
+    <!-- 2000 line... -->
+    <li><a href="javascript:;">text</a></li>
+</ul>
+</body>
+</html>

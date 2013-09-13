@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        /* 存储器属性使用*/
+        var p = {
+            x: 1.0,
+            y: 1.0,
+            get r() {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            },
+            set r(newvalue) {
+                var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y);
+                var ratio = newvalue / oldvalue;
+                this.x *= ratio;
+                this.y *= ratio;
+            },
+            get theta() {
+                return Math.atan2(this.y, this.x);
+            }
+        };
+        Object.defineProperties(p, {
+            z: {value: 3,
+                writable: true,
+                enumerable: false,
+                configurable: false},
+            h: {value: 4,
+                writable: false,
+                enumerable: true,
+                configurable: true}
+        });
+        var q = inherit(p);
+        if ("z" in q) {
+        }//false in检测对象不可枚举属性
+        for(var val in q)
+            console.log(q[val]);
+        var likeArray_q = Object.getOwnPropertyNames(q);
+        q.z = 4; //可赋值，新增实例自身z属性
+        q.h = 5 //不可赋值，writable为false
+        var keys_p = Object.keys(p); // 打印出存储器属性与数据属性
+        var keys_q = Object.keys(q); // 只打印出z
+    </script>
+</head>
+<body>
+
+</body>
+</html>

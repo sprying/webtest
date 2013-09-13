@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.iyunlu.com/demo/inline-block-ie/ -->
+<html version="g42dymwpi--nx"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta charset="gbk">
+    <title>inline-block 支持情况测试</title>
+    <style type="text/css">
+        .fl{float:left;}
+        .fr{float:right;}
+        .fl, .fr { *display:inline;}
+
+        h1{ font-size:22px; color:#333; text-align:center;}
+        h2{ font-size:18px; color:#555; margin:15px 0 0;}
+        h3{ font-size:14px; color:#666; font-weight:normal; margin:15px 0 0 10px;}
+
+        .dib-wrap {
+            font-size:0;/* 所有浏览器 */
+            *word-spacing:-1px;/* IE6、7 */
+        }
+        .dib-wrap .dib{
+            font-size: 12px;
+            letter-spacing: normal;
+            word-spacing: normal;
+            vertical-align: top;
+        }
+        .wrapBlock{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #999;
+            background-color:#FCC;
+        }
+        @media screen and (-webkit-min-device-pixel-ratio:0){
+            /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+            .dib-wrap{
+                letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+            }
+        }
+        .dib {
+            display: inline-block;
+            *display:inline;
+            *zoom:1;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body { font: 12px/1.5 tahoma, sans-serif; }/*1.5行高*/
+
+        ul,
+        ol { list-style: none outside none; }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        a:focus{ outline:thin dotted #555; outline: 5px auto -webkit-focus-ring-color; outline-offset:-2px;}
+
+        .main{
+            margin: 25px auto;
+            width: 990px;
+        }
+
+        .wrap {
+            border-bottom:1px solid #DDD;
+            padding-bottom:20px;
+        }
+
+        .list { margin: 10px 0; white-space:nowrap; }
+
+    </style>
+</head>
+<body youdao="bind">
+<div class="main clearfix">
+
+    <h1><a href="http://www.iyunlu.com/view/css-xhtml/64.html" title="点击返回文章">返回文章：《inline-block 前世今生》</a></h1>
+
+    <!-- 修复前 -->
+    <div class="content">
+        <div class="wrap">
+            <h2>请用 IE6、7 查看此 demo</h2>
+            <h3>block 元素 display:inline-block</h3>
+            <ul class="list dib-wrap">
+                <li class="dib wrapBlock"><a href="http://www.iyunlu.com/demo/inline-block-ie/#">li 标签</a></li>
+                <li class="dib wrapBlock"><a href="http://www.iyunlu.com/demo/inline-block-ie/#" style="color:red;">发现2：</a></li>
+                <li class="dib wrapBlock"><a href="http://www.iyunlu.com/demo/inline-block-ie/#" >发现1</a></li>
+                <li class="dib wrapBlock"><a href="http://www.iyunlu.com/demo/inline-block-ie/#" >发现Xx2</a></li>
+                <li class="dib wrapBlock"><a href="http://www.iyunlu.com/demo/inline-block-ie/#" >发现3</a></li>
+            </ul>
+            <h3>inline 元素 display:inline-block</h3>
+            <div class="list dib-wrap">
+                <a href="javascript:" class="dib wrapBlock">a 标签:</a>
+                <a href="javascript:" class="dib wrapBlock">发现2：</a>
+                <a href="javascript:" class="dib wrapBlock">发现1</a>
+                <span class="dib wrapBlock">span 标签</span>
+            </div>
+        </div>
+
+    </div>
+
+
+</div></body></html>

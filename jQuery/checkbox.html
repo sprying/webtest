@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[name="cxtj"]').change(function () {
+                var temp_array = [], temp_str;
+                $('[name="cxtj"]').each(function () {
+                    if ($(this).attr("checked")) {
+                        temp_array.push($(this).val())
+                    } else {
+                        var pointer = temp_array.indexOf($(this).val());
+                        if (pointer >= 0) {
+                            temp_array.splice(pointer, 1);
+                        }
+                    }
+                });
+                temp_array.sort(function (a, b) {
+                    return a > b;
+                })
+                temp_str = temp_array.join('');
+                if (temp_str == "123") {
+                    console.log("123");
+                } else if (temp_str == "12") {
+                    console.log("12");
+                } else if (temp_str == "13") {
+                    console.log("13");
+                } else if (temp_str == "23") {
+                    console.log("23");
+                } else if (temp_str == "1") {
+                    console.log("1");
+                } else if (temp_str == "2") {
+                    console.log("2");
+                } else if (temp_str == "3") {
+                    console.log("3");
+                } else {
+                    console.log("请选择查询条件");
+                }
+                console.log('长度' + temp_str.length)
+                var recover = temp_str.split('');
+                console.log(recover);
+                console.log([1, 2].indexOf(2));
+                console.log('123'.split('').indexOf('3'));
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="checkbox" name="cxtj" value="1">银行
+<input type="checkbox" name="cxtj" value="2">税务分局
+<input type="checkbox" name="cxtj" value="3">天
+</body>
+</html>

@@ -1,0 +1,2 @@
+[{"title":"税务管理","content":"您也许会问，为什么typeof 运算符对于null 值会返回\"Object\"。这实际上是JavaScript 最初实现中的一个错误，然后被ECMAScript 沿用了。现在，null 被认为是 ..."},
+    {"title":"財務管理","content":"ECMAScript 提供了typeof 运算符来判断一个值是否在某种类型的范围内。可以用这种运算符判断一个值是否表示一种原始类型：如果它是原始类型，还可以判断它 ..."}]

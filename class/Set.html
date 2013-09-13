@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="../scripts/extra.js"></script>
+    <script type="text/javascript">
+        /*引入Set类定义*/
+        var fn = function(y) {
+            console.log(this.x+y);
+        }
+        var obj1 = {};
+        var set1 = new Set(1,"sprying",obj1);
+        set1.add({x:1},obj1);
+        // set1.remove(obj1);
+        set1.foreach(fn,{x:1})
+        var set2 = new Set();
+        var set3 = inherit(set1);
+        set3.values[Set._v2s(1)] =2;
+        set1.equals(set3);
+        console.log(set1.equals(set2));
+        console.log("set1.toString: ",set1.toString());
+        console.log(set1.values);
+        console.log(set1.contains(obj1));
+        console.log(set2.values);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

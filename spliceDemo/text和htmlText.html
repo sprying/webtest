@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+<script language="javascript">
+function test()
+{
+var rng=document.body.createTextRange();
+alert(rng.text)
+}
+function test1()
+{
+var rng=document.body.createTextRange();
+alert(rng.htmlText)
+}
+</script>
+<input id="inp1" type="text" value="1234567890">
+<input id="inp2" type="text" value="9876543210">
+<input type="button" onclick="test()" value="text">
+<input type="button" onclick="test1()" value="htmlText">
+</BODY>
+</HTML>

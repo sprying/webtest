@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+<body>
+<script type="text/javascript">
+    <!--
+    window.onload=function(){
+        objDiv = document.getElementById('drag');
+        drag(objDiv);
+    };
+
+    function drag(dv){
+        dv.onmousedown=function(e){
+            var d=document;
+            e = e || window.event;
+            this.scrollLeft;
+
+            var x= e.layerX || e.offsetX;
+            var y= e.layerY || e.offsetY;
+
+            //设置捕获范围
+            if(dv.setCapture){
+                dv.setCapture();
+            }else if(window.captureEvents){
+                window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+            }
+
+
+            d.onmousemove=function(e){
+                e= e || window.event;
+                if(!e.pageX)e.pageX=e.clientX;
+                if(!e.pageY)e.pageY=e.clientY;
+                var tx=e.pageX-x;
+                var ty=e.pageY-y;
+
+                dv.style.left=tx+'px';
+                dv.style.top=ty+'px';
+            };
+
+            d.onmouseup=function(){
+                //取消捕获范围
+                if(dv.releaseCapture){
+                    dv.releaseCapture();
+                }else if(window.captureEvents){
+                    window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);
+                }
+
+                //清除事件
+                d.onmousemove=null;
+                d.onmouseup=null;
+            };
+        };
+    }
+    //-->
+</script>
+
+<div id="drag" style="position:absolute;left:12px;top:24px;width:100;height:150;border:1px solid #000000;z-index:1;background:#eeeeee;cursor:move">drag me</div>
+<iframe src="testTemp.html" style="width:600;height: 300"></iframe>
+</body>
+</html>

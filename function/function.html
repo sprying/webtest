@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="../scripts/Sprying.js"></script>
+    <script type="text/javascript">
+        var xzd = 1;
+        function a(){
+            return xzd +1;
+        }
+        console.log(a());
+
+        /**
+         * 参数校验
+         */
+        function sum(a) {
+            if (Sprying.isArrayLike(a)) {
+                var total = 0;
+                for (var i = 0; i < a.length; i++) {
+                    var element = a[i];
+                    if (element == null) continue;
+                    if (isFinite(element)) total += element;
+                    else throw new Error("element must be finite number");
+                }
+                return total;
+            } else {
+                throw new Error('sum():arguments must be array-like');
+            }
+        }
+        function flex() {
+            var total = 0;
+            for (var i = 0, l = arguments.length; i < l; i++) {
+                var ele = arguments[i];
+                if (ele == null) continue;
+                if (Sprying.isArray(ele)) {
+                    total += arguments.callee.apply(null,ele);
+                } else if (isFunction(ele)) {
+                    total += Number(ele());
+                } else if (isFinite(ele)) {
+                    total += ele;
+                } else {
+                    throw new Error('the para is not legal');
+                }
+            }
+            return total;
+        }
+        /**
+         *  记忆函数
+         */
+        function memorize(f) {
+            var cache = {};
+            return function () {
+                var key = arguments.length +''+ Array.prototype.join.call(arguments, ',');
+                if (!(key in cache))
+                    cache[key] = f.apply(null, arguments);
+                return cache[key];
+            }
+        }
+        var appFns = memorize(flex),
+                res = appFns(1, [2,null,3, [4, 5], 6], 7,function(){
+                    return 8;
+                });
+        console.log(res);
+
+        var bindFns = flex.bind({});
+
+        function f(y){
+            return this.x+y;
+        }
+        var g = f.bind({x:1},2);
+        console.log(g());
+
+        /**
+         * 高阶函数
+         */
+        (function(){
+            var sum = function (x, y) {
+                return x + y;
+            };
+            var square = function (x) {
+                return x * x;
+            };
+            var map = Array.prototype.map ? function (a, f) {
+                return a.map(f);
+            } : function (a, f) {
+                var results = [];
+                for (var i = a.length; i > 0; i--) {
+                    if (!(i in a)) continue;
+                    results[i] = f.call(this, a[i], i, a);
+                }
+                return results;
+            };
+            var reduce = Array.prototype.reduce ? function (a, f, initial) {
+                if(initial){
+                    return a.reduce(f, initial);
+                }else{
+                    return a.reduce(f);
+                }
+            } : function (a, f, initial) {
+                var i = 0, len = arguments.length, accumulator;
+                if (arguments.length > 2) {
+                    accumulator = initial;
+                } else {
+                    if (len == 0)
+                        throw TypeError();
+                    while (i < len) {
+                        if (a[i]) {
+                            accumulator = a[i];
+                            break;
+                        }
+                        i++;
+                    }
+                    if (i === len) throw TypeError();
+                }
+                while (i < len) {
+                    if (a[i]) {
+                        accumulator = f.call(null, accumulator, a[i], i, a);
+                    }
+                    i++;
+                }
+                return accumulator;
+            };
+
+            /**
+             * @desc 反函数
+             * @param f：函数
+             * @returns {Function}
+             */
+            function not(f) {
+                return function () {
+                    var result = f.apply(this, arguments);
+                    return !result;
+                }
+            }
+
+            var even = function (x) {
+                return x % 2 === 0;
+            }
+
+            var odd = not(even);
+            //console.log([1, 1, 3, 5, 5].every(odd));
+
+            function mapper(f) {
+                return function (a) {
+                    return map(a, f);
+                };
+            }
+
+            var data = [1, 1, 3, 5, 5],
+                    mean = reduce(data, sum) / data.length,
+                    ff = function (x) {
+                        return x - mean;
+                    },
+                    deviations = map(data, function (x) {
+                        return x - mean;
+                    }),
+                    stddev = Math.sqrt(reduce(map(deviations,square),sum,0) / (data.length - 1));
+        })()
+    </script>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            background-color: #ccc;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div></div><div></div><div></div>
+</body>
+<script type="text/javascript">
+    // 测试函数闭包式调用
+    var odiv = document.getElementsByTagName('div');
+    for(var i=0;i<odiv.length;i++){
+        odiv[i].onclick = (function(){
+            alert(i);
+        })();
+    }
+
+    function cons(){
+        this.x =1;
+        return {x:2,y:3};
+    }
+    var rtnCons = cons();
+</script>
+</html>
