@@ -2,8 +2,294 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/product/menu.html" />
-      <change type="DELETED" beforePath="D:\百度云\workspace\webtest\fromHelp\My97DatePickerBeta\demo.htm" afterPath="" />
+      <change type="DELETED" beforePath="D:\百度云\workspace\webtest\Demo" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tcc/frame_api.js" afterPath="$PROJECT_DIR$/css/tcc/frame_api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\dom\doubleEve.html" afterPath="$PROJECT_DIR$/dom/twoEvent.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\addOptionSelected.html" afterPath="$PROJECT_DIR$/work/addOptionSelected.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\alertNsrxxClass.js" afterPath="$PROJECT_DIR$/work/alertNsrxxClass.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\autocomplete.html" afterPath="$PROJECT_DIR$/work/autocomplete.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\chooseCx.html" afterPath="$PROJECT_DIR$/work/chooseCx.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\copy.html" afterPath="$PROJECT_DIR$/work/copy.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\copy.js" afterPath="$PROJECT_DIR$/work/copy.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom (1).zip" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom (1).zip" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/animated-overlay.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-icons_228ef1_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-icons_ef8c08_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-icons_ffd27a_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\images\ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/images/ui-icons_ffffff_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\jquery-ui-1.10.3.custom.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\css\ui-lightness\jquery-ui-1.10.3.custom.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\AUTHORS.txt" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/AUTHORS.txt" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\Gruntfile.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/Gruntfile.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\MIT-LICENSE.txt" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/MIT-LICENSE.txt" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\README.md" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/README.md" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\categories.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/categories.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\combobox.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/combobox.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\custom-data.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/custom-data.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\default.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/default.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\folding.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/folding.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\images\jquery_32x32.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\images\jqueryui_32x32.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/images/jqueryui_32x32.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\images\sizzlejs_32x32.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/images/sizzlejs_32x32.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\images\transparent_1x1.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/images/transparent_1x1.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\images\ui-anim_basic_16x16.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/images/ui-anim_basic_16x16.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\index.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/index.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\london.xml" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/london.xml" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\maxheight.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/maxheight.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\multiple-remote.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/multiple-remote.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\multiple.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/multiple.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\remote-jsonp.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/remote-jsonp.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\remote-with-cache.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/remote-with-cache.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\remote.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/remote.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\search.php" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/search.php" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\autocomplete\xml.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/autocomplete/xml.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\demos.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/demos.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\calendar.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/calendar.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\demo-config-on-tile.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/demo-config-on-tile.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\demo-config-on.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/demo-config-on.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\demo-spindown-closed.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/demo-spindown-closed.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\demo-spindown-open.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/demo-spindown-open.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\icon-docs-info.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/icon-docs-info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\images\pbar-ani.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/images/pbar-ani.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\menu\default.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/menu/default.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\menu\icons.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/menu/icons.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\menu\index.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/menu/index.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\cycler.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/cycler.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\default.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/default.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\images\earth.jpg" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/images/earth.jpg" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\images\flight.jpg" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/images/flight.jpg" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\images\rocket.jpg" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/images/rocket.jpg" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\position\index.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/position/index.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\widget\default.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/widget/default.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\demos\widget\index.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/demos/widget/index.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\docs\autocomplete.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/docs/autocomplete.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\docs\jQuery.widget.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/docs/jQuery.widget.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\docs\menu.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/docs/menu.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\docs\position.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/docs/position.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\globalize.culture.de-DE.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/globalize.culture.de-DE.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\globalize.culture.ja-JP.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/globalize.culture.ja-JP.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\globalize.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/globalize.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\jquery.mousewheel.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/jquery.mousewheel.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\jshint.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/jshint.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\qunit.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/qunit.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\external\qunit.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/external/qunit.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\jquery-1.9.1.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/jquery-1.9.1.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\package.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/package.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/animated-overlay.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-icons_2e83ff_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-icons_454545_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-icons_888888_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery-ui.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery-ui.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.all.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.all.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.autocomplete.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.autocomplete.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.base.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.base.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.core.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.core.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.menu.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.menu.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\jquery.ui.theme.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.theme.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/animated-overlay.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-icons_2e83ff_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-icons_454545_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-icons_888888_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\jquery-ui.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/jquery-ui.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\jquery.ui.autocomplete.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/jquery.ui.autocomplete.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\jquery.ui.core.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/jquery.ui.core.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\jquery.ui.menu.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/jquery.ui.menu.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\base\minified\jquery.ui.theme.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/base/minified/jquery.ui.theme.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/animated-overlay.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-icons_228ef1_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-icons_ef8c08_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-icons_ffd27a_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/images/ui-icons_ffffff_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery-ui.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery-ui.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.all.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.all.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.autocomplete.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.autocomplete.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.base.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.base.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.core.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.core.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.menu.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.menu.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\jquery.ui.theme.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/jquery.ui.theme.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/animated-overlay.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_flat_10_000000_40x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-icons_222222_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-icons_228ef1_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-icons_ef8c08_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-icons_ffd27a_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\images\ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/images/ui-icons_ffffff_256x240.png" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\jquery-ui.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/jquery-ui.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\jquery.ui.autocomplete.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/jquery.ui.autocomplete.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\jquery.ui.core.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/jquery.ui.core.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\jquery.ui.menu.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/jquery.ui.menu.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\themes\ui-lightness\minified\jquery.ui.theme.min.css" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/themes/ui-lightness/minified/jquery.ui.theme.min.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui.autocomplete.jquery.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui.autocomplete.jquery.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui.core.jquery.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui.core.jquery.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui.menu.jquery.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui.menu.jquery.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui.position.jquery.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui.position.jquery.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui.widget.jquery.json" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui.widget.jquery.json" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery-ui.custom.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery-ui.custom.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery.ui.autocomplete.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.autocomplete.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery.ui.core.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.core.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery.ui.menu.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.menu.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery.ui.position.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.position.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\jquery.ui.widget.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.widget.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery-ui.custom.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery-ui.custom.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery.ui.autocomplete.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery.ui.autocomplete.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery.ui.core.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery.ui.core.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery.ui.menu.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery.ui.menu.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery.ui.position.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery.ui.position.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\development-bundle\ui\minified\jquery.ui.widget.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/development-bundle/ui/minified/jquery.ui.widget.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\index.html" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/index.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\js\jquery-1.9.1.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/js/jquery-1.9.1.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\js\jquery-ui-1.10.3.custom.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\jquery-ui-1.10.3.custom\js\jquery-ui-1.10.3.custom.min.js" afterPath="$PROJECT_DIR$/work/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\radioSelected.html" afterPath="$PROJECT_DIR$/work/radioSelected.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\selectToAutocomplete.html" afterPath="$PROJECT_DIR$/work/selectToAutocomplete.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\btn_bg.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/btn_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\title_bg_center.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/title_bg_center.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\title_bg_left.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/title_bg_left.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\images\title_bg_right.gif" afterPath="$PROJECT_DIR$/work/skin/black/images/title_bg_right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\black\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/black/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\btn_bg.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/btn_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\title_bg_center.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/title_bg_center.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\title_bg_left.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/title_bg_left.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\images\title_bg_right.gif" afterPath="$PROJECT_DIR$/work/skin/bluebar/images/title_bg_right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\bluebar\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/bluebar/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\btn_bg.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/btn_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\titleIco.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/titleIco.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\title_bg_center.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/title_bg_center.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\title_bg_left.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/title_bg_left.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\title_bg_right.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/title_bg_right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\win_b.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/win_b.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\win_l.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/win_l.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\win_lb.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/win_lb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\win_r.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/win_r.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\images\win_rb.gif" afterPath="$PROJECT_DIR$/work/skin/dmm-green/images/win_rb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\dmm-green\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/dmm-green/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\btn_bg.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/btn_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\content_bg.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/content_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\title_bg_center.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/title_bg_center.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\title_bg_left.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/title_bg_left.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\title_bg_right.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/title_bg_right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\win_b.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/win_b.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\win_l.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/win_l.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\win_lb.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/win_lb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\win_r.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/win_r.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\images\win_rb.gif" afterPath="$PROJECT_DIR$/work/skin/qq/images/win_rb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\qq\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/qq/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/simple/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/simple/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/simple/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/simple/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/simple/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/simple/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple_gray\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/simple_gray/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple_gray\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/simple_gray/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple_gray\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/simple_gray/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple_gray\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/simple_gray/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\simple_gray\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/simple_gray/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\ask.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/ask.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\btn_bg.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/btn_bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\err.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/err.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\ico.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/ico.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\info.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/info.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\right.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\title_bg_center.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/title_bg_center.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\title_bg_left.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/title_bg_left.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\title_bg_right.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/title_bg_right.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\win_b.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/win_b.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\win_l.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/win_l.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\win_lb.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/win_lb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\win_r.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/win_r.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\images\win_rb.gif" afterPath="$PROJECT_DIR$/work/skin/vista/images/win_rb.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\skin\vista\ymPrompt.css" afterPath="$PROJECT_DIR$/work/skin/vista/ymPrompt.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\tempJs\ajaxTree.js" afterPath="$PROJECT_DIR$/work/tempJs/ajaxTree.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\tempJs\jdls_gs_grid.js" afterPath="$PROJECT_DIR$/work/tempJs/jdls_gs_grid.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\tempJs\jquery.validate.js" afterPath="$PROJECT_DIR$/work/tempJs/jquery.validate.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\tempJs\strLen.html" afterPath="$PROJECT_DIR$/work/tempJs/strLen.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\cmxform.css" afterPath="$PROJECT_DIR$/work/validator/css/cmxform.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\cmxformTemplate.css" afterPath="$PROJECT_DIR$/work/validator/css/cmxformTemplate.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\core.css" afterPath="$PROJECT_DIR$/work/validator/css/core.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\reset.css" afterPath="$PROJECT_DIR$/work/validator/css/reset.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\screen.css" afterPath="$PROJECT_DIR$/work/validator/css/screen.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\css\site-demos.css" afterPath="$PROJECT_DIR$/work/validator/css/site-demos.css" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\gridAdd.html" afterPath="$PROJECT_DIR$/work/validator/gridAdd.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\bg.gif" afterPath="$PROJECT_DIR$/work/validator/images/bg.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\checked.gif" afterPath="$PROJECT_DIR$/work/validator/images/checked.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\cmxform-divider.gif" afterPath="$PROJECT_DIR$/work/validator/images/cmxform-divider.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\cmxform-fieldset.gif" afterPath="$PROJECT_DIR$/work/validator/images/cmxform-fieldset.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\loading.gif" afterPath="$PROJECT_DIR$/work/validator/images/loading.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\images\unchecked.gif" afterPath="$PROJECT_DIR$/work/validator/images/unchecked.gif" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\required.html" afterPath="$PROJECT_DIR$/work/validator/required.html" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\scripts\jquery-1.9.1.js" afterPath="$PROJECT_DIR$/work/validator/scripts/jquery-1.9.1.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\scripts\jquery.js" afterPath="$PROJECT_DIR$/work/validator/scripts/jquery.js" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\job\validator\scripts\jquery.validate.js" afterPath="$PROJECT_DIR$/work/validator/scripts/jquery.validate.js" />
     </list>
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,7 +398,7 @@
     <file path="/twoFixedDivCenter.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1377505246312" ignored="false" />
     <file path="/overDefineSize.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1377505803593" ignored="false" />
     <file path="/float3bug.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1377514436546" ignored="false" />
-    <file path="/overScroll.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378920523265" ignored="false" />
+    <file path="/overScroll.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379064900515" ignored="false" />
     <file path="/relativeMargin.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1377593158968" ignored="false" />
     <file path="/tcc.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378891539906" ignored="false" />
     <file path="/ie8scroll.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378609780421" ignored="false" />
@@ -129,10 +415,11 @@
     <file path="/aLink.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378902556328" ignored="false" />
     <file path="/scrollTop.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378940634953" ignored="false" />
     <file path="/relative.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378922410281" ignored="false" />
-    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379030844640" ignored="false" />
+    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379041972515" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/Test123/test.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378953232515" ignored="false" />
     <file path="/dateDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378962718531" ignored="false" />
     <file path="/menu.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378988241671" ignored="false" />
+    <file path="/firstRowSecond3Cell.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379041961359" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +442,7 @@
       <file leaf-file-name="scrollOffset.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scroll/scrollOffset.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="12" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+            <state line="22" column="12" selection-start="579" selection-end="579" vertical-scroll-proportion="-0.64">
               <folding />
             </state>
           </provider>
@@ -173,7 +460,16 @@
       <file leaf-file-name="overScroll.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scroll/overScroll.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="73" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+            <state line="12" column="27" selection-start="330" selection-end="330" vertical-scroll-proportion="36.48">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ready.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/event/ready.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="114" column="40" selection-start="5085" selection-end="5090" vertical-scroll-proportion="1.2105263">
               <folding />
             </state>
           </provider>
@@ -182,7 +478,7 @@
       <file leaf-file-name="ymPrompt.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="0.0">
+            <state line="106" column="46" selection-start="4298" selection-end="4298" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1378782263125" expanded="false" signature="7042:7086" placeholder="..." />
                 <marker date="1378782263125" expanded="false" signature="7136:7200" placeholder="..." />
@@ -194,19 +490,45 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="frame_api.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/tcc/frame_api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="162" column="21" selection-start="3886" selection-end="3898" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1379062898562" expanded="false" signature="492:515" placeholder="..." />
+                <marker date="1379062898562" expanded="false" signature="818:841" placeholder="..." />
+                <marker date="1379062898562" expanded="false" signature="1296:1319" placeholder="..." />
+                <marker date="1379062898562" expanded="false" signature="6478:6527" placeholder="..." />
+                <marker date="1379062898562" expanded="false" signature="7213:7225" placeholder="..." />
+                <marker date="1379062898562" expanded="false" signature="7244:7286" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/product/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="85" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.0">
+            <state line="57" column="61" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ymPrompt.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ymPrompt.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="44" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.4514991">
+            <state line="35" column="9" selection-start="1003" selection-end="1013" vertical-scroll-proportion="-10.24">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firstRowSecond3Cell.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/layout/firstRowSecond3Cell.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="25" selection-start="676" selection-end="676" vertical-scroll-proportion="-11.56">
               <folding />
             </state>
           </provider>
@@ -215,7 +537,7 @@
       <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="89" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -240,8 +562,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dom/tableSort.html" />
-        <option value="$PROJECT_DIR$/job/aLink.html" />
         <option value="$PROJECT_DIR$/css/distance/overScroll.html" />
         <option value="$PROJECT_DIR$/dom/scrollTop.html" />
         <option value="$PROJECT_DIR$/css/relative.html" />
@@ -254,8 +574,10 @@
         <option value="$PROJECT_DIR$/dom/scrollOffset.html" />
         <option value="$PROJECT_DIR$/css/scroll/scrollOffset.html" />
         <option value="$PROJECT_DIR$/syntax/trycatch.html" />
-        <option value="$PROJECT_DIR$/css/scroll/overScroll.html" />
         <option value="$PROJECT_DIR$/css/product/menu.html" />
+        <option value="$PROJECT_DIR$/css/layout/firstRowSecond3Cell.html" />
+        <option value="$PROJECT_DIR$/css/tcc/frame_api.js" />
+        <option value="$PROJECT_DIR$/css/scroll/overScroll.html" />
       </list>
     </option>
   </component>
@@ -366,25 +688,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webtest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webtest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tcc" />
+              <option name="myItemId" value="event" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,22 +697,38 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="135" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
     <property name="recentsLimit" value="5" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/Test123" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="165" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="830" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="159" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="146" />
     <property name="GoToClass.includeJavaFiles" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
@@ -493,7 +813,11 @@
       <created>1378964745984</created>
       <updated>1378964745984</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="webstorm提交gitHub测试">
+      <created>1379041984109</created>
+      <updated>1379041984109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -518,24 +842,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="746" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2530303" sideWeight="0.6337793" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920536" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17272727" sideWeight="0.6711052" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17272727" sideWeight="0.67205167" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36332768" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.67081606" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="96" y="96" width="1174" height="546" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17793104" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -610,34 +934,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="17" selection-start="482" selection-end="482" vertical-scroll-proportion="0.33215547" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo/queue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="249" selection-end="249" vertical-scroll-proportion="0.15469614" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fromHelp/My97DatePickerBeta/My97DatePicker/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fromHelp/My97DatePickerBeta/My97DatePicker/WdatePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dom/doubleEve.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="457" selection-end="457" vertical-scroll-proportion="0.29756796" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/scroll/scrollOffset.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="12" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+        <state line="22" column="12" selection-start="579" selection-end="579" vertical-scroll-proportion="-0.64">
           <folding />
         </state>
       </provider>
@@ -649,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="89" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
+        <state line="45" column="0" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -666,26 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/scroll/overScroll.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="73" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1378782263125" expanded="false" signature="7042:7086" placeholder="..." />
-            <marker date="1378782263125" expanded="false" signature="7136:7200" placeholder="..." />
-            <marker date="1378782263125" expanded="false" signature="7294:7306" placeholder="..." />
-            <marker date="1378782263125" expanded="false" signature="7698:7715" placeholder="..." />
-            <marker date="1378782263125" expanded="false" signature="8015:8157" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Array/Array.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="26" selection-start="221" selection-end="221" vertical-scroll-proportion="0.25396827" />
@@ -693,7 +972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/product/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="85" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.0">
+        <state line="57" column="61" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -705,7 +984,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="44" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.4514991">
+        <state line="35" column="9" selection-start="1003" selection-end="1013" vertical-scroll-proportion="-10.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/layout/firstRowSecond3Cell.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="25" selection-start="676" selection-end="676" vertical-scroll-proportion="-11.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="46" selection-start="4298" selection-end="4298" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1378782263125" expanded="false" signature="7042:7086" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7136:7200" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7294:7306" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7698:7715" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="8015:8157" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/frame_api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="21" selection-start="3886" selection-end="3898" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1379062898562" expanded="false" signature="492:515" placeholder="..." />
+            <marker date="1379062898562" expanded="false" signature="818:841" placeholder="..." />
+            <marker date="1379062898562" expanded="false" signature="1296:1319" placeholder="..." />
+            <marker date="1379062898562" expanded="false" signature="6478:6527" placeholder="..." />
+            <marker date="1379062898562" expanded="false" signature="7213:7225" placeholder="..." />
+            <marker date="1379062898562" expanded="false" signature="7244:7286" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/optionselectedremove.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dom/twoEvent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="23" selection-start="399" selection-end="399" vertical-scroll-proportion="0.3229358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/scroll/overScroll.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="27" selection-start="330" selection-end="330" vertical-scroll-proportion="36.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event/ready.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="40" selection-start="5085" selection-end="5090" vertical-scroll-proportion="1.2105263">
           <folding />
         </state>
       </provider>

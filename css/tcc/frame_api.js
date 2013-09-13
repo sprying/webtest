@@ -1,30 +1,3 @@
-/**
-@功能： 创建一个弹出窗口
-@参数：  _src：需要连接的iframe地址  _title:弹出窗口的标题, _width:窗口宽度,_height:窗口高度,_model：是明弹还是暗弹true or false,_id弹出窗口的相关ID号，可以分辨独立的弹出窗口
-@返回:  无
-@实例: 
-
-function createWin(_src,_title,_width,_height,_model,_id,_closable){
-	ymPrompt.win({
-		title : _title,
-		fixPosition : true,
-		maxBtn : true,
-		minBtn : true,
-		showMask:true,
-		closeBtn : _closable,
-		width : _width,
-		height : _height,
-		iframe:{
-				id:'win_'+_id,
-				name:'win_'+_id,
-				src:_src
-				},
-		handler:function(tf){alert(tf);}
-		})
-	
-}
-*/
-
 /*
 @功能： 关闭全局是id为windows createWin()创建的窗口
 @参数： createWin中的相关的ID号
