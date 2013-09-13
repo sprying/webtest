@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var json1 = [ {
+            "title" : "aa",
+            "content" : "aa ..."
+        }, {
+            "title" : "bb",
+            "content" : "bb ..."
+        } ];
+        var json2 = [ {
+            "title" : "cc",
+            "content" : "cc ..."
+        }, {
+            "title" : "dd",
+            "content" : "dd ..."
+        } ];
+        var array = [];
+        for(var i= 0,len =json1.length;i<len;i++){
+            array.push(json1[i]);
+        }
+        Array.prototype.toJSON = function(){
+            return "["+this.toString()+"]";
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
