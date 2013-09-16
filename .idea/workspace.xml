@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="webstorm提交gitHub测试">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/addDarg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/dragDemo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/setCapture2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/setCapture3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/a.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/b.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/b.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/c.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/c.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/d.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/d.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/e.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/e.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/demo-files/f.js" afterPath="$PROJECT_DIR$/PaulGuo-In/demo-files/f.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/in-demo.html" afterPath="$PROJECT_DIR$/PaulGuo-In/in-demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaulGuo-In/in.js" afterPath="$PROJECT_DIR$/PaulGuo-In/in.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/event/laterAppend.html" afterPath="$PROJECT_DIR$/event/laterAppend.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scroll/overScroll.html" afterPath="$PROJECT_DIR$/css/scroll/overScroll.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/event/repeatEvent.html" afterPath="$PROJECT_DIR$/event/repeatEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scroll/scrollOffset.html" afterPath="$PROJECT_DIR$/css/scroll/scrollOffset.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tcc/setCapture.html" afterPath="$PROJECT_DIR$/css/tcc/setCapture.html" />
+    <list default="true" id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\百度云\workspace\webtest\css\tcc\testTemp.html" afterPath="$PROJECT_DIR$/css/tcc/tempConver.html" />
     </list>
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -146,7 +129,7 @@
     <file path="/aLink.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378902556328" ignored="false" />
     <file path="/scrollTop.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378940634953" ignored="false" />
     <file path="/relative.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378922410281" ignored="false" />
-    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379314168562" ignored="false" />
+    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379314269546" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/Test123/test.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378953232515" ignored="false" />
     <file path="/dateDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378962718531" ignored="false" />
     <file path="/menu.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378988241671" ignored="false" />
@@ -176,19 +159,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ready.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/event/ready.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="52" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="in-demo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PaulGuo-In/in-demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="96" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
+            <state line="21" column="62" selection-start="1251" selection-end="1251" vertical-scroll-proportion="-0.64">
               <folding />
             </state>
           </provider>
@@ -197,7 +171,7 @@
       <file leaf-file-name="e.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/e.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="37" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+            <state line="2" column="25" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -217,7 +191,7 @@
       <file leaf-file-name="b.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/b.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="38" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
+            <state line="2" column="25" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -242,17 +216,63 @@
       <file leaf-file-name="a.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/a.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="67" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
+            <state line="4" column="25" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="queue.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="queue.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formateDemo/queue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="19" selection-start="792" selection-end="792" vertical-scroll-proportion="0.5675676">
+            <state line="28" column="19" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setCapture3.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/tcc/setCapture3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="13" selection-start="1771" selection-end="1771" vertical-scroll-proportion="-13.72">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ymPrompt.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="408" column="15" selection-start="18379" selection-end="18379" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1378782263125" expanded="false" signature="7042:7086" placeholder="..." />
+                <marker date="1378782263125" expanded="false" signature="7136:7200" placeholder="..." />
+                <marker date="1378782263125" expanded="false" signature="7294:7306" placeholder="..." />
+                <marker date="1378782263125" expanded="false" signature="7698:7715" placeholder="..." />
+                <marker date="1378782263125" expanded="false" signature="8015:8157" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tempConver.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/tcc/tempConver.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="231" column="36" selection-start="6555" selection-end="6594" vertical-scroll-proportion="0.26631394">
+              <folding>
+                <marker date="1378476424000" expanded="true" signature="256:1999" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="411:1875" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="421:1074" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="425:1066" placeholder="..." />
+                <marker date="1378476424000" expanded="false" signature="482:493" placeholder="..." />
+                <marker date="1378476424000" expanded="false" signature="729:740" placeholder="..." />
+                <marker date="1378476424000" expanded="false" signature="993:1007" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="1096:1865" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="1104:1857" placeholder="..." />
+                <marker date="1378476424000" expanded="true" signature="1108:1848" placeholder="..." />
+                <marker date="1378476424000" expanded="false" signature="1909:1919" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -585,7 +605,11 @@
       <created>1379069682937</created>
       <updated>1379069682937</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="webstorm提交gitHub测试">
+      <created>1379314291203</created>
+      <updated>1379314291203</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -612,6 +636,7 @@
     <frame x="-4" y="-4" width="1374" height="746" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2530303" sideWeight="0.6337793" order="1" side_tool="false" content_ui="tabs" />
@@ -627,7 +652,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17793104" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -702,36 +726,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/formateDemo/queue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="0" selection-end="101" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/laterAppend.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="956" selection-end="3059" vertical-scroll-proportion="1.5520282" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inExample/inDemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="744" selection-end="744" vertical-scroll-proportion="0.47971782" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inExample/jsLoader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="9" selection-start="351" selection-end="351" vertical-scroll-proportion="0.25396827" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/c.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.08290155" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/b.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="38" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
+        <state line="2" column="25" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -748,7 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PaulGuo-In/in-demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="96" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
+        <state line="21" column="62" selection-start="1251" selection-end="1251" vertical-scroll-proportion="-0.64">
           <folding />
         </state>
       </provider>
@@ -769,26 +766,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/e.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="37" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+        <state line="2" column="25" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="67" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
+        <state line="4" column="25" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/tcc/dragDemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/tcc/addDarg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="286" selection-end="286" vertical-scroll-proportion="0.3783784" />
+        <state line="14" column="52" selection-start="286" selection-end="286" vertical-scroll-proportion="0.3783784">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PaulGuo-In/in.js">
@@ -802,8 +803,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formateDemo/queue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="792" selection-end="792" vertical-scroll-proportion="0.5675676">
+        <state line="28" column="19" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/setCapture3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="13" selection-start="1771" selection-end="1771" vertical-scroll-proportion="-13.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event/ready.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="52" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="36" selection-start="756" selection-end="756" vertical-scroll-proportion="-3.1040564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="408" column="15" selection-start="18379" selection-end="18379" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1378782263125" expanded="false" signature="7042:7086" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7136:7200" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7294:7306" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="7698:7715" placeholder="..." />
+            <marker date="1378782263125" expanded="false" signature="8015:8157" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/tempConver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="36" selection-start="6555" selection-end="6594" vertical-scroll-proportion="0.26631394">
+          <folding>
+            <marker date="1378476424000" expanded="true" signature="256:1999" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="411:1875" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="421:1074" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="425:1066" placeholder="..." />
+            <marker date="1378476424000" expanded="false" signature="482:493" placeholder="..." />
+            <marker date="1378476424000" expanded="false" signature="729:740" placeholder="..." />
+            <marker date="1378476424000" expanded="false" signature="993:1007" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="1096:1865" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="1104:1857" placeholder="..." />
+            <marker date="1378476424000" expanded="true" signature="1108:1848" placeholder="..." />
+            <marker date="1378476424000" expanded="false" signature="1909:1919" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
