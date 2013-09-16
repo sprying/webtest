@@ -1,5 +1,5 @@
-alert('f');
-alert(test);
+msgOut.writeln('f start ...');
+msgOut.writeln(test);
 var me='c rely on f!';
 //alert(window.num);
-alert('f end');
+msgOut.writeln('f end!');

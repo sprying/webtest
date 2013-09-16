@@ -1,0 +1,71 @@
+<HTML>
+<head>
+    <title>setCapture和releaseCapture的小应用</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <SCRIPT LANGUAGE="JavaScript">
+        <!--
+        var isFreeze = true;
+
+        function click_func()
+        {
+            if(event.srcElement.id == "divMain")
+            {
+                alert("处理中...");                                                            //常规操作
+                document.getElementById("divMain").setCapture();
+            }
+            else
+            {
+                if(isFreeze && event.srcElement.id != "btnChange")
+                {
+                    alert('未执行releaseCapture,不能点击');
+                    document.getElementById("divMain").setCapture();
+                }
+            }
+        }
+
+        function keydown_func()
+        {
+
+            if (event.keyCode==115  && event.altKey)            //ALT+F4
+            {
+                if(isFreeze)
+                {
+                    alert('保存！');                                        //可以执行重要操作
+                }
+
+                //window.showModelessDialog("about:blank","","dialogWidth:1px;dialogheight:1px");
+
+                //return false;
+            }
+            document.getElementById("divMain").setCapture();
+        }
+
+        function change_capture(obj)
+        {
+            isFreeze = !isFreeze;
+            if(isFreeze)
+            {
+                obj.value = "releaseCapture";
+                document.getElementById("divMain").setCapture();
+            }
+            else
+            {
+                obj.value = "setCapture";
+                alert('保存！');                                    //可以执行重要操作
+                document.getElementById("divMain").releaseCapture();
+            }
+        }
+        //-->
+    </SCRIPT>
+</head>
+<BODY  onkeydown="keydown_func();">
+<div id="divMain" style="width:500px;height:400px;border:1px solid #999;padding:2px" onclick="click_func();">
+    点一下IE的菜单或者按钮看看:) 又或者IE窗口外的地方
+    <input type="button" value="releaseCapture" onclick="change_capture(this);" id="btnChange">
+    <script language="javascript">
+        document.getElementById("divMain").setCapture();
+    </script>
+</div>
+
+</BODY>
+</HTML>

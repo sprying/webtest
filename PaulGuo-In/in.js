@@ -81,7 +81,7 @@
             if (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete') {
                 __loading[url] = false;
                 __loaded[url] = true;
-                console.log(url +'end:'+ (new Date).getTime())
+                console.log(url +'end:'+ (new Date).toString())
 
                 // 回调函数一般为下次要加载的js
                 if(callback) {
@@ -104,7 +104,7 @@
         }
         // script添加文档后才开始加载
         __head.appendChild(n);
-        console.log(url +'start:'+ (new Date).getTime())
+        console.log(url +'start:'+ (new Date).toString())
     };
     
     /**

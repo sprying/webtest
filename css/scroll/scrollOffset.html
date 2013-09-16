@@ -79,17 +79,18 @@
         }
         #hangDiv{
             border-radius: 10px;
-            box-shadow: 0 0 7px 20px #00FF80;
+            box-shadow: 0 0 7px 20px #BBBBBB;
             position: fixed;
             z-index: 10;
             right: 50px;
             bottom: 55px;
-            background-color: #00FF80;
+            background-color: #BBBBBB;
             width: 150px;
             height: 160px;
             filter: alpha(Opacity=100);
             opacity: 0.5;
             padding: 10px;
+            overflow: auto;
         }
     </style>
     <div id="winWrap" style="">
@@ -97,6 +98,16 @@
         wwwwwwwwww wwwwwwww wwwwwwwwww wwwwwwwwww wwwwwww wwwwwwww wwwww wwwwwwwwwwwww wwwwwwwww aaaa aaaaaaa
     </div>
     <div id="hangDiv"></div>
+    <script type="text/javascript">
+        function buildConsole(){
+            var newDom = document.createElement('<div id="hangDiv"></div>');
+            newDom.style.cssText='border-radius: 10px;box-shadow: 0 0 7px 20px #00FF80;position: fixed;z-index: 10;+'
+            'right: 50px;bottom: 55px;background-color: #00FF80;width: 150px;height: 160px;filter: alpha(Opacity=100);+'
+            'opacity: 0.5;padding: 10px;';
+            document.body.appendChild(newDom);
+            return newDom;
+        }
+    </script>
 </div>
 </body>
 </html>

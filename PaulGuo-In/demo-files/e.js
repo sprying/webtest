@@ -1,4 +1,3 @@
 //$(body).append('test jquery!!!!');
-alert('e');
-alert('e.js:!!!!'+$);
-alert('e end');
+msgOut.writeln('e start ...');
+msgOut.writeln('e end!');

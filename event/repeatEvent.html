@@ -2,16 +2,19 @@
 <html>
 <head>
     <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
 </head>
 <body>
-<button value="click" id="click"></button>
+重复绑定事件，看是否重复触发<br/>
+<button value="click" id="click">click me</button>
 </body>
 </html>
 <script type="text/javascript">
     var clickDom = document.getElementById("click");
-    var clickFns = function(e){
+    var clickFns = function(){
         alert(this.value);
     }
     clickDom.addEventListener("click",clickFns);
-    clickDom.addEventListener("click",clickFns)
+    clickDom.addEventListener("click",clickFns);
+    // 测试结果，只触发一次
 </script>
