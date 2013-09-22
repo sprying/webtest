@@ -159,12 +159,27 @@
         var div = document.createElement('div');
         div.innerHTML = [
             /*遮罩*/
-            "<div id='maskLevel' style=\'" + maskStyle + ';z-index:10000;\'></div>', IE6 ? ("<iframe id='maskIframe' src='javascript:false' style='" + maskStyle + ";z-index:9999;filter:alpha(opacity=0);opacity:0'></iframe>") : '',
+            "<div id='maskLevel' style=\'" + maskStyle + ';z-index:10000;\'></div>',
+            IE6 ? ("<iframe id='maskIframe' src='javascript:false' style='" + maskStyle +
+                ";z-index:9999;filter:alpha(opacity=0);opacity:0'></iframe>") : '',
             /*窗体*/
-            "<div id='ym-window' style='position:absolute;z-index:10001;display:none'>", IE6 ? "<iframe src='javascript:false' style='width:100%;height:100%;position:absolute;top:0;left:0;z-index:-1'></iframe>": '', "<div class='ym-tl' id='ym-tl'><div class='ym-tr'><div class='ym-tc' style='cursor:move;'><div class='ym-header-text'></div><div class='ym-header-tools'>", "<div class='ymPrompt_min' title='最小化'><strong>0</strong></div>", "<div class='ymPrompt_max' title='最大化'><strong>1</strong></div>", "<div class='ymPrompt_close' title='关闭'><strong>r</strong></div>", "</div></div></div></div>", "<div class='ym-ml' id='ym-ml'><div class='ym-mr'><div class='ym-mc'><div class='ym-body' style='position:relative'></div></div></div></div>", "<div class='ym-ml' id='ym-btnl'><div class='ym-mr'><div class='ym-btn'></div></div></div>",
-            "<div class='ym-bl' id='ym-bl'><div class='ym-br'><div class='ym-bc'></div></div></div>", "</div>",
+            "<div id='ym-window' style='position:absolute;z-index:10001;display:none'>",
+            IE6 ? "<iframe src='javascript:false' style='width:100%;height:100%;position:absolute;top:0;left:0;z-index:-1'></iframe>"
+                : '',
+            "<div class='ym-tl' id='ym-tl'><div class='ym-tr'><div class='ym-tc' style='cursor:move;'>" +
+                "<div class='ym-hxzeader-text'></div><div class='ym-header-tools'>",
+            "<div class='ymPrompt_min' title='最小化'><strong>0</strong></div>",
+            "<div class='ymPrompt_max' title='最大化'><strong>1</strong></div>",
+            "<div class='ymPrompt_close' title='关闭'><strong>r</strong></div>",
+            "</div></div></div></div>",
+            "<div class='ym-ml' id='ym-ml'><div class='ym-mr'><div class='ym-mc'>" +
+                "<div class='ym-body' style='position:relative'></div></div></div></div>",
+            "<div class='ym-ml' id='ym-btnl'><div class='ym-mr'><div class='ym-btn'></div></div></div>",
+            "<div class='ym-bl' id='ym-bl'><div class='ym-br'><div class='ym-bc'>fff</div></div></div>",
+            "</div>",
             /*阴影*/
-            isIE ? "<div id='ym-shadow' style='position:absolute;z-index:10000;background:#808080;filter:alpha(opacity=80) progid:DXImageTransform.Microsoft.Blur(pixelradius=2);display:none'></div>": ''].join('');
+            isIE ? "<div id='ym-shadow' style='position:absolute;z-index:10000;background:#808080;" +
+                "filter:alpha(opacity=80) progid:DXImageTransform.Microsoft.Blur(pixelradius=2);display:none'></div>": ''].join('');
         document.body.appendChild(div);
         /*窗口上的对象*/
         /*mask、window*/
@@ -284,6 +299,7 @@
             /*IE下窗口外部拖动*/
             bindEl && (detachEvent("losecapture", uEvent, bindEl), bindEl.releaseCapture());
         };
+        /*绑定鼠标下按事件*/
         addEvent('mousedown',function(e) {
                 if (curCfg.disableDrag) return false;    // 禁止拖动 2013-03-09
                 if ((e.srcElement || e.target).parentNode == ym_hTool) return false; //点击操作按钮不进行启用拖动处理
@@ -408,9 +424,7 @@
                 left: pos[0] + 'px'
             });
             saveWinInfo(); //保存当前窗口位置信息
-            setTimeout(function(){
-               setStyle(ym_body, 'height', h - $height(ym_headbox) - $height(ym_btn) - $height(ym_bottom) + 'px'); //设定内容区的高度
-           },25);
+            setStyle(ym_body, 'height', h - $height(ym_headbox) - $height(ym_btn) - $height(ym_bottom) + 'px'); //设定内容区的高度
             isCompat && IE6 && curCfg.iframe && setStyle(getPage(), {height: ym_body.clientHeight}); //IE6标准模式下要计算iframe高度
         };
         var _obj = []; //IE中可见的obj元素
