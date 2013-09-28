@@ -5,20 +5,17 @@
 @实例: 
 */
 function closeWin(_id){
-	
 	ymPrompt.close()
 }
 function closeWin_fn(_id,fn){
-	
-	ymPrompt.close()
+	ymPrompt.close();
 	fn();
-	
 }
 
 
 /*
 @功能： 弹出警告框
-@参数： tt:警告框标题,msg:警告框信息,fn:回调函数
+@参数： tt:警告框标题,msg:警告框信息,fns:回调函数,mask:是否显示遮罩,info:'info"时，弹出错误提示，不设置时，弹出一般提示
 @返回:  无
 @实例: 
 */
@@ -97,7 +94,8 @@ function API_Tab_add(objs)
 {	
 	try{
 		
-		window.top.addTabItem({id:alert(Math.round(Math.random()*100000)),title:(obj.attr("title")&&obj.attr("title")!="")?obj.attr("title"):obj.text(),src:obj.attr("href"),isCloseBtn:true})
+		window.top.addTabItem({id:alert(Math.round(Math.random()*100000)),title:(obj.attr("title")&&obj.attr("title")!="")?
+            obj.attr("title"):obj.text(),src:obj.attr("href"),isCloseBtn:true})
 	}catch(ex){
 		
 	   $("frame[name='tabframe']",window.parent.parent.document)[0].contentWindow.addTab(objs);

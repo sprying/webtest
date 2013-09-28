@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/function/closureDemo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/demo_ymPrompt_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/tcc/demo_ymPromt.html" />
-      <change type="DELETED" beforePath="D:\百度云\workspace\webtest\testGit" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/work/validator/relay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/work/validator.js" />
+      <change type="DELETED" beforePath="D:\百度云\workspace\webtest\function\closureDemo.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tcc/frame_api.js" afterPath="$PROJECT_DIR$/css/tcc/frame_api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/validator/scripts/jquery.validate.js" afterPath="$PROJECT_DIR$/work/validator/scripts/jquery.validate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/validator/required.html" afterPath="$PROJECT_DIR$/work/validator/required.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tcc/ymPrompt.js" afterPath="$PROJECT_DIR$/css/tcc/ymPrompt.js" />
     </list>
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,7 +134,7 @@
     <file path="/aLink.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378902556328" ignored="false" />
     <file path="/scrollTop.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378940634953" ignored="false" />
     <file path="/relative.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378922410281" ignored="false" />
-    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379808854421" ignored="false" />
+    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1380358025656" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/Test123/test.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378953232515" ignored="false" />
     <file path="/dateDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378962718531" ignored="false" />
     <file path="/menu.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378988241671" ignored="false" />
@@ -147,6 +148,10 @@
     <file path="/demo_ymPromt.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379381602281" ignored="false" />
     <file path="/demo_ymPrompt_content.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379379561234" ignored="false" />
     <file path="/closureDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379469106546" ignored="false" />
+    <file path="/ajaxTree.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1379820355421" ignored="false" />
+    <file path="/required.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1380252679703" ignored="false" />
+    <file path="/relay.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1380268027609" ignored="false" />
+    <file path="/validator.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1380246414296" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,84 +171,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="in.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PaulGuo-In/in.js">
+      <file leaf-file-name="required.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/work/validator/required.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
+            <state line="26" column="37" selection-start="925" selection-end="925" vertical-scroll-proportion="0.3313783">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="a.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/a.js">
+      <file leaf-file-name="relay.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/validator/relay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="25" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
+            <state line="21" column="64" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cdn.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HighPerformance/cdn.html">
+      <file leaf-file-name="validator.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/validator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="79" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setCapture3.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/tcc/setCapture3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="90" selection-start="1733" selection-end="1733" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ymPrompt.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="321" column="76" selection-start="14237" selection-end="14237" vertical-scroll-proportion="0.0">
+            <state line="246" column="62" selection-start="7650" selection-end="7650" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1379397066953" expanded="false" signature="7070:7114" placeholder="..." />
-                <marker date="1379397066953" expanded="false" signature="7176:7240" placeholder="..." />
-                <marker date="1379397066953" expanded="false" signature="7363:7375" placeholder="..." />
-                <marker date="1379397066953" expanded="false" signature="7871:7888" placeholder="..." />
-                <marker date="1379397066953" expanded="true" signature="8215:8378" placeholder="..." />
-                <marker date="1379397066953" expanded="false" signature="8215:8266" placeholder="..." />
+                <element signature="e#1649#1680#0" expanded="false" />
+                <element signature="e#5857#6114#0" expanded="false" />
+                <element signature="e#6648#6772#0" expanded="false" />
+                <element signature="e#6824#7064#0" expanded="false" />
+                <element signature="e#7066#7133#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="closureDemo.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/function/closureDemo.html">
+      <file leaf-file-name="queue.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formateDemo/queue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="383" selection-end="383" vertical-scroll-proportion="0.38165137">
+            <state line="46" column="34" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tempConver.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/tcc/tempConver.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="247" column="56" selection-start="7039" selection-end="7039" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1378476424000" expanded="true" signature="256:1999" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="411:1875" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="421:1074" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="425:1066" placeholder="..." />
-                <marker date="1378476424000" expanded="false" signature="482:493" placeholder="..." />
-                <marker date="1378476424000" expanded="false" signature="729:740" placeholder="..." />
-                <marker date="1378476424000" expanded="false" signature="993:1007" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="1096:1865" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="1104:1857" placeholder="..." />
-                <marker date="1378476424000" expanded="true" signature="1108:1848" placeholder="..." />
-                <marker date="1378476424000" expanded="false" signature="1909:1919" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -251,25 +216,16 @@
       <file leaf-file-name="ymPrompt.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="24" selection-start="4057" selection-end="4065" vertical-scroll-proportion="0.0">
+            <state line="19" column="20" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo_ymPromt.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/tcc/demo_ymPromt.html">
+      <file leaf-file-name="jquery.validate.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/validator/scripts/jquery.validate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="14" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo_ymPrompt_content.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/tcc/demo_ymPrompt_content.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="107" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+            <state line="589" column="0" selection-start="21981" selection-end="23909" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -294,12 +250,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/event/laterAppend.html" />
-        <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/c.js" />
-        <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/b.js" />
-        <option value="$PROJECT_DIR$/PaulGuo-In/in-demo.html" />
-        <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/d.js" />
-        <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/f.js" />
         <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/a.js" />
         <option value="$PROJECT_DIR$/PaulGuo-In/demo-files/e.js" />
         <option value="$PROJECT_DIR$/scripts/common.js" />
@@ -310,13 +260,19 @@
         <option value="$PROJECT_DIR$/css/tcc/ymPrompt.js" />
         <option value="$PROJECT_DIR$/HighPerformance/cdn.html" />
         <option value="$PROJECT_DIR$/function/closureDemo.html" />
+        <option value="$PROJECT_DIR$/work/ajaxTree.js" />
+        <option value="$PROJECT_DIR$/css/tcc/frame_api.js" />
+        <option value="$PROJECT_DIR$/work/validator/scripts/jquery.validate.js" />
+        <option value="$PROJECT_DIR$/work/validator.js" />
+        <option value="$PROJECT_DIR$/work/validator/relay.html" />
+        <option value="$PROJECT_DIR$/work/validator/required.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-4" />
     <option name="y" value="-4" />
-    <option name="width" value="1374" />
+    <option name="width" value="1032" />
     <option name="height" value="746" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -391,6 +347,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -399,9 +356,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="validator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="function" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formateDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,14 +435,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/Test123" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="165" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="830" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="830" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="159" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="146" />
     <property name="GoToClass.includeJavaFiles" value="true" />
@@ -430,8 +456,8 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -541,7 +567,11 @@
       <created>1379406476062</created>
       <updated>1379406476062</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="webstorm提交gitHub测试">
+      <created>1379809015515</created>
+      <updated>1379809015515</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -565,14 +595,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="746" extended-state="6" />
+    <frame x="-4" y="-4" width="1032" height="746" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2530303" sideWeight="0.6337793" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19318181" sideWeight="0.67205167" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22903885" sideWeight="0.6704362" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36332768" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.67081606" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -583,7 +614,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17793104" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -658,121 +688,102 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/e.js">
+    <entry file="file://$PROJECT_DIR$/work/validator/scripts/jquery.validate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/dragDemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/addDarg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="286" selection-end="286" vertical-scroll-proportion="0.3783784" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PaulGuo-In/in.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/ready.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="52" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="24" selection-start="4057" selection-end="4065" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/demo_ymPrompt_content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="107" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+        <state line="589" column="0" selection-start="21981" selection-end="23909" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/tcc/demo_ymPromt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="14" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="14" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/tcc/tempConver.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="56" selection-start="7039" selection-end="7039" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1378476424000" expanded="true" signature="256:1999" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="411:1875" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="421:1074" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="425:1066" placeholder="..." />
-            <marker date="1378476424000" expanded="false" signature="482:493" placeholder="..." />
-            <marker date="1378476424000" expanded="false" signature="729:740" placeholder="..." />
-            <marker date="1378476424000" expanded="false" signature="993:1007" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="1096:1865" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="1104:1857" placeholder="..." />
-            <marker date="1378476424000" expanded="true" signature="1108:1848" placeholder="..." />
-            <marker date="1378476424000" expanded="false" signature="1909:1919" placeholder="..." />
-          </folding>
+        <state line="247" column="56" selection-start="7039" selection-end="7039" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/setCapture3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="90" selection-start="1733" selection-end="1733" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HighPerformance/cdn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="79" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/copy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/frame_api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="232" column="18" selection-start="5361" selection-end="5370" vertical-scroll-proportion="0.028070176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/ajaxTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="29" selection-start="934" selection-end="934" vertical-scroll-proportion="0.028070176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="76" selection-start="14237" selection-end="14237" vertical-scroll-proportion="0.027027028" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/a.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="25" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.110535406" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/formateDemo/queue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="31" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.5405405" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/setCapture3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="90" selection-start="1733" selection-end="1733" vertical-scroll-proportion="0.0">
+        <state line="46" column="34" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/frame_api.js">
+    <entry file="file://$PROJECT_DIR$/work/validator/scripts/jquery.validate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="61" selection-start="4687" selection-end="4687" vertical-scroll-proportion="5.3333335" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighPerformance/cdn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="79" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+        <state line="589" column="0" selection-start="21981" selection-end="23909" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PaulGuo-In/demo-files/a.js">
+    <entry file="file://$PROJECT_DIR$/work/validator/relay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="1895" selection-end="1895" vertical-scroll-proportion="0.0">
+        <state line="21" column="64" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/tcc/ymPrompt.js">
+    <entry file="file://$PROJECT_DIR$/work/validator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="321" column="76" selection-start="14237" selection-end="14237" vertical-scroll-proportion="0.0">
+        <state line="246" column="62" selection-start="7650" selection-end="7650" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1379397066953" expanded="false" signature="7070:7114" placeholder="..." />
-            <marker date="1379397066953" expanded="false" signature="7176:7240" placeholder="..." />
-            <marker date="1379397066953" expanded="false" signature="7363:7375" placeholder="..." />
-            <marker date="1379397066953" expanded="false" signature="7871:7888" placeholder="..." />
-            <marker date="1379397066953" expanded="true" signature="8215:8378" placeholder="..." />
-            <marker date="1379397066953" expanded="false" signature="8215:8266" placeholder="..." />
+            <element signature="e#1649#1680#0" expanded="false" />
+            <element signature="e#5857#6114#0" expanded="false" />
+            <element signature="e#6648#6772#0" expanded="false" />
+            <element signature="e#6824#7064#0" expanded="false" />
+            <element signature="e#7066#7133#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/function/closureDemo.html">
+    <entry file="file://$PROJECT_DIR$/work/validator/required.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="383" selection-end="383" vertical-scroll-proportion="0.38165137">
+        <state line="26" column="37" selection-start="925" selection-end="925" vertical-scroll-proportion="0.3313783">
           <folding />
         </state>
       </provider>
