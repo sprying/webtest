@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Makes details required only if #other is checked.</title>
+    <link rel="stylesheet" href="http://jquery.bassistance.de/validate/demo/site-demos.css">
+
+</head>
+<body>
+<form id="myform">
+    <label for="other">Check to make next field required</label>
+    <input id="other" type="checkbox">
+    <br>
+    <input id="details" name="details" style="float: left">
+    <br>
+    <input type="submit" value="Validate!">
+</form>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://jquery.bassistance.de/validate/jquery.validate.js"></script>
+<script src="http://jquery.bassistance.de/validate/additional-methods.js"></script>
+<script>
+    // just for the demos, avoids form submit
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
+    $( "#myform" ).validate({
+        rules: {
+            details: {
+                required: "#other:checked"
+            }
+        }
+    });
+</script>
+</body>
+</html>
