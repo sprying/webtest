@@ -390,7 +390,7 @@ function setLoading(obj) {
                 var me = this;
                 $.ajax({
                     url: "./nsrxx.json",//**** 本地化
-                    type: "POST",
+                    type: "GET",
                     data: this.__inData,
                     beforeSubmit: function () {
                         setLoading({
@@ -409,8 +409,8 @@ function setLoading(obj) {
                             mask: true
                         });
                         var out = me.__outData;
-                        data.nsrxxJson = $.parseJSON(data.nsrxxJson);//**** 本地化
-                        data = $.parseJSON(data);
+                        //data.nsrxxJson = $.parseJSON(data.nsrxxJson);//**** 本地化
+                        //data = $.parseJSON(data);
                         // 将数据加载到outData
                         $.extend(out, data);
                         if (out.msgType && !(out.msgType in out.tipMsg)) {
@@ -439,10 +439,10 @@ function setLoading(obj) {
                 if (!this.__outData.bzxx) {
                     return;
                 }
-                // 一条记录时
                 var out = this.__outData,
                     nsrxx;
                 if (out.bzxx == "exist") {
+                    // 一条记录时
                     if (out.nsrxxJson.length == 1) {
                         nsrxx = out.nsrxxJson[0];
                         // 将模板转化成消息
@@ -553,7 +553,6 @@ function setLoading(obj) {
             dataTable: '',
             headTable: '',
             ColTable: '',
-            dataTable: '',
             tableId: '',
             outHtml: '',
             buildFixedTable: function (inHtml) {
