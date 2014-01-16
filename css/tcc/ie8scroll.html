@@ -7,9 +7,9 @@
 </head>
 <body>
     <div id="wrapDiv" style="width: 500px;height: 300px;overflow: auto">
-        <div style="width: 900px;height: 600px;"></div>
+        <div style="width: 900px;height: 600px;background:blue"></div>
     </div>
-    <div id="console" style="width: 300px;">
+    <div id="console" style="width: 300px;"></div>
 <script type="text/javascript">
     $('#wrapDiv').scroll(function(){
               $('#console').html(this.scrollLeft+','+this.scrollTop)

@@ -141,7 +141,7 @@
 
         rootEl = isCompat ? document.documentElement: rootEl; //根据html Doctype获取html根节点，以兼容非xhtml的页面
         var frameset = document.getElementsByTagName('frameset').length; //是否frameset页面
-        if (!isIE && frameset) return; //frameset页面且不是IE则直接返回，否则会出现错误。
+        if (!isIE && frameset) return; //不是IE的frameset页面返回，否则会出现错误。
         /*获取scrollLeft和scrollTop，在fixed定位时返回0，0*/
         var getScrollPos = function() {
             return curCfg.fixPosition && useFixed ? [0, 0] : [rootEl.scrollLeft, rootEl.scrollTop];

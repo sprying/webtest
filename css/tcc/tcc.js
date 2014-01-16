@@ -222,9 +222,9 @@ function setLoading(obj) {
             /*
              * 纳税人信息列表Html模板
              */
-            __template_html: '<div class="cntntWin">\
+            __template_html: '<div class="nsrxxTcc cntntWin">\
             <div class="list_title"><div class="head">纳税人信息列表</div></div>\
-            <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="ddtable" class="list" freezeRowNum="1" freezeColumnNum="1">\
+            <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="ddtable" class="list">\
                 <tbody><tr>\
                     <th width="5%"></th>\
                     <th>登记机关</th>\
@@ -501,8 +501,8 @@ function setLoading(obj) {
                     return wrapTcc.innerHTML;
                 }
 
-                win_html = fixedTable(win_html);
-                document.getElementById('tccContainer').innerHTML = '';
+                //win_html = fixedTable(win_html);
+                //document.getElementById('tccContainer').innerHTML = '';
                 // 弹出选择纳税人信息窗
                 API_showMsg({
                     msg: win_html,
@@ -518,7 +518,8 @@ function setLoading(obj) {
                 } else {
                     $(':radio[name="target_nsr"]:eq(0)').attr("checked", true);
                 }
-                contWin.bindEvent();
+                contWin.init('ddtable',1,1,800-6,400-26-15);
+//                contWin.bindEvent();
                 // 绑定点确认事件
                 $('#select_btn').bind('click', function (e) {
                     var nsrdzdah = $(':radio[name="target_nsr"]:checked').val(),
@@ -547,50 +548,122 @@ function setLoading(obj) {
             }
         },
         contWin = {
+            tableId: '',
+            table:'',
             fixedRowNum: 0,
             fixedColNum: 0,
             commonTable: '',
             dataTable: '',
             headTable: '',
-            ColTable: '',
-            tableId: '',
+            colTable: '',
             outHtml: '',
-            buildFixedTable: function (inHtml) {
-                var rst = /[\w\W]*freezeRowNum\=((?:\d)+)[\w\W]*freezeColumnNum((?:\d)+)[\w\W]*/.exec(inHtml);
-                this.tableId = /[\w\W]*id\=([\'\"]?)([\w\W]*)[$1] /.exec(inHtml)[2];
-                this.fixedRowNum = rst[1];
-                this.fixedColNum = rst[2];
-                this.dataTable = $('<div id="' + this.tableId + 'dataTable">' + inHtml + '</div>');
+            buildBase: function (width,height) {
+                var divTableLayout = $("#" + this.tableId + "_tableLayout");
+                if(divTableLayout.length){
+                    divTableLayout.empty();
+                }else{
+                    this.table.before('<div id="'+this.tableId+'_tableLayout"></div>');
+                    this.divTableLayout = divTableLayout = $("#" + this.tableId + "_tableLayout");
+                }
+                var wrapper = $('<div id="' + this.tableId + 'dataTable"></div>');
+                wrapper.append(this.table);
+                divTableLayout.append(wrapper);
+                this.dataTable = $('#'+this.tableId+'dataTable');
                 if (this.fixedRowNum && this.fixedColNum) {
-                    this.commonTable = $('<div id="' + this.tableId + 'commonTable">' + inHtml + '</div>');
+                    wrapper = $('<div id="' + this.tableId + 'commonTable"></div>');
+                    wrapper.append(this.table.clone(true).removeAttr('id'));
+                    divTableLayout.append(wrapper);
+                    this.commonTable =  $('#'+this.tableId+'commonTable');
                 }
                 if (this.fixedRowNum) {
-                    this.headTable = $('<div id="' + this.tableId + 'headTable">' + inHtml + '</div>');
+                    wrapper = $('<div id="' + this.tableId + 'headTable"></div>');
+                    wrapper.append(this.table.clone(true).removeAttr('id'));
+                    divTableLayout.append(wrapper);
+                    this.headTable = $('#'+this.tableId+'headTable');
                 }
                 if (this.fixedColNum) {
-                    this.ColTable = $('<div id="' + this.tableId + 'ColTable">' + inHtml + '</div>');
+                    wrapper = $('<div id="' + this.tableId + 'colTable"></div>');
+                    wrapper.append(this.table.clone(true).removeAttr('id'));
+                    divTableLayout.append(wrapper);
+                    this.colTable = $('#'+this.tableId+'colTable');
                 }
-                this.dataTable.scroll(function (e) {
-                    this.headTable && this.headTable.scrollLeft(this.headTable.scrollLeft());
-                    this.ColTable && this.ColTable.scrollTop(this.ColTable.scrollTop());
-                });
+                return this;
+
             },
-            getHeight: function (table,param) {
-                if(!iitms.isArray(param)){
-                    return 0;
-                }
-                if(!iitms.isArray(table)){
-                    table = $('#'+table) ;
-                }
+            setStyleEvent:function(){
+                this.commonTable && this.commonTable.css({
+                    width:this.showWidth,
+                    height:this.showHeight,
+                    overflow:'hidden',
+                    'z-index':50,
+                    "position": "absolute"
+                });
+                this.headTable && this.headTable.css({
+                    height:this.showHeight,
+                    overflow:'hidden',
+                    'z-index':40,
+                    "position": "absolute",
+                    width:this.width
+                });
+                this.colTable && this.colTable.css({
+                    width:this.showWidth,
+                    overflow:'hidden',
+                    'z-index':45,
+                    "position": "absolute",
+                    height:this.height
+                });
+                this.dataTable.css({
+                    overflow:'scroll',
+                    "position": "absolute",
+                    width:this.width,
+                    height:this.height
+                });
+                this.commonTable && this.commonTable.offset(this.divTableLayout.offset());
+                this.headTable && this.headTable.offset(this.divTableLayout.offset());
+                this.colTable && this.colTable.offset(this.divTableLayout.offset());
+                this.dataTable.offset(this.divTableLayout.offset());
+                var that = this;
+                $('#'+this.tableId+'dataTable').scroll(function (e) {
+                    that.headTable && that.headTable.scrollLeft(that.dataTable.scrollLeft());
+                    that.colTable && that.colTable.scrollTop(that.dataTable.scrollTop());
+                });
+                return this;
+            },
+            init:function(tableId,fixedRowNum,fixedColNum,width,height){
+                this.tableId = tableId;
+                this.table = $('#'+tableId);
+                this.fixedRowNum = fixedRowNum;
+                this.fixedColNum = fixedColNum;
+                this.width = width;
+                this.height = height;
+                this.buildBase().getHeight().getWidth().setStyleEvent().bindEvent();
+            },
+            getHeight: function () {
                 var rowNum = this.fixedRowNum,
                     showHeight = 0;
-                this.headTable.find('tr:lt(' + rowNum + ')').each(function (index, domElem) {
+                this.table.find('tr:lt(' + rowNum + ')').each(function (index, domElem) {
+                    var td = $(this).find('td:first-child,th:first-child');
                     if(index>rowNum-1){
                          return false;
                     }
-                    rowNum -= $(this).attr('rowspan')|| 0;
-                    showHeight += $(this).find('td,th').height();
+                    rowNum -= parseInt($(this).attr('rowspan')|| 0);
+                    showHeight += td.outerHeight(true);
                 })
+                this.showHeight = showHeight + 2;
+                return this;
+            },
+            getWidth:function(){
+                var colNum =  this.fixedColNum,
+                    showWidth = 0;
+                this.colTable.find('table').find('tr:eq('+this.fixedRowNum+')').find('td,th').each(function(index,domEle){
+                    if(index>colNum-1){
+                        return false;
+                    }
+                    showWidth += $(this).outerWidth(true);
+                    colNum -= parseInt($(this).attr('colspan')||0);
+                });
+                this.showWidth = showWidth + 2;
+                return this;
             },
             bindEvent: function () {
                 $('.cntntWin tr').live('mouseover', function (e) {
@@ -605,19 +678,11 @@ function setLoading(obj) {
                         trNum = 0;
                     if ($this.is(':checked')) {
                         trNum = $this.closest('tr').prevAll().size() + 1;
-                        $('.cntntWin tr').removeClass('selClr');
-                        $('.cntntWin tr:nth-child(' + trNum + ')').addClass('selClr');
+                        $('.cntntWin tr').removeClass('selCol');
+                        $('.cntntWin tr:nth-child(' + trNum + ')').addClass('selCol');
                     }
                 });
-                var divTableData = $("#ddtable_tableData");
-                var divTableHead = $("#ddtable_tableHead");
-                var divTableColumn = $("#ddtable_tableColumn");
-                divTableData.scroll(function () {
-                    divTableHead != null && divTableHead.scrollLeft(divTableData.scrollLeft());
-
-                    divTableColumn != null && divTableColumn.scrollTop(divTableData.scrollTop());
-                });
-                var maxLen = 0;
+                 var maxLen = 0;
                 $('.jyfw').each(function (index, e) {
                     var l = strlen($(this).text());
                     l > maxLen ? maxLen = l : '';

@@ -123,8 +123,8 @@ function freezeTable(table, freezeRowNum, freezeColumnNum, width, height) {
 	});
 	
 	divTableFix != null && divTableFix.css({ "overflow": "hidden", "position": "absolute", "z-index": "50" });
-	divTableHead != null && divTableHead.css({ "overflow": "hidden", "width": width - 17, "position": "absolute", "z-index": "45" });
-	divTableColumn != null && divTableColumn.css({ "overflow": "hidden", "height": height - 17, "position": "absolute", "z-index": "40" });
+	divTableHead != null && divTableHead.css({ "overflow": "hidden", "width": width, "position": "absolute", "z-index": "45" });
+	divTableColumn != null && divTableColumn.css({ "overflow": "hidden", "height": height, "position": "absolute", "z-index": "40" });
 	divTableData.css({ "overflow": "scroll", "width": width, "height": height, "position": "absolute" });
 	
 	divTableFix != null && divTableFix.offset(divTableLayout.offset());
@@ -181,18 +181,6 @@ $(document).ready(function() {
         var freezeColumnNum = table.attr('freezeColumnNum');
         if (typeof(freezeRowNum) != 'undefined' || typeof(freezeColumnNum) != 'undefined') {
             freezeTable(table, freezeRowNum || 0, freezeColumnNum || 0, 800-6, 400-28-26-55);
-            var flag = false;
-            $(window).resize(function() {
-                if (flag)
-                    return ;
-
-                setTimeout(function() {
-                    adjustTableSize(tableId, 800, 400);
-                    flag = false;
-                }, 100);
-
-                flag = true;
-            });
         }
     }
     fixedFns();
