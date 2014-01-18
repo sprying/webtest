@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style>
+     * {margin:0;padding:0;}
+	 .parentCls {margin:5px 60px 0;}
+	 .js-max-input {border: solid 1px #ffd2b2;background: #fffae5;padding: 0 10px 0 10px;font-size:20px;color: #ff4400}
+  </style>
+ </head>
+ <body>
+	<h2>输入框放大镜的demo</h2>
+	<div style="height:50px;"></div>
+
+	<div style="margin-left:56px; margin-top:6px;">我的方向是向上,允许输入长度11位</div>
+	<div class="parentCls">
+		<input type="text" class="inputElem" autocomplete = "off" maxlength="11"/>
+	</div>
+	
+	<div style="margin-left:56px; margin-top:6px;">我的方向是向右,允许输入长度18位</div>
+	<div class="parentCls">
+		<input type="text" class="inputElem1" autocomplete = "off" maxlength="18"/>
+	</div>
+	
+	<div style="margin-left:56px; margin-top:6px;">我的方向是向下,允许输入长度18位</div>
+	<div class="parentCls">
+		<input type="text" class="inputElem2" autocomplete = "off" maxlength="18"/>
+	</div>
+
+	 <script src="index.js"></script>
+	 <script>
+		 // 初始化
+		 $(function(){
+			new TextMagnifier({
+				inputElem: '.inputElem',
+				align: 'top'
+			});
+			new TextMagnifier({
+				inputElem: '.inputElem1',
+				align: 'right',
+				splitType: [4,4,4,6]
+			});
+			new TextMagnifier({
+				inputElem: '.inputElem2',
+				align: 'bottom',
+				splitType: [6,4,4,4]
+			});
+		 });
+	 </script>
+ </body>
+</html>
