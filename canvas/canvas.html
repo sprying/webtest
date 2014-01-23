@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+   <canvas id="canvas" width="800" height="700"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById('canvas'),
+    c = canvas.getContext('2d');
+    c.fillStyle = "red";
+    c.fillRect(100,100,200,150);
+
+   // c.fillStyle = "blue";
+    c.beginPath();
+    c.moveTo(400,100);
+    c.lineTo(500,300);
+    c.lineTo(700,400);
+    c.closePath();
+    c.fill();
+    c.strokeStyle = 'green';
+    c.lineWidth = 5;
+    c.stroke();
+
+    var img = new Image();
+    img.src='https://www.google.com.hk/images/srpr/logo11w.png';
+    img.onload = function(e){
+         e = e || window.event;
+        c.drawImage(e.target,100,300);
+    }
+
+    c.save();
+    c.fillStyle = "black";
+    c.font = ""+16+'px lighter';
+    c.fillText('(100,100)',80,90);
+    c.fillText('(300,100)',280,90);
+    c.fillText('(300,250)',280,265);
+    c.fillText('(100,250)',80,265);
+
+    c.fillText('(400,100)',380,90);
+    c.fillText('(500,300)',480,310);
+    c.fillText('(700,400)',680,410);
+
+    c.strokeStyle = 'black';
+    c.lineWidth = 1;
+    c.strokeRect(0,0,800,700);
+
+    c.save();
+
+    var grad = c.createLinearGradient(0,0,200,0);
+    grad.addColorStop(0, "white");
+    grad.addColorStop(0.5, "red");
+    grad.addColorStop(1, "black");
+
+    c.fillStyle = grad;
+    c.fillRect(100,500,400,200);
+</script>
+<canvas id="canvas2" width="600" height="700"></canvas>
+<script type="text/javascript">
+    var canvas2 = document.getElementById('canvas2'),
+        c2 = canvas2.getContext("2d");
+    c2.strokeStyle = "pink";
+    c2.lineWidth = 1;
+    c2.strokeRect(0, 0,600,700);
+</script>
+</body>
+</html>

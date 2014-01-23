@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="200"></canvas>
+<canvas id="canvas2" width="600" height="600"></canvas>
+<script type="text/javascript">
+    window.requestAnimationFrame = window.requestAnimationFrame ||
+                                    window.webkitRequestAnimationFrame ||
+                                    window.mozRequestAnimationFrame ||
+                                    window.oRequestAnimationFrame ||
+                                    window.msRequestAnimationFrame ||
+                                    function(fn){
+                                        setTimeout(fn,1000/60);
+                                    }
+    var canvas = document.getElementById('canvas'),
+            c=canvas.getContext('2d'),
+            x=0;
+    var drawIt = function(){
+        window.requestAnimationFrame(drawIt);
+        c.clearRect(0,0,canvas.width,canvas.height);
+        c.fillStyle = 'red';
+        c.fillRect(x,50,50,100);
+        x +=5;
+    };
+    window.requestAnimationFrame(drawIt);
+
+    var canvas2= document.getElementById('canvas2');
+    c2 = canvas2.getContext('2d');
+    c2.strokeRect(0,0,300,300);
+
+    c2.rotate(30*Math.PI/180);
+    c2.strokeRect(0,0,300,300);
+</script>
+</body>
+</html>

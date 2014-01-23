@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <canvas id="canvas" width="500" height="500"></canvas>
+ <canvas id="canvas2" width="500" height="500"></canvas>
+ <canvas id="canvas3" width="400" height="500"></canvas>
+<script type="text/javascript">
+    var data= [2,3,6,5];
+    var canvas = document.getElementById('canvas');
+    var c = canvas.getContext('2d');
+    c.fillStyle = 'white';
+    c.fillRect(0,0,500,500);
+
+    c.fillStyle = '#ff8000';
+    for(var i= 0,len=data.length;i<len;i++){
+        c.fillRect(50+i*100,500 - 30 - data[i]*50 ,50,data[i]*50);
+    }
+
+    c.fillStyle = 'black';
+    c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(25,15);
+    c.lineTo(25,470);
+    c.lineTo(470,470);
+    c.stroke();
+
+    for(var i= 0,len=data.length;i<=len;i++){
+        c.fillText((4-i)*100,4,70 + i*100);
+        c.beginPath();
+        c.moveTo(25,70+i*100);
+        c.lineTo(35,70+i*100);
+        c.stroke();
+    }
+    for(var i= 0,len=data.length;i<len;i++){
+        c.fillText((i+1)*100,25 + (i+1)*100,485);
+        c.beginPath();
+        c.moveTo(25 + (i+1)*100,470);
+        c.lineTo(25 + (i+1)*100,460);
+        c.stroke();
+    }
+
+    var data = [20,30,60,50],
+            canvas1= document.getElementById('canvas2'),
+            c2 = canvas1.getContext('2d');
+    //a list of colors
+    var colors = [ "orange", "green", "blue", "yellow", "teal"];
+
+    //calculate total of all data
+    var total = 0;
+    for(var i=0; i<data.length; i++) {
+        total += data[i];
+    }
+
+    var startAngle = 0;
+    for(var i=0;i<data.length;i++){
+        var fraction = data[i]/total;
+        var endAngle = fraction * Math.PI*2;
+        var big = false;
+        if(endAngle > Math.PI) big = true;
+        endAngle = startAngle + endAngle;
+
+        c2.beginPath();
+        c2.moveTo(250,250);
+        c2.arc(250,250,150,startAngle,endAngle,big);
+        var grad = c2.createRadialGradient(250,250,10,250,250,250);
+        grad.addColorStop(0,'white');
+        grad.addColorStop(1,colors[i]);
+        c2.fillStyle = grad;
+//        c2.fillStyle = colors[i];
+        c2.lineTo(250,250);
+        c2.fill();
+        c2.strokeStyle = 'black';
+        c2.lineWidth =1;
+        c2.stroke();
+
+        startAngle = endAngle;
+    }
+
+    //draw centered text
+    c2.fillStyle = "black";
+    c2.font = "24pt sans-serif";
+    var text = "Sales Data from 2025";
+    var metrics = c2.measureText(text);
+    c2.fillText(text, (500-metrics.width)/2, 450);
+    c2.strokeRect(0,0,500,500);
+
+    var canvas3 = document.getElementById('canvas3');
+    var c3 = canvas3.getContext('2d');
+    c3.lineWidth = 1;
+    c3.strokeRect(0,0,400,500);
+    var img = new Image();
+    img.onload=function(){
+        var pat1 = c3.createPattern(img,'repeat');
+        c3.fillStyle = pat1;
+        c3.fillRect(50,50,100,100);
+
+        var pat2 = c3.createPattern(img,'repeat-y');
+        c3.fillStyle = pat2;
+        c3.translate(200,0);
+        c3.fillRect(0,50,100,100);
+    }
+    img.src = 'http://joshondesign.com/p/books/canvasdeepdive/images/tile.png';
+</script>
+</body>
+</html>
