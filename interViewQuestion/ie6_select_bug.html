@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <title>简单菜单</title>
+    <!--
+    提供定位函数，用iframe作载体，不会被select挡住
+    By Fason(2003-5-21)
+    -->
+    <style id=s>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            position:absolute;
+            z-index:100;
+            width:100;
+            height:130;
+            background-color:#d2e8ff;
+            border:1 solid black;
+        }
+        div{cursor:hand;font-size:12px;}
+        a{text-decoration:none;color:red;font-size:12px}
+    </style>
+</head>
+<body>
+<script>
+    window.onload = function (){
+        var shtml=div1.innerHTML;
+        var ifm=document.createElement("iframe")
+        ifm.style.width=div1.offsetWidth
+        ifm.style.height=div1.offsetHeight
+        ifm.name="123";
+        div1.innerHTML=""
+        div1.appendChild(ifm)
+        window.frames[0].document.write(s.outerHTML+"<body leftmargin=0 topmargin=0>"+shtml+"</body>")
+    }
+
+    function show(){
+        with(document.all.img1){
+            x=offsetLeft;
+            y=offsetTop;
+            objParent=offsetParent;
+            while(objParent.tagName.toUpperCase()!= "BODY"){
+                x+=objParent.offsetLeft;
+                y+=objParent.offsetTop;
+                objParent = objParent.offsetParent;
+            }
+            y+=offsetHeight-1
+            with(document.all.div1.style){
+                pixelLeft=x
+                pixelTop=y
+                visibility=''
+            }
+        }
+    }
+    function hide(){
+        document.all.div1.style.visibility='hidden'
+    }
+</script>
+<img id=img1 onmouseover="show()" onmouseout="hide()" src="../images/demo.jpg.jpeg"><br><select></select>
+<div id=div1 onmouseover="style.visibility=''" onmouseout="style.visibility='hidden'" style="visibility:hidden;position: absolute;top:200px;">
+    <div href="http://www.csdn.net" onmouseover="style.backgroundColor='highlight'" onmouseout="style.backgroundColor=''" onclick="window.open(href)">中国程序员</div>
+    <div href="http://www.sohu.com" onmouseover="style.backgroundColor='highlight'" onmouseout="style.backgroundColor=''" onclick="window.open(href)">sohu</div>
+</div>
+</body>
+</html>
+
