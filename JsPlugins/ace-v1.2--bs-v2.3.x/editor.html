@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Inbox - Ace Admin</title>
+
+    <meta name="description" content="Mailbox with some customizations as described in docs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- basic styles -->
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="assets/js/ace-extra.min.js"></script>
+</head>
+
+<body>
+<form id="id-message-form" class="form-horizontal message-form">
+    <div class="control-group">
+        <label class="control-label" for="form-field-recipient">Recipient:</label>
+
+        <div class="controls">
+										<span class="input-icon">
+											<input type="email" name="recipient" id="form-field-recipient" data-value="alex@doe.com" value="alex@doe.com" placeholder="Recipient(s)" />
+											<i class="icon-user"></i>
+										</span>
+        </div>
+    </div>
+
+    <div class="hr hr-16 dotted"></div>
+
+    <div class="control-group">
+        <label class="control-label" for="form-field-subject">Subject:</label>
+
+        <div class="controls">
+										<span class="input-icon span8">
+											<input maxlength="100" type="text" class="span12" name="subject" id="form-field-subject" placeholder="Subject" />
+											<i class="icon-comment-alt"></i>
+										</span>
+        </div>
+    </div>
+
+    <div class="hr hr-16 dotted"></div>
+
+    <div class="control-group">
+        <label class="control-label">
+            <span class="inline space-16 hidden-480"></span>
+            Message:
+        </label>
+
+        <div class="controls">
+            <div class="wysiwyg-editor"></div>
+        </div>
+    </div>
+
+    <div class="hr hr-16 dotted"></div>
+
+    <div class="control-group no-margin-bottom">
+        <label class="control-label">Attachments:</label>
+
+        <div class="controls">
+            <div id="form-attachments">
+                <input type="file" name="attachment[]" />
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="align-right">
+            <button id="id-add-attachment" type="button" class="btn btn-small btn-danger">
+                <i class="icon-paper-clip bigger-140"></i>
+                Add Attachment
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<script src="assets/js/bootstrap-tag.min.js"></script>
+<script src="assets/js/jquery.hotkeys.min.js"></script>
+<script src="assets/js/bootstrap-wysiwyg.min.js"></script>
+<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+<!-- ace scripts -->
+
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+<script type="text/javascript">
+    $('.wysiwyg-editor').ace_wysiwyg({
+        toolbar:
+                [
+                    'bold',
+                    'italic',
+                    'strikethrough',
+                    'underline',
+                    null,
+                    'justifyleft',
+                    'justifycenter',
+                    'justifyright',
+                    null,
+                    'createLink',
+                    'unlink',
+                    null,
+                    'undo',
+                    'redo'
+                ]
+    }).prev().addClass('wysiwyg-style1');
+
+</script>
+</body>
+</html>
