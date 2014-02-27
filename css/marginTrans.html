@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        /*margin的值向父传递*/
+        #wrap{
+            background: #e0f2be;
+            width: 80px;
+            height: 80px;
+            overflow: auto;
+        }
+        #container{
+            *margin-top: 50px;
+        }
+        #firstDiv{
+            width: 50px;
+            height: 50px;
+            background: #aa7700;
+            margin: 50px 0 0 50px;
+            *margin: 0 0 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="background: #7F7F7F;width: 100px;height: 100px">
+        <div id="firstDiv"></div>
+        <div style="width: 50px;height: 50px;background: #ff0000;"></div>
+    </div>
+</body>
+</html>

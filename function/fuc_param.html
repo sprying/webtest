@@ -4,15 +4,14 @@
     <title></title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <script type="text/javascript">
-        // 函数传参引用
+        // 函数内改变引入实参
         var oo = {x:1,y:2,get z(){
             return 3;
         }}
         function fns(obj){
-            obj.h = 4;
+            !obj.h ? (obj.h = 4):(obj.h++);
         }
         fns(oo);
-
     </script>
 
 </head>

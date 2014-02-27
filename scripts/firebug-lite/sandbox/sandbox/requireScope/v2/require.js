@@ -45,12 +45,12 @@ var require, define;
     }
     
         /**
-     * Calls a method on a plugin. The obj object should have two property,
-     * name: the name of the method to call on the plugin
-     * args: the arguments to pass to the plugin method.
+     * Calls a method on a browserPlugins. The obj object should have two property,
+     * name: the name of the method to call on the browserPlugins
+     * args: the arguments to pass to the browserPlugins method.
      */
     function callPlugin(prefix, context, obj) {
-        //Call the plugin, or load it.
+        //Call the browserPlugins, or load it.
         var plugin = s.plugins.defined[prefix], waiting;
         if (plugin) {
             plugin[obj.name].apply(null, obj.args);
@@ -316,15 +316,15 @@ var require, define;
         context = s.contexts[contextName];
 
         if (name) {
-                        // Pull off any plugin prefix.
+                        // Pull off any browserPlugins prefix.
             index = name.indexOf("!");
             if (index !== -1) {
                 pluginPrefix = name.substring(0, index);
                 name = name.substring(index + 1, name.length);
             } else {
-                //Could be that the plugin name should be auto-applied.
-                //Used by i18n plugin to enable anonymous i18n modules, but
-                //still associating the auto-generated name with the i18n plugin.
+                //Could be that the browserPlugins name should be auto-applied.
+                //Used by i18n browserPlugins to enable anonymous i18n modules, but
+                //still associating the auto-generated name with the i18n browserPlugins.
                 pluginPrefix = context.defPlugin[name];
             }
 
@@ -522,7 +522,7 @@ var require, define;
             context.defined[name] = callback;
         }
 
-        //If a pluginPrefix is available, call the plugin, or load it.
+        //If a pluginPrefix is available, call the browserPlugins, or load it.
                 if (pluginPrefix) {
             callPlugin(pluginPrefix, context, {
                 name: "require",
@@ -593,10 +593,10 @@ var require, define;
     }
 
         /**
-     * Sets up a plugin callback name. Want to make it easy to test if a plugin
+     * Sets up a browserPlugins callback name. Want to make it easy to test if a browserPlugins
      * needs to be called for a certain lifecycle event by testing for
      * if (s.plugins.onLifeCyleEvent) so only define the lifecycle event
-     * if there is a real plugin that registers for it.
+     * if there is a real browserPlugins that registers for it.
      */
     function makePluginCallback(name, returnOnTrue) {
         var cbs = s.plugins.callbacks[name] = [];
@@ -611,25 +611,25 @@ var require, define;
     }
 
     /**
-     * Registers a new plugin for require.
+     * Registers a new browserPlugins for require.
      */
     req.plugin = function (obj) {
         var i, prop, call, prefix = obj.prefix, cbs = s.plugins.callbacks,
             waiting = s.plugins.waiting[prefix], generics,
             defined = s.plugins.defined, contexts = s.contexts, context;
 
-        //Do not allow redefinition of a plugin, there may be internal
-        //state in the plugin that could be lost.
+        //Do not allow redefinition of a browserPlugins, there may be internal
+        //state in the browserPlugins that could be lost.
         if (defined[prefix]) {
             return req;
         }
 
-        //Save the plugin.
+        //Save the browserPlugins.
         defined[prefix] = obj;
 
-        //Set up plugin callbacks for methods that need to be generic to
+        //Set up browserPlugins callbacks for methods that need to be generic to
         //require, for lifecycle cases where it does not care about a particular
-        //plugin, but just that some plugin work needs to be done.
+        //browserPlugins, but just that some browserPlugins work needs to be done.
         generics = ["newContext", "isWaiting", "orderDeps"];
         for (i = 0; (prop = generics[i]); i++) {
             if (!s.plugins[prop]) {
@@ -648,7 +648,7 @@ var require, define;
             }
         }
 
-        //If there are waiting requests for a plugin, execute them now.
+        //If there are waiting requests for a browserPlugins, execute them now.
         if (waiting) {
             for (i = 0; (call = waiting[i]); i++) {
                 if (obj[call.name]) {
@@ -741,7 +741,7 @@ var require, define;
     /**
      * Trace down the dependencies to see if they are loaded. If not, trigger
      * the load.
-     * @param {String} pluginPrefix the plugin prefix, if any associated with the name.
+     * @param {String} pluginPrefix the browserPlugins prefix, if any associated with the name.
      *
      * @param {String} name: the name of the module that has the dependencies.
      *
@@ -770,7 +770,7 @@ var require, define;
                     //Reset the start time to use for timeouts
                     context.startTime = (new Date()).getTime();
 
-                    //If a plugin, call its load method.
+                    //If a browserPlugins, call its load method.
                     if (dep.prefix) {
                                                 callPlugin(dep.prefix, context, {
                             name: "load",
@@ -991,7 +991,7 @@ var require, define;
     };
 
     /**
-     * Splits a name into a possible plugin prefix and
+     * Splits a name into a possible browserPlugins prefix and
      * the module name. If baseName is provided it will
      * also normalize the name via require.normalizeName()
      * 
@@ -1512,7 +1512,7 @@ var require, define;
             //we want -- execute it whenever it is finished downloading. Only
             //Helps Firefox 3.6+
             //Allow some URLs to not be fetched async. Mostly helps the order!
-            //plugin
+            //browserPlugins
             if (!s.skipAsync[url]) {
                 node.async = true;
             }

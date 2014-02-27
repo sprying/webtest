@@ -120,10 +120,11 @@ function freezeTable(table, freezeRowNum, freezeColumnNum, width, height) {
 		
 		divTableColumn != null && divTableColumn.scrollTop(divTableData.scrollTop());
 	});
-	
+    var isMac = !!(navigator.userAgent.indexOf("Mac",0)+1),
+        red =  isMac?0:17;
 	divTableFix != null && divTableFix.css({ "overflow": "hidden", "position": "absolute", "z-index": "50" });
-	divTableHead != null && divTableHead.css({ "overflow": "hidden", "width": width - 17, "position": "absolute", "z-index": "45" });
-	divTableColumn != null && divTableColumn.css({ "overflow": "hidden", "height": height - 17, "position": "absolute", "z-index": "40" });
+	divTableHead != null && divTableHead.css({ "overflow": "hidden", "width": width - red, "position": "absolute", "z-index": "45" });
+	divTableColumn != null && divTableColumn.css({ "overflow": "hidden", "height": height - red, "position": "absolute", "z-index": "40" });
 	divTableData.css({ "overflow": "scroll", "width": width, "height": height, "position": "absolute" });
 	
 	divTableFix != null && divTableFix.offset(divTableLayout.offset());
@@ -141,15 +142,17 @@ function freezeTable(table, freezeRowNum, freezeColumnNum, width, height) {
  * 	height - 表格的滚动区域高度
  */
 function adjustTableSize(table, width, height) {
-	var tableId;
+    var isMac = !!(navigator.userAgent.indexOf("Mac",0)+1),
+        red =  isMac?0:17;
+    var tableId;
 	if (typeof(table) == 'string')
 		tableId = table;
 	else
 		tableId = table.attr('id');
 	
 	$("#" + tableId + "_tableLayout").width(width).height(height);
-	$("#" + tableId + "_tableHead").width(width - 17);
-	$("#" + tableId + "_tableColumn").height(height - 17);
+	$("#" + tableId + "_tableHead").width(width - red);
+	$("#" + tableId + "_tableColumn").height(height - red);
 	$("#" + tableId + "_tableData").width(width).height(height);
 }
 

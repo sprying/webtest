@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+<body>
+<ul>
+
+</ul>
+ <script type="text/javascript">
+     /**
+      * 结果，是绑定无效果
+      * @type {DocumentFragment}
+      */
+      var frag = document.createDocumentFragment();
+      for(var x = 0; x < 10; x++) {
+          var li = document.createElement("li");
+          li.innerHTML = "List item " + x;
+          frag.appendChild(li);
+      }
+//      frag.appendChild(document.createElement('<div id="fragChild" style="width: 200px;height: 200px;background: pink;border-radius: 9px;-webkit-border-radius: 9px;"></div>'));
+     var dom = document.getElementsByTagName('li')[0];
+      frag.addEventListener('click',function(event){console.log(event.target.TagName)})
+     document.getElementsByTagName('ul')[0].appendChild(frag);
+ </script>
+</body>
+</html>

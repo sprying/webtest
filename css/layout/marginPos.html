@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        /*最普遍的做法，两旁的绝对定位，中间设置margin*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div_left{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 198px;
+            height: 500px;
+            border: 1px salmon solid;
+        }
+        #div_right{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 298px;
+            height: 500px;
+            border: 1px sandybrown solid;
+            background: #9f9f9f;
+        }
+        #div_center{
+            position: static;
+            margin: 0 300px 0 200px;
+            height: 500px;
+            border: 1px seagreen solid;
+        }
+    </style>
+</head>
+<body>
+<div id="div_left">aa</div>
+<div id="div_center">
+    到目前为止，本书参照ECMAScript 3和ECMAScript 5中的标准规范完整的讨论了JavaScript这门语言。从现在起，本章将开始讨论JavaScript的子集和超集。其中子集的内容大部分都是出于安全考虑，只有使用这门语言的一个安全的子集编写脚本，才能让代码执行的更安全、更稳定，比如如何更安全的执行一段由不可信第三方提供的广告代码。§11.1会对这个子集作简要介绍。
+
+    ECMAScript 3标准是1999年颁布的，十年后，也就是2009年才更新到了ECMAScript 5。JavaScript的作者Brendan Eich在这十年间不断地改进这门语言（ECMAScript 标准规范是允许对其作任何扩充的），同时，伴随着Mozilla项目的推进，在Firefox 1.0、1.5、2、3和3.5版本中分别发布了JavaScript 1.5、1.6、1.7、1.8和1.8.1版本。这些JavaScript的扩展版本中的很多新特性已经融入到了ECMAScript 5中，还有很多特性依然是非标准的，但这些特性将有很大一部分会融入到ECMAScript的将来版本中。</div>
+<div id="div_right">cc</div>
+</body>
+</html>

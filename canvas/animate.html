@@ -19,11 +19,11 @@
             c=canvas.getContext('2d'),
             x=0;
     var drawIt = function(){
-        window.requestAnimationFrame(drawIt);
         c.clearRect(0,0,canvas.width,canvas.height);
         c.fillStyle = 'red';
         c.fillRect(x,50,50,100);
         x +=5;
+        window.requestAnimationFrame(drawIt);
     };
     window.requestAnimationFrame(drawIt);
 

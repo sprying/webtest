@@ -2961,10 +2961,10 @@ var source=sourceMap[url]=xhr.responseText;
 return source
 };
 var fetchProxyResource=function(url){if(sourceMap.hasOwnProperty(url)){return sourceMap[url]
-}var proxyURL=Env.Location.baseDir+"plugin/proxy/proxy.php?url="+encodeURIComponent(url);
+}var proxyURL=Env.Location.baseDir+"browserPlugins/proxy/proxy.php?url="+encodeURIComponent(url);
 var response=fetchResource(proxyURL);
 try{var data=eval("("+response+")")
-}catch(E){return"ERROR: Firebug Lite Proxy plugin returned an invalid response."
+}catch(E){return"ERROR: Firebug Lite Proxy browserPlugins returned an invalid response."
 }var source=data?data.contents:"";
 return source
 }

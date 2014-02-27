@@ -3,7 +3,7 @@
 (function(){
 // ************************************************************************************************
 
-// TODO: plugin problem with Dev panel
+// TODO: browserPlugins problem with Dev panel
 // TODO: Dev panel doesn't work in persistent mode
 // TODO: XHR listener breaks Firebug in Chrome when in persistent mode 
 
@@ -168,7 +168,7 @@ window.FBDev =
         // ****************************************************************************************
         // Plugin Interface
         
-        "lite/plugin.js", // must be the last module loaded
+        "lite/browserPlugins.js", // must be the last module loaded
         
         // ****************************************************************************************
         // Bootstrap

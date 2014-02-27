@@ -1,0 +1,27 @@
+
+{
+    "curMember": {
+        "id": "1",
+        "name": "Tom",
+        "msgList": [
+            {
+                "msgId":"",
+                "name":"Tom",
+                "headPic":"resources/default/img/g3.jpeg",
+                "isServe":"1",
+                "time":"2013-3-6",
+                "content":"hi,nice to meet you!"
+            }]
+    },
+    "msgTemplate": {},
+    "contactList": [
+        {
+            "id": "2",
+            "name": "Lily",
+            "headPic": "resources/default/img/g.jpeg",
+            "lastMsg": "xxx",
+            "lastDate": "Tue",
+            "unWatchedSum": "3"
+        }
+    ]
+}

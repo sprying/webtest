@@ -1,13 +1,10 @@
 /**
- * Created with JetBrains WebStorm.
- * User: Administrator
- * Date: 13-3-18
- * Time: 下午11:09
- * To change this template use File | Settings | File Templates.
+ * @fileOverview 封装繁琐的内部操作，提供简化的Api
+ * @author <a href="mailto:sprying.fang@gmail.com">sprying</a>
  */
 /**
- * ie equals one of false|6|7|8|9 values, ie5 is fucked down.
- * Based on the method: https://gist.github.com/527683
+ * IE版本检测 Based on the method: https://gist.github.com/527683
+ * ie版本号，6-最新版本；false时，表示非IE浏览器
  */
 var ie = function () {
     var v = 4, //原作者的此处代码是3，考虑了IE5的情况，我改为4。
@@ -20,9 +17,9 @@ var ie = function () {
 }();
 
 /**
- * @desc  新建一原型为p的对象
- * @param p：为一函数
- * @returns {*} 返回新建对象
+ * 原型式继承,生成的新对象继承传入对象
+ * @param {Object} p 原对象
+ * @returns {Object} 返回新建对象
  */
 function inherit(p) {
     if (p == null)
@@ -34,7 +31,8 @@ function inherit(p) {
     if (t !== "object" && t !== "function")
         throw TypeError();
     function f() {
-    };
+    }
+
     f.prototype = p;
     return new f();
 }
@@ -72,6 +70,7 @@ Function.prototype.bind || (Function.prototype.bind = function (that) {
                 boundArgs.concat(slice.call(arguments)));
         }
     }
+
     // NOTICE: The function.length is not writable.
     bound.length = Math.max(target.length - boundArgs.length, 0);
 
@@ -80,21 +79,21 @@ Function.prototype.bind || (Function.prototype.bind = function (that) {
 
 
 /**
- * @title 获取参数类型
- * @desc 对象直接量、Object.create、自定义构造函数的类属性皆为Object;
+ * 获取参数类型
+ * 对象直接量、Object.create、自定义构造函数的类属性皆为Object;
  * 识别出原生类型 （内置构造函数和宿主对象）
- * @param o
- * @returns {string}
+ * @param {*} o 所有的数据类型
+ * @returns {string} 类型名
  */
 function classOf(o) {
     if (o === null) return "Null";
     if (o === undefined) return "Undefined";
-    return Object.prototype.toString.call(o).slice(8, -1);
+    return Object.prototype.toString.call(o).slice(8, -1);//[Object Array]
 }
 
 /**
- * @desc 返回函数的名字，可能为空串；不是函数，返回null
- * @returns {*}
+ * 返回函数的名字，可能为空串
+ * @returns {String} 函数名
  */
 Function.prototype.getName = function () {
     if ("name" in this) return this.name;
@@ -102,9 +101,9 @@ Function.prototype.getName = function () {
 };
 
 /**
- * @desc 以字符串形式返回o的类型
- * @param o
- * @returns {*}
+ * 以字符串形式返回o的类型
+ * @param {*} o 任意类型的变量
+ * @returns {String} 类型名称
  */
 function type(o) {
     var t, c, n;
@@ -143,9 +142,11 @@ Range.prototype = {
 };
 
 /**
- * @title 集合类
- * @desc 有添加、删除、是否包括方法
+ * @name Set
+ * @class Set类，仿照Java中的Set，故Set内的元素不会重复，有添加、删除、是否包括方法
  * @constructor
+ * @example
+ * var set = new Set(1,"set contains string",function(){},[],{});
  */
 function Set() {
     this.values = {
@@ -155,8 +156,8 @@ function Set() {
     this.add.apply(this, arguments);
 }
 /**
- * @desc 添加一个个实参“值”，入实例中，以对象形式保存“属性：值”
- * @returns {*} 返还该对象
+ * 添加一个个实参“值”，在实例中，以对象形式保存“属性：值”
+ * @returns {Set} 返回当前对象
  */
 Set.prototype.add = function () {
     for (var i = 0, len = arguments.length; i < len; i++) {
@@ -170,8 +171,8 @@ Set.prototype.add = function () {
     return this;
 };
 /**
- * @desc 由值定位属性名，删除values对象中相应属性
- * @returns {*}返还该对象
+ * 删除指定的value的Set元素，由值定位属性名，删除values对象中相应属性
+ * @returns {Set}返还该对象
  */
 Set.prototype.remove = function () {
     for (var i = 0, len = arguments.length; i < len; i++) {
@@ -184,32 +185,36 @@ Set.prototype.remove = function () {
     }
 };
 /**
- * @desc 根据实参值定位属性名，查询values对象是否有相应属性
- * @param val
- * @returns {boolean}
+ * Set中是否存在value的元素，根据实参值定位属性名，查询values对象是否有相应属性
+ * @param {*} val 待检测的元素
+ * @returns {boolean} 是否存在
  */
 Set.prototype.contains = function (val) {
     return this.values.hasOwnProperty(Set._v2s(val));
 };
+/**
+ * Set的元素个数
+ * @returns {number} set中的元素个数
+ */
 Set.prototype.size = function () {
     return this.n;
 };
 /**
- * @desc 对values对象每一自身属性值，执行f(属性值)函数
- * @param f 函数引用
- * @param context函数执行的上下文h
+ * 对set每个元素，执行函数，此函数的第一个参数是当前元素
+ * @param {function} f 函数引用
+ * @param {object} [context=null] 函数执行的上下文h
  */
 Set.prototype.foreach = function (f, context) {
     for (var s in this.values) {
         if (this.values.hasOwnProperty(s)) {
-            f.call(context, this.values[s]);
+            f.call(context || {}, this.values[s]);
         }
     }
 };
 /**
- * @desc 有值定位属性名，没有this,故可提出来作类的方法
- * @param val
- * @returns {string}
+ * 生成各种类型值的唯一索引
+ * @param {*} val 各种类型值
+ * @returns {string} 索引名
  * @private
  */
 Set._v2s = function (val) {
@@ -240,6 +245,9 @@ Set._v2s = function (val) {
         return o[prop];
     }
 };
+/**
+ * 自增的起始值
+ */
 Set._v2s.next = 100;
 
 /**
@@ -262,31 +270,56 @@ try {
     });
 } catch (ex) {
     console.log(ex);
-    console.log("Object.prototype.extend定义失败");
+    console.log("创建Object.prototype.extend失败");
+}
+
+
+/**
+ * Copy the enumerable properties of p to o, and return o.
+ * If o and p have a property by the same name, o's property is overwritten.
+ * This function does not handle getters and setters or copy attributes.
+ * @param {Object} o
+ * @param {Object} p
+ * @returns {Object}
+ */
+function copy(o, p) {
+    if (p == null) throw TypeError;
+    for (var prop in p) {
+        o[prop] = p[prop];
+    }
+    return o;
 }
 
 /**
- * 覆盖一对象属性到另一对象
- * @param o
- * @param p
+ * 深拷贝
+ * @param {Object} o
+ * @param {Object} p
+ * @returns {Object}
  */
-function extend(o, p) {
+function deepCopy(o, p) {
     if (p == null) throw TypeError;
-    for (var val in p) {
-        o[val] = p[val];
+    for (var prop in p) {
+        var type = typeof prop;
+        if (type == "object") {
+            o[prop] = (prop.prototype.constructor === Array) ? [] : {};
+            arguments.callee(o[prop], p[prop]);
+        } else {
+            o[prop] = p[prop];
+        }
     }
-};
+    return o;
+}
 
 /**
  * 扩展Set的标准转换方法
  */
-extend(Set.prototype, {
+copy(Set.prototype, /** @lends Set.prototype*/ {
     toString: function () {
         var s = "{",
             i = 0;
         this.foreach(function (v) {
             s += (i++ > 0 ? "," : "") + v;
-        }, {});
+        });
         return s += "}";
     },
     toLocaleString: function () {
@@ -297,7 +330,7 @@ extend(Set.prototype, {
                 v = v.toLocaleString();
             }
             s += (i++ >= 0 ? "," : "") + v;
-        }, {})
+        })
         return s += "}";
     },
     toArray: function () {
@@ -307,7 +340,12 @@ extend(Set.prototype, {
         });
         return a;
     }
-});
+})
+/**
+ * 比较两Set的对象是否相等，相等最基本条件是包含一样的元素
+ * @param {Set} that 要比较的对象
+ * @returns {boolean} 是否相等
+ */
 Set.prototype.equals = function (that) {
     if (this === that) return true;
     if (!(that instanceof Set))  return false;
@@ -324,7 +362,7 @@ Set.prototype.equals = function (that) {
 }
 
 /**
- * @desc 实参对象表示类的每个实例的名字和值
+ * 实参对象表示类的每个实例的名字和值
  * @param namesToValues
  * @returns {Function}
  */
@@ -360,11 +398,23 @@ function enumeration(namesToValues) {
     };
     return enumeration;
 }
+/**
+ * 插入Html元素
+ * @param  {Node} parent 父元素
+ * @param {Node} child 插入元素
+ * @param {Number} n 插入位置
+ */
 function insertAt(parent, child, n) {
     if (n < 0 || n > parent.childNodes.length) throw new Error('invaild index');
     if (n === parent.childNodes.length) parent.appendChild(child);
-    else parent.insertBefore(parent.childNodes[n]);
+    else child.insertBefore(parent.childNodes[n]);
 }
+/**
+ * Dom元素的文本值
+ * @param {Node} element Dom元素
+ * @param {String} value 设置的文本值
+ * @returns {*}
+ */
 function textContent(element, value) {
     var content = element.textContent;
     if (value === undefined) {
@@ -373,6 +423,12 @@ function textContent(element, value) {
         content ? element.textContent = value : element.innerText = value;
     }
 }
+/**
+ * 绑定事件
+ * @function
+ * @type Function
+ * @param {String} 事件类型
+ */
 var addEvent = (function () {
     if (window.addEventListener) {
         return function (type, element, fns) {
@@ -380,14 +436,17 @@ var addEvent = (function () {
         }
     }
     if (window.attachEvent) {
-        return function (tyle, element, fns) {
-            element.attachEvent("on" + tyle, fns);
+        return function (type, element, fns) {
+            element.attachEvent("on" + type, fns);
         }
     }
-    return function (tyle, element, fns) {
-        element["on" + tyle] = fns;
+    return function (type, element, fns) {
+        element["on" + type] = fns;
     }
 })();
+/**
+ * Firefox的Dom添加innerText属性支持
+ */
 (function () {
     if (!(/Firefox/.test(window.navigator.userAgent))) return;
 
@@ -411,6 +470,12 @@ var addEvent = (function () {
         HTMLElement.prototype.__defineSetter__("innerText", innerTextSetter);
     }
 })();
+/**
+ * 从指定的开始位置截取数组到末尾
+ * @param seq {Array|Object} 数组或类数组
+ * @param begIndex {Number} 截取的
+ * @returns {Array} {Array} 数组
+ */
 Array.fromSequence = function (seq, begIndex) {
     var arr = [];
     var arrayIndex = 0;
@@ -453,6 +518,7 @@ function makeSortable(table) {
 }
 /**
  * 获取浏览器的类型和版本信息
+ * @type {Object}
  */
 var browser = (function () {
     var s = navigator.userAgent.toLowerCase()
@@ -604,13 +670,13 @@ var EventUtil = {
 };
 
 /**
- * 类数组判断
- * @param o
+ * 判断类数组
+ * @param {*} o
  * @returns {boolean}
  */
-function isArrayLike(o){
-    if(o &&
-        typeof o ==='object' &&
+function isArrayLike(o) {
+    if (o &&
+        typeof o === 'object' &&
         o.nodeType != 3 &&
         isFinite(o.length) &&
         o.length >= 0 &&
@@ -620,17 +686,27 @@ function isArrayLike(o){
     else
         return false;
 }
-function isArray(o){
+/**
+ * 判断数组
+ * @param {*} o
+ * @returns {boolean}
+ */
+function isArray(o) {
     return typeof o === "object" &&
         Object.prototype.toString.call(o) === "[object Array]";
 }
+/**
+ * 判断函数
+ * @param o
+ * @returns {boolean}
+ */
 var isFunction = function (o) {
     return Object.prototype.toString.call(o) === "[object Function]";
 };
 /**
  * 早期的ie有bug，即屏蔽的不可枚举属性，不存在for in中
  */
-Object.keys || (Object.keys = (function() {
+Object.keys || (Object.keys = (function () {
     var hasDontEnumBug = !{toString: ''}.propertyIsEnumerable('toString');
     var DontEnums = [
         'toString',
@@ -643,7 +719,7 @@ Object.keys || (Object.keys = (function() {
     ];
     var DontEnumsLength = DontEnums.length;
 
-    return function(o) {
+    return function (o) {
         if (o !== Object(o)) {
             throw new TypeError(o + ' is not an object');
         }
@@ -666,92 +742,31 @@ Object.keys || (Object.keys = (function() {
 
         return result;
     };
-    function addEvent(element, type, handler) {
-        Event.prototype.getTarget = function () {
-            return this.target || this.srcElement;
-        };
-        Event.prototype.preventDefault = function () {
-            if (this.preventDefault)
-                this.preventDefault();
-            else
-                this.returnValue = false;
-        };
-        Event.prototype.stopPropagation = function () {
-            if (this.stopPropagation) {
-                this.stopPropagation();
-            } else {
-                this.cancelBubble = true;
-            }
-        };
-        Event.prototype.getRelatedTarget = function () {
-            if (this.relatedTarget) {
-                return this.relatedTarget;
-            } else if (this.toElement) {
-                return this.toElement;
-            } else if (this.fromElement) {
-                return this.fromElement;
-            } else {
-                return null;
-            }
-        };
-        Event.prototype.getButton = function () {
-            if (document.implementation.hasFeature("MouseEvents", "2.0")) {
-                return this.button;
-            } else {
-                switch (this.button) {
-                    case 0:
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                        return 0;
-                    case 2:
-                    case 6:
-                        return 2;
-                    case 4:
-                        return 1;
-                }
-            }
-        };
-        Event.prototype.getWheelDelta = function () {
-            if (this.wheelDelta) {
-                return  (browser.name == "opera" && browser.version < 9.5) ?
-                    -this.wheelDelta : this.wheelDelta;
-            } else {
-                return -this.detail * 40;
-            }
-        };
-        Event.prototype.getCharCode = function () {
-            if (typeof this.charCode == "number") {
-                return this.charCode;
-            } else {
-                return this.keyCode;
-            }
-        };
-
-        var event = 0;
-        var innerHanlder = function (eve) {
-            event = eve ? eve : window.event;
-            handler.call(element, event);
-        };
-        if (element.addEventListener) {
-            element.addEventListener(type, innerHanlder, false);
-        } else if (element.attachEvent) {
-            element.attachEvent("on" + type, innerHanlder);
-        } else {
-            element["on" + type] = innerHanlder;
-        }
-    }
 })());
 
-(function(window, undefined) {
+(function (window, undefined) {
+    /**
+     * 渲染完成后待执行的队列
+     * @type {Array}
+     */
     var readyList = [],
-        isReady = 0,
-        readyBound = false,
+        /**
+         * Dom渲染完成标志
+         */
+            isReady = 0,
+        /**
+         * 绑定渲染事件标志
+         */
+            readyBound = false,
         init,
         bindReady,
         readyWait = 1;
-    init = function(wait) { // A third-party is pushing the ready event forwards
+    /**
+     * DOM渲染完成后初始化
+     * @param wait
+     * @returns {number}
+     */
+    init = function (wait) { // A third-party is pushing the ready event forwards
         if (wait === true) {
             readyWait--;
         } // Make sure that the DOM is not already loaded
@@ -759,7 +774,8 @@ Object.keys || (Object.keys = (function() {
             // 确保body元素存在，这个操作是防止IE的bug
             if (!document.body) {
                 return setTimeout(init, 1);
-            } // dom渲染完成标志设置为true
+            }
+            // dom渲染完成标志设置为true
             isReady = true; // If a normal DOM Ready event fired, decrement, and wait if need be
             if (wait !== true && --readyWait > 0) {
                 return;
@@ -775,7 +791,7 @@ Object.keys || (Object.keys = (function() {
         }
     }; // 初始化readyList事件处理函数队列
     // 兼容不同浏览对绑定事件的区别
-    bindReady = function() {
+    bindReady = function () {
         if (readyBound) {
             return;
         }
@@ -787,7 +803,7 @@ Object.keys || (Object.keys = (function() {
         // 兼容事件，通过检测浏览器的功能特性，而非嗅探浏览器
         if (document.addEventListener) { // 使用事件回调函数
             document.addEventListener("DOMContentLoaded",
-                function() {
+                function () {
                     document.removeEventListener("DOMContentLoaded", arguments.callee, false);
                     init();
                 },
@@ -796,19 +812,21 @@ Object.keys || (Object.keys = (function() {
         } else if (document.attachEvent) { // 确保在load之前触发onreadystatechange,
             // 针对iframe情况，可能有延迟
             document.attachEvent("onreadystatechange",
-                function() { // Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
+                function () { // Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
                     if (document.readyState === "complete") {
                         document.detachEvent("onreadystatechange", arguments.callee);
                         init();
                     }
-                }); // 绑定回调到一定执行能load事件
+                });
+            // 绑定回调到一定执行能load事件
             window.attachEvent("onload", init); // 如果是IE且非iframe情况下
             // 持续的检查，看看文档是否已准备
             var toplevel = false;
             try {
                 toplevel = window.frameElement == null;
-            } catch(e) {}
-            (function() {
+            } catch (e) {
+            }
+            (function () {
                 if (document.documentElement.doScroll && toplevel) {
                     if (isReady) {
                         return;
@@ -816,7 +834,7 @@ Object.keys || (Object.keys = (function() {
                     try { // If IE is used, use the trick by Diego Perini
                         // http://javascript.nwbox.com/IEContentLoaded/
                         document.documentElement.doScroll("left");
-                    } catch(e) {
+                    } catch (e) {
                         setTimeout(arguments.callee, 1);
                         return;
                     } // 执行在等待的函数
@@ -825,7 +843,7 @@ Object.keys || (Object.keys = (function() {
             })();
         }
     };
-    window.ready = function(fn) { // 绑定上监听事件
+    window.ready = function (fn) { // 绑定上监听事件
         bindReady(); // 如果dom已经渲染
         if (isReady) { // 立即执行
             fn.call(document); // 否则，保存到缓冲队列，等上面的监听事件触发时，再全部执行
@@ -834,5 +852,116 @@ Object.keys || (Object.keys = (function() {
         }
     };
 })(window);
+function addEvent(element, type, handler) {
+    Event.prototype.getTarget = function () {
+        return this.target || this.srcElement;
+    };
+    Event.prototype.preventDefault = function () {
+        if (this.preventDefault)
+            this.preventDefault();
+        else
+            this.returnValue = false;
+    };
+    Event.prototype.stopPropagation = function () {
+        if (this.stopPropagation) {
+            this.stopPropagation();
+        } else {
+            this.cancelBubble = true;
+        }
+    };
+    Event.prototype.getRelatedTarget = function () {
+        if (this.relatedTarget) {
+            return this.relatedTarget;
+        } else if (this.toElement) {
+            return this.toElement;
+        } else if (this.fromElement) {
+            return this.fromElement;
+        } else {
+            return null;
+        }
+    };
+    Event.prototype.getButton = function () {
+        if (document.implementation.hasFeature("MouseEvents", "2.0")) {
+            return this.button;
+        } else {
+            switch (this.button) {
+                case 0:
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    return 0;
+                case 2:
+                case 6:
+                    return 2;
+                case 4:
+                    return 1;
+            }
+        }
+    };
+    Event.prototype.getWheelDelta = function () {
+        if (this.wheelDelta) {
+            return  (browser.name == "opera" && browser.version < 9.5) ?
+                -this.wheelDelta : this.wheelDelta;
+        } else {
+            return -this.detail * 40;
+        }
+    };
+    Event.prototype.getCharCode = function () {
+        if (typeof this.charCode == "number") {
+            return this.charCode;
+        } else {
+            return this.keyCode;
+        }
+    };
 
+    var event = 0;
+    var intializeHandle = function (eve) {
+        event = eve ? eve : window.event;
+        handler.call(element, event);
+    };
+    if (element.addEventListener) {
+        element.addEventListener(type, intializeHandle, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + type, intializeHandle);
+    } else {
+        element["on" + type] = intializeHandle;
+    }
+}
+/**
+ * 原型继承，利用原型链实现继承，当然原型链继承有很多种形式，这是效果最好的，配合借用父构造函数一起使用
+ * YUI中extend也是如此
+ * @param {Function} superType 父引用类型
+ * @param {Function} subType 子引用类型
+ */
+function extend(superType, subType) {
+    var F = function () {
+    };
+    F.prototype = superType.prototype;
+    subType.prototype = new F();
+    subType.prototype.constructor = subType;
+    subType.superClass = superType.prototype;
+    if (superType.prototype.constructor == Object.prototype.constructor) {
+        superType.prototype.constructor = superType;
+    }
+}
+
+/**
+ * augment扩充类
+ * @param {Object} receivingClass
+ * @param {Object} givingClass
+ */
+function argument(receivingClass,givingClass){
+    if(arguments[2]){
+        for(var i = 2,len = arguments.length;i<len;i++){
+            receivingClass.prototype[arguments[i]] = givingClass.prototype[arguments[i]];
+        }
+    }else{
+        for(var method in givingClass.prototype){
+            if(!receivingClass.prototype[method]){
+                receivingClass.prototype[method] = givingClass.prototype[method];
+            }
+        }
+    }
+}
 

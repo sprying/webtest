@@ -5,17 +5,21 @@
 </head>
 <body>
 <canvas id="canvas" width="600" height="600"></canvas>
-<canvas id="canvas2" width="125" height="145"></canvas>
-<button type="button" onclick="isLoop = !isLoop;isLoop&&window.requestAnimationFrame(loop);">Switch</button>
+<canvas id="canvas2" width="750" height="145"></canvas>
+<button type="button" onclick="isLoop = !isLoop;isLoop&&window.requestAnimationFrame(loop);">Pause</button>
 <script type="text/javascript">
     var canvas2 = document.getElementById('canvas2'),
+            colors = [ "orange", "pink", "red", "yellow", "teal",'white'],
             c2 = canvas2.getContext('2d');
     //c2.fillStyle = 'black';
     //c2.fillRect(0,0,125,145);
-    snowflake(c2,4,0,109,125);
-    c2.fillStyle='white';
-    c2.fill();
-    canvas2.style.opacity = '0';
+    for(var i= 0,l=colors.length;i<l;i++){
+        snowflake(c2,4,125*i,109,125);
+        c2.fillStyle=colors[i];
+        c2.fill();
+    }
+
+    canvas2.style.display = 'none';
 
     window.requestAnimationFrame = window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
@@ -27,6 +31,7 @@
             }
     function snowflake(c,n,x,y,len){
         c.save();
+        c.beginPath();
         c.translate(x,y);
         c.moveTo(0,0);
         leg(n);
@@ -58,7 +63,6 @@
     var canvas = document.getElementById('canvas'),
             c=canvas.getContext('2d'),
             particle=[],
-            colors = [],
             tick = 0 ,
             isLoop = true;
     var loop = function(){
@@ -79,7 +83,7 @@
                     y:0,
                     speed:2+Math.random()*3,
                     radius:5+Math.random()*5,
-                    color:'white'
+                    color:Math.round(Math.random()*5)
                 });
             }
         }
@@ -109,7 +113,7 @@
                 //         snowflake(c,0,5,115,125);
                 //snowflake(c,4,part.x,part.y,part.radius);
                 var fraction = part.radius/10;
-                c.drawImage(c2.canvas,0,0,125,145,part.x,part.y,fraction*125/3,fraction*145/3);
+                c.drawImage(c2.canvas,part.color*125,0,125,145,part.x,part.y,fraction*125/3,fraction*145/3);
                 //c.closePath();
                 //c.fill();
             }

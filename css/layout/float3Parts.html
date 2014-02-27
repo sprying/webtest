@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        /*左浮动、左浮动，右浮动，两旁设置宽度，中间不设置；
+        浮动定位，一旦开始用浮动，同级的元素全部要用；
+        这里面中间放内容，会撑开的；左右是没问题*/
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #firstRow{
+            width: 100%;
+            height: 200px;
+            background: #7F7F7F;
+        }
+        #secRow{
+            width: 100%;
+            min-width: 600px;
+        }
+        #secLeft{
+            width: 250px;
+            height: 500px;
+            float: left;
+            background: salmon;
+        }
+        #secRight{
+            width: 300px;
+            height: 500px;
+            float: right;
+            background: sandybrown;
+        }
+        #secCenter{
+            height: 500px;
+            float: left;
+            /*margin: 0 300px 0 250px;*/
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="firstRow">首行</div>
+    <div id="secRow">
+        <div id="secLeft">
+            由于Firefox是基于一个名叫Spidermonkey的JavaScript引擎（译注：Firefox的JavaScript引擎有很多种，多是我们熟悉的“猴”系列，文中所提到的Spidermonkey（用于Firefox 1.0~3.0）便是其中一种，此外还包括TraceMonkey（用于Firefox 3.5~3.6）、JaegerMonkey（用于Firefox4.0）以及最新开发的IonMonkey。有关Spidermonkey的更多信息可参照：http://en.wikipedia.org/wiki/SpiderMonkey ），因此Firefox浏览器也可以支持这些扩展特性。由Mozilla开发的另一个基于Java的JavaScript引擎Rhino（§12.1）也支持大部分扩展特性。但由于这些语言特性是非标准的，本章的内容对于那些需要调试浏览器兼容性的开发者来说可能帮助不大。我们在本章对它们作必要的讲述是基于几点考虑：
+
+        </div>
+        <div id="secCenter">
+
+        </div>
+        <div id="secRight">右边</div>
+        <div class="clear"></div>
+    </div>
+    <div style="background: orange;">底部</div>
+</body>
+</html>

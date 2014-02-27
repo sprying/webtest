@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="ax" style="">
+        <input type="file" id="imgFile">
+    </div>
+    <div class="row-fluid">
+        <div class="span6" style="position: relative;">
+            <img src="../../images/demo.jpg.jpeg" id="img1">
+            <div id="imgLeft" style="background:grey;position: absolute;left: 0;top: 0;">
+                <button class="btn btn-mini btn-danger" data-toggle="modal" data-target="#myModal"><i class="icon-edit"></i> </button>
+            </div>
+        </div>
+
+        <div class="span6" style="position: relative;">
+            <img src="../../images/blend.png" id="img2">
+            <div id="imgRight" style="background: grey;position: absolute;left: 0;top:0;">
+                <button class="btn btn-mini btn-danger" data-toggle="modal" data-target="#myModal"><i class="icon-edit"></i> </button>
+            </div>
+        </div>
+        <button class="btn" onclick="flowAll();">Draw</button>
+    </div>
+    <div id="overContainner"></div>
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel1">Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+<script type="text/javascript">
+    $('#myModal,#myModal1').on('show', function () {
+        $('#myModal .modal-body,#myModal1 .modal-body').empty()
+        for(var i in imgUrl){
+            var imgObj = new Image();
+            imgObj.src = imgUrl[i];
+            var width = imgObj.width,
+                height = imgObj.height;
+            imgObj.width = width>200?200:width;
+            imgObj.height = height*200/width;
+            $('#myModal .modal-body').append(imgObj);
+            $('#myModal .modal-body img').bind('click',function(){
+                $('#img1')[0].src = this.src;
+                $('#imgRight').css('left',$('#img2').offset().left);
+            })
+        }
+    })
+    var imgFile = document.getElementById('imgFile'),
+            imgUrl = {};
+    imgFile.addEventListener('change',function(e){
+        e = e || window.event;
+        var tar = e.target,
+            files = tar.files;
+        for(var i= 0,l=files.length;i<l;i++){
+            var fileInfo = files[i],
+            fReader = new FileReader();
+            fReader.onload = function (e) {
+                imgUrl[fileInfo.name] =  e.target.result;
+            };
+            fReader.readAsDataURL(fileInfo);
+        }
+
+    },false);
+    var eve = (function(){
+        var evnCache = [],
+                firstTag ={};
+        return {
+            bind:function(name,fns){
+                evnCache[name] = fns;
+            },
+            trigger:function(name){
+                if(name in firstTag){
+                    delete firstTag[name];
+                    evnCache[name].fns && evn[name].fns.call(null);
+                }else{
+                    firstTag[name] = true;
+                }
+            }
+        }
+    })(),
+    overFns =  (function(){
+        var typeCache={
+            'zpdd':['正片叠底',function(a,b){
+                var c = 0;
+                c = a*b/255;
+                return c;
+            }],
+            'ysjs':['颜色加深',function(a,b){
+                var c = 0;
+                c = a - (255-a)*(255-b)/b;
+                c = c>0?c:0;
+            }],
+            'xxjs':['线性加深',function(a,b){
+                var c = 0;
+                c = a+b-255;
+                c = c>0?c:0;
+                return c;
+            }],
+            'ba':['变暗',function(a,b){
+                c = a>b?b:a;
+                return c;
+            }],
+            'ls':['滤色',function(a,b){
+                var c;
+                c =  a + b - a*b/255;
+                return c;
+            }],
+            'ysjd':['颜色减淡',function(a,b){
+                var c;
+                c =  a + a*b/(255-b);
+                c = (c>255?255:c);
+                return c;
+
+            }],
+            'xxjd':['线性减淡',function(a,b){
+                var c;
+                c =  a + b;
+                c = (c>255?255:c);
+                return c;
+
+            }],
+            'bl':['变亮',function(a,b){
+                var c;
+                c =  a>b?a:b;
+                return c;
+
+            }]
+        },
+        overId = 0;
+        var canvasHolder = document.createElement('canvas');
+        document.body.appendChild(canvasHolder);
+
+        return function(type,img1,img2){
+            var time1 = (new Date()).getTime();
+            var c = canvasHolder.getContext('2d'),
+                img1Width = img1.width,
+                img1Height = img1.height,
+                img2Width = img2.width,
+                img2Height = img2.height,
+                minWidth = (img1Width>img2Width?img2Width:img1Width),
+                minHeight = (img1Height>img2Height?img2Height:img1Height);
+            canvasHolder.width = img1Width>img2Width?img1Width:img2Width;
+            canvasHolder.height = img1Height+img2Height;
+            if(!typeCache[type]) return;
+            c.drawImage(img1,0,0,img1Width,img1Height);
+            c.drawImage(img2,0,img1Height,img2Width,img2Height);
+            var imgData1 = c.getImageData(0,0,img1Width,img1Height),
+                imgData2 = c.getImageData(0,img1Height,minWidth,minHeight),
+                arrData1 = imgData1.data,
+                arrData2 = imgData2.data;
+            for(var i= 0,l=arrData2.length;i<l;i=i+4){
+                arrData1[i] = typeCache[type][1](arrData1[i],arrData2[i]);
+                arrData1[i+1] = typeCache[type][1](arrData1[i+1],arrData2[i+1]);
+                arrData1[i+2] = typeCache[type][1](arrData1[i+2],arrData2[i+2]);
+            }
+            canvasHolder.width = img1Width;
+            canvasHolder.height = img1Height;
+            c.putImageData(imgData1,0,0);
+            c.fillStyle = "#ccc";
+            c.font = ""+12+'px lighter';
+            c.fillText(typeCache[type][0],10,20);
+            var newImg = new Image();
+            newImg.src = canvasHolder.toDataURL();
+            newImg.className= 'calculate';
+            newImg.id = 'over_'+overId;
+            canvasHolder.width=0;
+            canvasHolder.height=0;
+            return newImg;
+        };
+    })(),
+    flowAll = function(){
+        var time1 = (new Date()).getTime(),
+            overContainner = document.getElementById('overContainner'),
+            arr = ['zpdd','ysjs','xxjs','ba','ls','ysjd','xxjd','bl'];
+        overContainner.innerHTML = '';
+        overContainner.appendChild(overFns('zpdd',img1,img2));
+        overContainner.appendChild(overFns('ysjs',img1,img2));
+        overContainner.appendChild(overFns('xxjs',img1,img2));
+        overContainner.appendChild(overFns('ba',img1,img2));
+        overContainner.appendChild(overFns('ls',img1,img2));
+        overContainner.appendChild(overFns('ysjd',img1,img2));
+        overContainner.appendChild(overFns('xxjd',img1,img2));
+        overContainner.appendChild(overFns('bl',img1,img2));
+        var timeTamp = (new Date()).getTime() - time1;
+        console.log(timeTamp);
+    }
+    window.setTimeout(flowAll,1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        .list li{
+            list-style-type: none;
+            position: relative;
+            border-top: 1px solid #e3e3e3;
+            padding: .15em 1px;
+            line-height: 100%;
+            cursor: pointer;
+        }
+        .list_white>li {
+            border-color: #ccc;
+            background: #f1f1f1;
+            background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f1f1f1));
+            background: -webkit-linear-gradient(white,#f1f1f1);
+            background: -moz-linear-gradient(white,#f1f1f1);
+            background: -ms-linear-gradient(white,#f1f1f1);
+            background: -o-linear-gradient(white,#f1f1f1);
+            background: linear-gradient(#fff,#f1f1f1);
+        }
+        .list_item:after {
+            visibility: hidden;
+            display: block;
+            content: " ";
+            clear: both;
+        }
+        .list_item .avatar {
+            float: left;
+            position: relative;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+        }
+        .avatar {
+            margin: 8px!important;
+        }
+        a.avatar {
+            -webkit-tap-highlight-color: rgba(255,255,255,0);
+            text-decoration: none;
+        }
+
+        .list_item .avatar img {
+            width: 100%;
+            height: 100%;
+        }
+        .lazyLoadImg {
+            -webkit-transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+        }
+        .member_nick {
+            padding: 6px 0 0 5px;
+            margin: 0;
+            width: 180px;
+        }
+        .member_nick {
+            line-height: 23px;
+            height: 23px;
+            overflow: hidden;
+            padding-right: 5px!important;
+        }
+        .member_nick span {
+            color: #aaa;
+            line-height: 17px;
+            font-size: 12px;
+        }
+        .member_msg {
+            margin: 0;
+            overflow: hidden;
+            font-size: 12px;
+            color: #aaa;
+            line-height: 28px;
+            padding-left: 5px;
+            width: 180px;
+        }
+        .text_ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<ul class="list list_white" style="width: 280px;">
+    <li class="list_item">
+        <a href="javascript:void(0);" class="avatar" cmd="clickMemberAvatar" _uin="1714415544" _type="friend">
+            <img src="http://face4.web.qq.com/cgi/svr/face/getface?cache=1&amp;type=1&amp;f=40&amp;uin=1714415544&amp;t=1387887623&amp;vfwebqq=eb60781e5ade8e12eacc9574c7770ea8816a2cc80407b56bc7a92e355d0acc62c6fd29ab059bd9a2" class="lazyLoadImg loaded">
+        </a>
+        <p class="member_nick">
+            萍萍<span>(琉璃月)</span>
+        </p>
+        <p id="recent-item-friend-1714415544-msg" class="member_msg text_ellipsis">hello everyone,I'm sorry to padden you</p>
+        <div style="position: absolute;left: 250px;top: 10px;float: left;width: 20px;display: inline-block;height: 40px;">
+            <p style="color: #aaa;line-height: 17px;font-size: 12px;margin: 2px 0 0 0">Tue</p>
+            <img src="../images/online_fangyc.png" style="width:12px;height:11px">
+        </div>
+    </li>
+    <li id="recent-item-friend-2079291776" class="list_item" _uin="2079291776" _type="friend" cmd="clickMemberItem">
+        <a href="javascript:void(0);" class="avatar" cmd="clickMemberAvatar" _uin="2079291776" _type="friend"><img src="http://face6.web.qq.com/cgi/svr/face/getface?cache=1&amp;type=1&amp;f=40&amp;uin=2079291776&amp;t=1387887623&amp;vfwebqq=eb60781e5ade8e12eacc9574c7770ea8816a2cc80407b56bc7a92e355d0acc62c6fd29ab059bd9a2" class="lazyLoadImg loaded">
+        </a>
+        <p class="member_nick" id="userNick-2079291776">
+            殷文旭<span>(阿甘)</span>
+        </p>
+        <p id="recent-item-friend-2079291776-msg" class="member_msg text_ellipsis"></p>
+    </li>
+</ul>
+</body>
+</html>

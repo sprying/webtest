@@ -14,8 +14,8 @@ Firebug.Lite.Proxy =
     
     /**
      * Load a resource, either locally (directly) or externally (via proxy) using 
-     * synchronous XHR calls. Loading external resources requires the proxy plugin to
-     * be installed and configured (see /plugin/proxy/proxy.php).
+     * synchronous XHR calls. Loading external resources requires the proxy browserPlugins to
+     * be installed and configured (see /browserPlugins/proxy/proxy.php).
      */
     load: function(url)
     {
@@ -113,7 +113,7 @@ var fetchProxyResource = function(url)
     if (sourceMap.hasOwnProperty(url))
         return sourceMap[url];
 
-    var proxyURL = Env.Location.baseDir + "plugin/proxy/proxy.php?url=" + encodeURIComponent(url);
+    var proxyURL = Env.Location.baseDir + "browserPlugins/proxy/proxy.php?url=" + encodeURIComponent(url);
     var response = fetchResource(proxyURL);
     
     try
@@ -122,7 +122,7 @@ var fetchProxyResource = function(url)
     }
     catch(E)
     {
-        return "ERROR: Firebug Lite Proxy plugin returned an invalid response.";
+        return "ERROR: Firebug Lite Proxy browserPlugins returned an invalid response.";
     }
     
     var source = data ? data.contents : ""; 
