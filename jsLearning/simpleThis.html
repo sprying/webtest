@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+        <!-- this使用情形 -->
+        function UseThis() {
+            console.log(this === window);
+            this.instancePro = 1;
+        }
+        UseThis.objPro = 2;
+        UseThis.objMethod = function () {
+            console.log(this.objPro);
+        }
+
+        UseThis();//true 不管嵌套多深，执行函数时，函数内的this === window
+        console.log(instancePro);// 1
+
+        var useThis = new UseThis();//false 当前是A是个构造函数，构造函数内的this，是new创建的实例
+        console.log(useThis.instancePro);// 1
+
+        UseThis.objMethod();//2 当前函数是对象方法，this===A
+        var fn = UseThis.objMethod;
+        fn();//undefined
+    </script>
+</head>
+<body>
+
+</body>
+</html>

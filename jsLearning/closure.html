@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function consFns(){
+            var fns = [];
+            for(var  i= 0;i<10;i++){
+                fns[i] = function() {return i;}
+            }
+            return fns;
+        }
+        console.log(consFns()[5]());
+
+        // 外部定义的函数，在一函数中被返回并执行，执行时，并无闭包功能
+        function inside() {
+            return x;
+        }
+        function outside(){
+            var x = 1;
+            return inside;
+        }
+        var xx = outside()();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
