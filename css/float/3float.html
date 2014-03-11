@@ -2,17 +2,38 @@
 <html>
 <head>
     <title></title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta charset="utf-8">
+    <style type="text/css">
+          .clearfix:after{
+              content: '.';
+              display: block;
+              height: 0;
+              visibility: hidden;
+              clear: both;
+          }
+          * html .clearfix {zoom: 1;}
+        /*    .clearfix{background:#FF9;overflow:auto;zoom:1;}  */
+    </style>
 </head>
 <body>
-<div style="margin: 0 auto; width: 70%;height:400px;border: 1px dotted orangered;min-height: 150px;">
+<div style="margin: 0 auto; width: 70%;border: 1px dotted orangered;">
     <div style="float: left;width: 90px;background-color: red;"><img src="../../images/online_fangyc.png"></div>
-    <div style="float: left;background: rosybrown"><p>小乔</p><p>i love you</p></div>
+    <div style="float: left;background: rosybrown">
+        <p>小乔</p>
+        <p>i love you</p>
+    </div>
     <div style="float: left;width: 40px;background: #808080">
         <span>Tue</span><br>
         <img src="../../images/online_fangyc.png" width=20>
     </div>
     <div style="clear: both"></div>
+</div>
+<div class="clearfix">
+    <ul style="float:left">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+    </ul>
 </div>
 </body>
 </html>

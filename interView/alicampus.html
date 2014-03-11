@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        var a = 1;
+        var obj = { b : 2 };
+        var fn = function() {};
+        fn.c = 3;
+        function test(x, y, z) {
+            x = 4;
+            y.b = 5;
+            z.c = 6;
+            return z;
+        }
+        test(a, obj, fn);
+        alert(a + obj.b + fn.c);
+        // 12
+    </script>
+</head>
+<body>
+
+</body>
+</html>

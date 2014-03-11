@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+     <input type="button" value="button" id="btn">
+     <script type="text/javascript">
+         /*Demo与自己预期的不符，符合Js语法*/
+
+
+         /* 一个关联对象实例和事件处理器的函数。
+          它返回的内部函数被用作事件处理器。对象实例以 - obj - 参数表示，
+          而在该对象实例中调用的方法名则以 - methodName - （字符串）参数表示。
+          */
+
+         function associateObjWithEvent(obj, methodName){
+             /* 下面这个返回的内部函数将作为一个 DOM 元素的事件处理器*/
+
+             return (function(e){
+                 /* 在支持标准 DOM 规范的浏览器中，事件对象会被解析为参数 - e - ，
+                  若没有正常解析，则使用 IE 的事件对象来规范化事件对象。
+                  */
+
+                 e = e||window.event;
+                 /* 事件处理器通过保存在字符串 - methodName - 中的方法名调用了对象
+                  - obj - 的一个方法。并传递已经规范化的事件对象和触发事件处理器的元素
+                  的引用 - this - （之所以 this 有效是因为这个内部函数是作为该元素的方法执行的）
+                  */
+
+                 return obj[methodName](e, this);
+             });
+         }
+
+         /* 这个构造函数用于创建将自身与 DOM 元素关联的对象，
+          DOM 元素的 ID 作为构造函数的字符串参数。
+          所创建的对象会在相应的元素触发 onclick、
+          onmouseover 或 onmouseout 事件时，
+          调用相应的方法。
+          */
+
+         function DhtmlObject(elementId){
+             /* 调用一个返回 DOM 元素（如果没找到返回 null）引用的函数，
+              必需的参数是 ID。 将返回的值赋给局部变量 - el -。
+              */
+             var el = document.getElementById(elementId);
+             /* - el - 值会在内部通过类型转换变为布尔值，以便 - if - 语句加以判断。
+              因此，如果它引用一个对象结果将返回 true，如果是 null 则返回 false。
+              下面的代码块只有当 - el - 变量返回一个 DOM 元素时才会被执行。
+              */
+             var i = 0;
+             if(el){
+                 /* 为给元素的事件处理器指定一个函数，该对象调用了
+                  - associateObjWithEvent - 函数。
+                  同时对象将自身（通过 - this - 关键字）作为调用方法的对象，
+                  并提供了调用的方法名称。 - associateObjWithEvent - 函数会返回
+                  一个内部函数，该内部函数被指定为 DOM 元素的事件处理器。
+                  在响应事件时，执行这个内部函数就会调用必要的方法。
+                  */
+                 el.onclick = associateObjWithEvent(this, "doOnClick");
+                 el.onmouseover = associateObjWithEvent(this, "doMouseOver");
+                 el.onmouseout = associateObjWithEvent(this, "doMouseOut");
+             }
+         }
+         DhtmlObject.prototype.doOnClick = function(event, element){
+             console.log(element.tagName+':click'); // doOnClick 方法体。.
+             i++;
+             console.log(i);
+         }
+         DhtmlObject.prototype.doMouseOver = function(event, element){
+             console.log(element.tagName+':mouseover'); // doMouseOver 方法体。
+             i++;
+             console.log(i);
+         }
+         DhtmlObject.prototype.doMouseOut = function(event, element){
+             console.log(element.tagName+':mouseout'); // doMouseOut 方法体。
+             i++;
+             console.log(i);
+         }
+         new DhtmlObject('btn');
+     </script>
+</body>
+</html>

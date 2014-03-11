@@ -23,6 +23,16 @@
         }
         var xx = outside()();
 
+        setTimeout((function(){
+            //...
+             return function(){
+                 // ...
+             }
+        })(xx),0);
+
+        setTimeout(function(){
+            funs(xx);
+        },0);
     </script>
 </head>
 <body>

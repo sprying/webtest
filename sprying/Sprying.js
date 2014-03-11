@@ -11,26 +11,12 @@
  * 2013年5月11日0:22:31 解决Sprying.isArray类似工具函数无法调用问题；新增extend方法
  */
 (function () {
-    var AP = Array.prototype;
+    var AP = Array.prototype,
+        OP = Object.prototype;
     var slice = AP.slice;
-    /**
-     * ES3下实现ES5的Array相关方法
-     */
-    /*---------------------------------------*
-     * Array
-     *---------------------------------------*/
-    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array
-    // https://github.com/kangax/fabric.js/blob/gh-pages/src/util/lang_array.js
-
-    // ES5 15.4.3.2
-    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/isArray
     Array.isArray || (Array.isArray = function(obj) {
         return OP.toString.call(obj) === '[object Array]';
     });
-
-
-    // ES5 15.4.4.18
-    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/array/foreach
     AP.forEach || (AP.forEach = function(fn, context) {
         for (var i = 0, len = this.length >>> 0; i < len; i++) {
             if (i in this) {
@@ -38,10 +24,6 @@
             }
         }
     });
-
-
-    // ES5 15.4.4.19
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/map
     AP.map || (AP.map = function(fn, context) {
         var len = this.length >>> 0;
         var result = new Array(len);
@@ -54,10 +36,6 @@
 
         return result;
     });
-
-
-    // ES5 15.4.4.20
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/filter
     AP.filter || (AP.filter = function(fn, context) {
         var result = [], val;
 
@@ -72,10 +50,6 @@
 
         return result;
     });
-
-
-    // ES5 15.4.4.16
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/every
     AP.every || (AP.every = function(fn, context) {
         for (var i = 0, len = this.length >>> 0; i < len; i++) {
             if (i in this && !fn.call(context, this[i], i, this)) {
@@ -84,10 +58,6 @@
         }
         return true;
     });
-
-
-    // ES5 15.4.4.17
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/some
     AP.some || (AP.some = function(fn, context) {
         for (var i = 0, len = this.length >>> 0; i < len; i++) {
             if (i in this && fn.call(context, this[i], i, this)) {
@@ -96,10 +66,6 @@
         }
         return false;
     });
-
-
-    // ES5 15.4.4.21
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/reduce
     AP.reduce || (AP.reduce = function(fn /*, initial*/) {
         if (typeof fn !== 'function') {
             throw new TypeError(fn + ' is not an function');
@@ -132,10 +98,6 @@
 
         return result;
     });
-
-
-    // ES5 15.4.4.22
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/reduceRight
     AP.reduceRight || (AP.reduceRight = function(fn /*, initial*/) {
         if (typeof fn !== 'function') {
             throw new TypeError(fn + ' is not an function');
@@ -167,10 +129,6 @@
 
         return result;
     });
-
-
-    // ES5 15.4.4.14
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/indexOf
     AP.indexOf || (AP.indexOf = function(value, from) {
         var len = this.length >>> 0;
 
@@ -188,10 +146,6 @@
 
         return -1;
     });
-
-
-    // ES5 15.4.4.15
-    // https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Array/indexOf
     AP.lastIndexOf || (AP.lastIndexOf = function(value, from) {
         var len = this.length >>> 0;
 

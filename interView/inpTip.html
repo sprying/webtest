@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>input提示</title>
+</head>
+<body>
+<nav>
+    <ul><li>index</li><li>demo</li></ul>
+</nav>
+<header>
+    <h1>input框默认提示文字</h1>
+    <time>2014年3月9日11:30:11</time>
+</header>
+<article>
+    <!-- 阿里2013年8月份校招题-->
+    <!-- 不理解，第一个在这里就没效果了 -->
+    <input type="text" defaultValue="alipay WD Team" value="alipay WD Team" id="tarInp" onblur="vaule='alipay WD Team'" onfocus="this.value='';"/>
+    <input type="text" defaultValue="alipay WD Team" value="alipay WD Team" id="tarInp1">
+    <input id='test' type='text' placeholder='alipay WD Team' />
+
+    <script>
+        document.getElementById('test').onfocus=function(){this.value=" "};
+    </script>
+</article>
+<footer>CopyRight @2014 sprying</footer>
+<script type="text/javascript">
+    <!--
+    var targInp1 = document.getElementById('tarInp1');
+    targInp1.addEventListener('focus',function(event){
+        event.target.value="";
+    },false);
+    tarInp1.addEventListener('blur',function(event){
+        var inp =event.target;
+        inp.value = inp.getAttribute('defaultValue');
+    },false);
+    //-->
+</script>
+</body>
+</html>

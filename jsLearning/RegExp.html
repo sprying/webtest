@@ -4,18 +4,19 @@
     <title></title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <script type="text/javascript">
-        /**
-         * 理解正则表达式在字符串首尾匹配
-         * 及正则表达式一般的书写 \S
-         * 引用的使用：用于返回子表达式数组
-         * match和exec、test 、search
+         /**
+         * replace
          */
         var s = "<b>aa2aa3aau</b>";
-        s = s.replace(/aa/g, "happy");//结果:<b>happy2happy3happyu</b>
+        newS = s.replace(/aa/g, "happy");//newS:<b>happy2happy3happyu</b>,s:<b>aa2aa3aau</b>
 
         var feedback = "${nsrOrJfr}没有进行${swOrSb}登记，且主管税务机关在${zgswjg},主管税务科所在${zgswksj}，${nsrOrJfr}不在操作员权限内";
         s = s.replace(/\$\{nsrOrJfr\}/g,"纳税人");
 
+        /**
+         * match
+         */
+        var url = /(\w+):\/\/([\w.]+)\/((?:[\w.]+\/)*)([^?]*)\?(\S*)/
         var url = /(\w+):\/\/([\w.]+)\/(\S*)/
         var text = 'http://music.baidu.com/home/vip/invite?pst=invite_tips';
         var result = text.match(url);
@@ -24,22 +25,60 @@
         var re_words = str_word.match('\\b(java)\\b');//记得要用双反斜线，不然无法查出
         var re_word = str_word.match(/\b(java)\b/g);
 
-        var tt = "#fdas.fa"
-        tt = /[\w]+/.exec(tt);// 结果返回 数组对象tt 属性index为1，第一个元素为fdas，input为"#fdas.fa"
+         // 以abc开头或\s开头的，注意\在js字符串中是转义字符，也需用\\表示
+         var pat = /(^|\s)abc/;
+         var st3 = 'cabc';
+         console.log(c = st3.match(pat));//null
 
-        var ma = /[\w]+:\/\/[\w.:]+\/[\w]+\//.exec('http://127.0.0.1:8801/home/vip/invite?pst=invite_tips');
-        var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
-        var reCat = /(cat)/ig;
-        var execResult = reCat.exec(data); // execResult{0：Cat 1:Cat index:23(第一个查找到的Cat前面的字符数) input:123...dfs} reCat{lastIndex:26}
-        console.log(/script/i.test('Javascript'));//true
+        // match匹配多个字符串串及其字串，涉及大小写时，情况有点复杂
         // 下面返回的数组，一直理解不透
-        // es5 下每次调用reCat重新生成RegExp对象
-        // 返回Cat cat 子表达式 其中cat 子表达式合并了，只有一个子表达式引用
+        var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
         var matchResult = data.match(/(cat)/ig);
         console.log(RegExp.$1);//cat
+
+         /**
+          * split
+          */
+         arg = ' div#frame .face input#username'
+         if (typeof arg === 'string' && /\s+/.test(arg)) {
+             var match = arg.split(/\s+/);//0: "",1: "div#frame",2: ".face",3: "input#username"
+         }
+         console.log("1 ,  2, 3,4,     5".split(/\s*,\s*/));
+
+        /**
+         * exec
+         */
+        var ttResult = /[\w]+/.exec("#fdas.fa");// ttResult 0:fdas，index:1，input:"#fdas.fa"
+        var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+        var reCat = /(cat)/ig;
+        var execResult = reCat.exec(data);
+        // execResult{0：Cat 1:Cat index:23 input:123...dfs} reCat{lastIndex:26}
+
+         /**
+          * lastIndex值的变化
+          */
+         var pattern = /Java/g;
+         var text = "JavaScript is more fun than Java!";
+         var result;
+         while ((result = pattern.exec(text)) !== null) {
+             console.log(result + ',index:' + result.index + ',lastIndex:' + pattern.lastIndex);
+             //Java,index:0,lastIndex:4
+             //Java,index:28,lastIndex:32
+         }
+
+         /**
+         * test
+         */
+        console.log(/script/i.test('Javascript'));//true
+
+        /**
+         * search
+         */
+        var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+        var reCat = /(cat)/ig;
+        console.log(data.search(reCat));// 23
         console.log(data.search(reCat));// 23
         console.log("Javascript".search(/[Ss]cript([\w]*)/));//4
-        console.log(data.replace(/cat/g, "fangyc"));// 123123,213,12312,312,3,Cat,fangyc,dsfsdfs,
 
 
         /**
@@ -53,16 +92,18 @@
         // 在replace中使用引用
         var sToChange = "1234 5678";
         var reMatch = /(\d{4}) (\d{4})/;
-        var sNew = sToChange.replace(reMatch, "$2 $1");
-        console.log(sNew);// 5678 1234
+        var sNew = sToChange.replace(reMatch, "$2 $1");//sNew  5678 1234
 
-        var quote = /([^"]*)/g;
+        // 有关双引号使用
         var text1 = "faff";
         console.log(text1);//faff
         console.log('“faff”');//可以打印出中文双引号
-        execResult = quote.exec(text1);//有结果
-        console.log(text1.replace(/([^"]*)/, "“$1”"));//加g出现“faff”“”表示不理解,现在结果：“faff”
-        //记住，修改后的结果，是repalce返回的值，被作用的字符串仍未变化
+        var quote = /([^"]*)/g;
+        var execResult = quote.exec(text1);//execResult ["faff", "faff"]
+        execResult = quote.exec(text1);//execResult ["", ""]
+        console.log(text1.replace(/([^"]*)/, "“$1”"));// “faff”
+        console.log(text1.replace(/([^"]*)/, "“$1”"));// “faff”“”
+        //记住，修改后的结果，是replace返回的值，被作用的字符串仍未变化
         console.log(text1);//faff
 
         /**
@@ -70,37 +111,10 @@
          */
         var str = '.java is very good';
         var match = /\b([\w]+)\b/.exec(str); //0:java 1:java index:1 input:.java is very good
-
         var str = "aaa,bbb,ccc";
         console.log(str.replace(/\b/g, "|"));//|aaa|,|bbb|,|ccc|
 
-        /**
-         * split的使用
-         */
-        arg = ' div#frame .face input#username'
-        if (typeof arg === 'string' && /\s+/.test(arg)) {
-            var match = arg.split(/\s+/);//0: "",1: "div#frame",2: ".face",3: "input#username"
-        }
-        console.log("1 ,  2, 3,4,     5".split(/\s*,\s*/));
 
-        /**
-         * lastIndex值的变化
-         */
-        var pattern = /Java/g;
-        var text = "JavaScript is more fun than Java!";
-        var result;
-        while ((result = pattern.exec(text)) !== null) {
-            console.log(result + ',index:' + result.index + ',lastIndex:' + pattern.lastIndex);
-            //Java,index:0,lastIndex:4
-            //Java,index:28,lastIndex:32
-        }
-
-        /**
-         * 以abc开头或\s开头的，注意\在js字符串中是转义字符，也需用\\表示
-         */
-        var pat = /(^|\\s)abc/;
-        var st3 = 'cabc';
-        console.log(c = st3.match(pat));//null
 
 
     </script>
