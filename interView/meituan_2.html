@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var a = '?token=abc&id=123';
+        var b = '?name=john&age';
+        function parse(str){
+            str = /\?([\S]+)/.exec(str)[1];
+            var arr = str.split(/\s*\&\s*/),
+                    res = {},
+                    temp;
+            for(var i= 0,len= arr.length;i<len;i++){
+                temp = arr[i].split(/[\s]*\=[\s]*/);
+                res[temp[0]] = temp[1] || null;
+            }
+            return res;
+        }
+        var res1 = parse(a),
+                res2 = parse(b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
