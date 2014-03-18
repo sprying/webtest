@@ -7,7 +7,7 @@
         var b = '?name=john&age';
         function parse(str){
             str = /\?([\S]+)/.exec(str)[1];
-            var arr = str.split(/\s*\&\s*/),
+            var arr = str.split(/[\s]*\&[\s]*/),
                     res = {},
                     temp;
             for(var i= 0,len= arr.length;i<len;i++){
