@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
+    <script type="text/javascript" src="js/lib/backbone.js"></script>
+    <script type="text/javascript">
+        var app = Backbone.View.extend({
+            tagName:'h3',
+            className:'hTitle',
+            events:{
+                'click':'showWorld'
+            },
+            showWorld:function(){
+                this.$el.append( 'Hello!<br>');
+            },
+            initialize:function(){
+                this.$el = $(this.el);
+                this.render();
+            },
+            render:function(){
+                this.$el.html('Hello World!<br>');
+                return this;
+            }
+        });
+
+        $(function(){
+            $('body').append(new app().render().el);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
