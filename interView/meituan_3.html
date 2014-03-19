@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var inArr = [
+            { id: 1, name: 'text1', pid: 0 },
+            { id: 2, name: 'text2', pid: 1 },
+            { id: 3, name: 'text3', pid: 2 },
+            { id: 4, name: 'text4', pid: 8 },
+            { id: 5, name: 'text5', pid: 4 }
+        ];
+
+        var outArr2 = buildTree_Ex(inArr);
+        var outArr = buildTree(inArr);
+
+        /**
+         * 此方法较buildTree，时间复杂度低些
+         * @param arr
+         * @returns {Array}
+         */
+        function buildTree_Ex(arr) {
+            function buildVo(node) {
+                var members = node.members = [],
+                        childNode;
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    if (node.id == arr[i].pid) {
+                        childNode = arr[i];
+                        arguments.callee(childNode);
+                        members.push(childNode);
+                    }
+                }
+            }
+
+
+            var noFather = [],nodeObj = {};
+            for (var i = 0, len = arr.length; i < len; i++) {
+                var node = arr[i];
+                nodeObj[node.id]=node;
+            }
+            for (var i = 0, len = arr.length; i < len; i++) {
+                var node = arr[i];
+                if(nodeObj[node.pid]){
+                    continue;
+                }else{
+                    noFather.push(node);
+                }
+            }
+            for (var j = 0, l = noFather.length; j < l; j++) {
+                buildVo(noFather[j]);
+            }
+            return noFather;
+        }
+
+
+
+        function buildTree(arr) {
+            function buildVo(node) {
+                var members = node.members = [],
+                        childNode;
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    if (node.id == arr[i].pid) {
+                        childNode = arr[i];
+                        arguments.callee(childNode);
+                        members.push(childNode);
+                    }
+                }
+            }
+
+            function hasFather(nodeId) {
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    if (nodeId == arr[i].id) return true;
+                }
+                return false;
+            }
+
+            var noFather = [];
+            for (var i = 0, len = arr.length; i < len; i++) {
+                var node = arr[i];
+                if (!hasFather(node.pid)) noFather.push(node);
+            }
+            for (var j = 0, l = noFather.length; j < l; j++) {
+                buildVo(noFather[j]);
+            }
+            return noFather;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
