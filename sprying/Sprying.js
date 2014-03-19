@@ -9,175 +9,37 @@
  * 2013年4月28日8:23:32 解决IE7兼容模式下，选择器问题
  * 2013年5月6日6:35:47 解决文档渲染完成的多次调用（$(function(){})），并按序执行
  * 2013年5月11日0:22:31 解决Sprying.isArray类似工具函数无法调用问题；新增extend方法
+ * 2014年03月18日08:39:36 规范注释(js doc) 更改事件绑定内部实现逻辑
+ * @fileOverview 封装Js基层操作的库
+ * @author sprying <sprying.fang@gmail.com>
+ * @version 0.1.0
+ * @require es5-safe.js
  */
 (function () {
-    var AP = Array.prototype,
-        OP = Object.prototype;
-    var slice = AP.slice;
-    Array.isArray || (Array.isArray = function(obj) {
-        return OP.toString.call(obj) === '[object Array]';
-    });
-    AP.forEach || (AP.forEach = function(fn, context) {
-        for (var i = 0, len = this.length >>> 0; i < len; i++) {
-            if (i in this) {
-                fn.call(context, this[i], i, this);
-            }
-        }
-    });
-    AP.map || (AP.map = function(fn, context) {
-        var len = this.length >>> 0;
-        var result = new Array(len);
-
-        for (var i = 0; i < len; i++) {
-            if (i in this) {
-                result[i] = fn.call(context, this[i], i, this);
-            }
-        }
-
-        return result;
-    });
-    AP.filter || (AP.filter = function(fn, context) {
-        var result = [], val;
-
-        for (var i = 0, len = this.length >>> 0; i < len; i++) {
-            if (i in this) {
-                val = this[i]; // in case fn mutates this
-                if (fn.call(context, val, i, this)) {
-                    result.push(val);
-                }
-            }
-        }
-
-        return result;
-    });
-    AP.every || (AP.every = function(fn, context) {
-        for (var i = 0, len = this.length >>> 0; i < len; i++) {
-            if (i in this && !fn.call(context, this[i], i, this)) {
-                return false;
-            }
-        }
-        return true;
-    });
-    AP.some || (AP.some = function(fn, context) {
-        for (var i = 0, len = this.length >>> 0; i < len; i++) {
-            if (i in this && fn.call(context, this[i], i, this)) {
-                return true;
-            }
-        }
-        return false;
-    });
-    AP.reduce || (AP.reduce = function(fn /*, initial*/) {
-        if (typeof fn !== 'function') {
-            throw new TypeError(fn + ' is not an function');
-        }
-
-        var len = this.length >>> 0, i = 0, result;
-
-        if (arguments.length > 1) {
-            result = arguments[1];
-        }
-        else {
-            do {
-                if (i in this) {
-                    result = this[i++];
-                    break;
-                }
-                // if array contains no values, no initial value to return
-                if (++i >= len) {
-                    throw new TypeError('reduce of empty array with on initial value');
-                }
-            }
-            while (true);
-        }
-
-        for (; i < len; i++) {
-            if (i in this) {
-                result = fn.call(null, result, this[i], i, this);
-            }
-        }
-
-        return result;
-    });
-    AP.reduceRight || (AP.reduceRight = function(fn /*, initial*/) {
-        if (typeof fn !== 'function') {
-            throw new TypeError(fn + ' is not an function');
-        }
-
-        var len = this.length >>> 0, i = len - 1, result;
-
-        if (arguments.length > 1) {
-            result = arguments[1];
-        }
-        else {
-            do {
-                if (i in this) {
-                    result = this[i--];
-                    break;
-                }
-                // if array contains no values, no initial value to return
-                if (--i < 0)
-                    throw new TypeError('reduce of empty array with on initial value');
-            }
-            while (true);
-        }
-
-        for (; i >= 0; i--) {
-            if (i in this) {
-                result = fn.call(null, result, this[i], i, this);
-            }
-        }
-
-        return result;
-    });
-    AP.indexOf || (AP.indexOf = function(value, from) {
-        var len = this.length >>> 0;
-
-        from = Number(from) || 0;
-        from = Math[from < 0 ? 'ceil' : 'floor'](from);
-        if (from < 0) {
-            from = Math.max(from + len, 0);
-        }
-
-        for (; from < len; from++) {
-            if (from in this && this[from] === value) {
-                return from;
-            }
-        }
-
-        return -1;
-    });
-    AP.lastIndexOf || (AP.lastIndexOf = function(value, from) {
-        var len = this.length >>> 0;
-
-        from = Number(from) || len - 1;
-        from = Math[from < 0 ? 'ceil' : 'floor'](from);
-        if (from < 0) {
-            from += len;
-        }
-        from = Math.min(from, len - 1);
-
-        for (; from >= 0; from--) {
-            if (from in this && this[from] === value) {
-                return from;
-            }
-        }
-
-        return -1;
-    });
-
     /**
      *  解决IE兼容问题，实现通用ES5标准方法
+     *  @namespace nEvent
      */
     var nEvent = {
+        /**
+         * 返回事件触发对象
+         * @returns {HTMLElement}
+         */
         getTarget: function () {
             return this.target || this.srcElement;
         },
+        /**
+         * 阻止事件默认处理
+         */
         preventDefault: function () {
             if (this.preventDefault)
                 this.preventDefault();
             else
                 this.returnValue = false;
         },
+        /**
+         * 停止冒泡
+         */
         stopPropagation: function () {
             if (this.stopPropagation) {
                 Event.prototype.stopPropagation.apply(this);
@@ -185,6 +47,10 @@
                 this.cancelBubble = true;
             }
         },
+        /**
+         * 获取相关联Dom对象
+         * @returns {null|HTMLElement}
+         */
         getRelatedTarget: function () {
             if (this.relatedTarget) {
                 return this.relatedTarget;
@@ -196,6 +62,10 @@
                 return null;
             }
         },
+        /**
+         * 获取按键
+         * @returns {Number}
+         */
         getButton: function () {
             if (document.implementation.hasFeature("MouseEvents", "2.0")) {
                 return this.button;
@@ -215,6 +85,10 @@
                 }
             }
         },
+        /**
+         * 获得滚轮值
+         * @returns {number}
+         */
         getWheelDelta: function () {
             if (this.wheelDelta) {
                 return  (browser.name == "opera" && browser.version < 9.5) ?
@@ -223,6 +97,10 @@
                 return -this.detail * 40;
             }
         },
+        /**
+         * 获得字符编码
+         * @returns {Number}
+         */
         getCharCode: function () {
             if (typeof this.charCode == "number") {
                 return this.charCode;
@@ -234,6 +112,10 @@
     var _Sprying = window.Sprying,
         _$ = window.$,
         data_storage = {};
+    /**
+     * 生成选择器对象
+     * @function
+     */
     window.$ = window.Sprying = function (selector) {
         return new Sprying(selector);
     };
@@ -241,10 +123,10 @@
     /**
      * 解决IE7以下对class选取兼容
      * http://www.cnblogs.com/rubylouvre/archive/2009/07/24/1529640.html
-     * @param searchClass
-     * @param node
-     * @param tag
-     * @returns {Array}
+     * @param {String} searchClass
+     * @param {HTMLElement} [node]
+     * @param {String} [tag]
+     * @returns {Array} 匹配的Dom
      */
     var getElementsByClassName = function (searchClass, node, tag) {
         if (document.getElementsByClassName) {
@@ -285,8 +167,8 @@
     }
 
     /**
-     * 生成数组，
-     * @param arr 类数组对象 ，过滤不存在 null undefined
+     * 类数组对象生成数组，过滤不存在的元素、null、undefined
+     * @param {Object} arr 类数组对象
      * @returns {Array}
      * @private
      */
@@ -300,9 +182,9 @@
     };
 
     /**
-     * 找出参数二数组元素为参数一数组元素的子节点或相同
-     * @param parent
-     * @param children
+     * 两数组中，找出第二个数组元素属于第一个数组任一元素的子节点
+     * @param {Array} parent
+     * @param {Array} children
      * @returns {Array}  从children中找出所有parent数组元素下的子节点
      * @private
      */
@@ -329,9 +211,9 @@
     };
 
     /**
-     * 获取两数组中共有的元素
-     * @param arr1数组一
-     * @param arr2数组二
+     * 获取两数组中公共的元素
+     * @param {Array} arr1数组一
+     * @param {Array} arr2数组二
      * @returns {Array}返回共有的元素
      * @private
      */
@@ -352,13 +234,21 @@
         return comArray;
     };
 
+    /**
+     * 合并两数组
+     * @param {Array} arr1 数组一
+     * @param {Array} arr2 数组二
+     * @returns {Array}
+     * @private
+     */
     var _buildUnion = function (arr1, arr2) {
         return arr1.concat(arr2);
     };
     /**
-     * 选取一层层限制的Dom
-     * @param selector 类似body#aa.class.class2
-     * @returns {null|Array}
+     * 选取多层限制的Dom
+     * @param {String} selector 无空格的选择器字符串
+     * @returns {null|Array} 匹配的Dom
+     * @example _selectWord(body#aa.class.class2)
      * @private
      */
     var _selectWord = function (selector) {
@@ -399,8 +289,9 @@
 
     /**
      * 选取层次关系的元素
-     * @param arg 选取层次关系的元素
-     * @returns {null|Array}
+     * @param {String} arg 选择器字符
+     * @returns {null|Array} 匹配的Dom
+     * @example _selectBlock(body div#wrap)
      * @private
      */
     var _selectBlock = function (arg) {
@@ -418,17 +309,33 @@
         }
     };
 
+    /**
+     * 缓存所有选择器Dom节点
+     * @private
+     */
     var _cacheDom = [];
+    /**
+     * Dom渲染完的回调数组缓存
+     * @type {Array}
+     * @private
+     */
+        _domLoaded_Fns = [];
 
+    /**
+     * 选择器构造函数
+     * param {String} [arg] 选择器字符串
+     * @constructor
+     * @namespace Sprying
+     */
     function Sprying(arg) {
-        this.elems = new Array();
+        this.elems = [];
         this.arg = arg;
         var matches, queryResults = [];
         // 传入为Sprying对象
-        if (arg instanceof Sprying) {
+        if (arg.constructor === Sprying) {
             return arg;
             // 传入为字符串且逗号相隔
-        } else if (typeof arg === 'string' && /\s*,\s*/.test(arg)) {
+        } else if (typeof arg === 'string' && /^|[\s]*,[\s]*|&/.test(arg)) {
             matches = arg.trim().split(/\s*,\s*/);
             for (var i = 0, len = matches.length; i < len; i++) {
                 queryResults[i] = _selectBlock(matches[i]);
@@ -439,7 +346,7 @@
             this.elems.push(arg);
             // 传入为函数
         } else if (typeof arg === 'function') {
-            var fnCache = Sprying.domLoaded_Fns;
+            var fnCache = _domLoaded_Fns;
             fnCache.push(arg);
             if (!Sprying.isReady){
                 Sprying.isReady = true;
@@ -449,21 +356,6 @@
                     }
                 });
             }
-
-
-            /*           if (!Sprying._EventTimer) {
-                           Sprying._EventTimer = setTimeout(function () {
-                               Sprying.ready(function () {
-                                   for (var i = 0, l = fnCache.length; i < l; i++) {
-                                       fnCache[i]();
-                                   }
-                               });
-                           }, 0);
-                       }
-           */
-        } else {
-            // 进入层次选取
-            this.elems = _selectBlock(arg);
         }
         // 实现类似$('#aa')[0]访问
         for (var i = 0, len = this.elems.length; i < len; i++) {
@@ -473,37 +365,65 @@
     }
 
     Sprying.fn = Sprying.prototype = {
+        /**
+         * @inner
+         */
         constructor: Sprying,
         /**
          * 实现绑定事件函数
-         * @param type
-         * @param handler
-         * @returns {*}
+         * @function
+         * @param {String} type 事件类型
+         * @param {Function} handler 事件回调
+         * @returns {Sprying}
          */
-        bind: function (type, handler) {
-            this.each(function (index) {
-                var self = this, isBubble = true;
-                ;
-                var innerHandler = function (eve) {
-                    var event = eve ? eve : window.event;
+        bind: (function(){
+            var rtn,callback,innerHandler;
+            /**
+             * 封装事件回调
+             * @param handler
+             * @returns {Function}
+             */
+            callback = function(handler){
+                return function(event){
+                    var event = event ? event : window.event,
+                        isBubble;
                     for (var val in nEvent) {
                         event[val] = nEvent[val];
                     }
-                    isBubble = handler.call(self, event) || true;
+                    isBubble = handler.call(this, event) || true;
                     if (!isBubble) {
                         event.stopPropagation();
+                        event.preventDefault();
                     }
-                };
-                if (this.addEventListener) {
-                    this.addEventListener(type, innerHandler, false);
-                } else if (this.attachEvent) {
-                    this.attachEvent("on" + type, innerHandler);
-                } else {
-                    this["on" + type] = innerHandler;
                 }
-            });
-            return this;
-        },
+            };
+            if(document.addEventListener){
+                rtn = function(type,handler){
+                    this.each(function(){
+                        innerHandler = callback.call(this,handler);
+                        this.addEventListener(type, innerHandler, false);
+                    });
+                    return this;
+                }
+            }else if(document.attachEvent){
+                rtn = function(type,handler){
+                    this.each(function(){
+                        innerHandler = callback.call(this,handler);
+                        this.attachEvent("on" + type, innerHandler);
+                    })
+                    return this;
+                }
+            }else{
+                rtn = function(type,handler){
+                    this.each(function(){
+                        innerHandler = callback.call(this,handler);
+                        this["on" + type] = innerHandler;
+                    })
+                    return this;
+                }
+            }
+            return rtn;
+        })(),
         /**
          * 返回Dom对象
          * @param index
@@ -513,9 +433,9 @@
             return this.elems[index] || null;
         },
         /**
-         * 对选择器选中的Sprying对象
-         * @param fns
-         * @returns {*}
+         * 针对选择的的每个Dom节点，迭代应用回调
+         * @param {Function} fns 回调返回false时，停止迭代
+         * @returns {Sprying}
          */
         each: function (fns) {
             for (var i = 0, l = this.elems.length; i < l; i++) {
@@ -527,11 +447,11 @@
         },
         /**
          * 比较两选择器选中内容是否一样
-         * @param arg
+         * @param {*} arg
          * @returns {boolean}
          */
         is: function (arg) {
-            if (this.length == (_buildCommon(this.elems, Sprying(arg))).length)
+            if (this.length == (_buildCommon(this.elems, new Sprying(arg))).length)
                 return true;
             return false;
         },
@@ -541,10 +461,9 @@
             })
         }
     }
-    Sprying.domLoaded_Fns = [];
     /**
      * 类数组判断
-     * @param o
+     * @param {*} 待判断的对象
      * @returns {boolean}
      */
     Sprying.isArrayLike = function (o) {
@@ -561,7 +480,7 @@
     };
     /**
      * 数组判断
-     * @param o
+     * @param {*} 待判断的对象
      * @returns {boolean}
      */
     Sprying.isArray = function (o) {
@@ -570,7 +489,7 @@
     };
     /**
      * 函数判断
-     * @param o
+     * @param o待判断的对象
      * @returns {boolean}
      */
     Sprying.isFunction = function (o) {
@@ -578,8 +497,8 @@
     };
     /**
      * 转换成数组
-     * @param seq
-     * @returns {Function|Array|string|Blob}
+     * @param {*} seq 要转换成数组的对象
+     * @returns {Array}
      */
     Sprying.toArray = function (seq) {
         var arr = new Array(seq.length);
@@ -591,6 +510,7 @@
 
     /**
      * 以对象形式返回浏览器信息
+     * @namespace Sprying.browser
      */
     Sprying.browser = (function () {
         var s = navigator.userAgent.toLowerCase()
@@ -600,15 +520,23 @@
             /(msie)([\w.]+)/.exec(s) ||
             !/compatible/.test(s) && /(mozilla)(?:.*? rv:([\w.]+))?/.exec(s) ||
             [];
-        return {name: function () {
-            return match[1] || "";
-        }, version: function () {
-            return match[2] || "0";
-        }}
+        return {
+            /**
+             * memberOf Sprying.browser
+             * @type {String}
+             */
+            name: match[1] || "",
+            /**
+             * memberOf Sprying.browser
+             * @type {String}
+             */
+            version: match[2] || "0"
+        }
     })();
     /**
      * ie equals one of false|6|7|8|9 values, ie5 is fucked down.
      * Based on the method: https://gist.github.com/527683
+     * @type {Number|Boolean}
      */
     Sprying.browser.ie = function () {
         var v = 4, //原作者的此处代码是3，考虑了IE5的情况，我改为4。
@@ -617,15 +545,16 @@
         do {
             div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->';
         } while (i[0]);
-        return v > 5 ? v : false; //如果不是IE，之前返回undefined，现改为返回false。
+        return v > 5 ? v : false; //如果不是IE，返回false。
     }();
 
     /**
-     * 判断当前是否是严格模式
+     * 是否严格模式
+     * @type {Boolean}
      */
-    Sprying.isStrict = function () {
+    Sprying.isStrict = (function () {
         return !this;
-    };
+    })();
 
     /**
      * Dom渲染完成后执行fn
@@ -675,37 +604,44 @@
             return new Sprying(str);
         }
     }
+
     Sprying.isNumber = function (value) {
         return !isNaN(value) && typeof value == 'number';
     };
     /**
-     * 返回：null NaN undefined string number boolean
-     * function Array String Object（包括一些自定义类型） 自定义类型
+     * 获取参数类型
+     * 对象直接量、Object.create、自定义构造函数的类属性皆为Object;
+     * 识别出原生类型 （内置构造函数和宿主对象）
+     * @function
+     * @inner
+     */
+    function classOf(obj) {
+        return Object.prototype.toString.call(obj).slice(8, -1);
+    }
+
+    /**
+     * 返回函数的名字，可能为空串；不是函数，返回null
+     * @function
+     * @inner
+     */
+    Function.prototype.getName = function () {
+        if ("name" in this) return this.name;
+        return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
+    };
+    /**
+     * 判断传入对象的类型，可识别出自定义类型
+     * @param {*} o 基本数据类型、自定义类型
+     * returns {String}
      */
     Sprying.type = function (o) {
-        /**
-         * 获取参数类型
-         * 对象直接量、Object.create、自定义构造函数的类属性皆为Object;
-         * 识别出原生类型 （内置构造函数和宿主对象）
-         */
-        function classOf(obj) {
-            return Object.prototype.toString.call(obj).slice(8, -1);
-        }
-
-        /**
-         * 返回函数的名字，可能为空串；不是函数，返回null
-         */
-        Function.prototype.getName = function () {
-            if ("name" in this) return this.name;
-            return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
-        };
         var t, c, n;
         // 处理null值特殊情形
         if (o === null) return "null";
         // NaN：和自身值不相等
         if (o !== o) return "NaN";
-        // 识别出原生值类型和函数、undefined
-        if ((t = typeof o) !== "object") return t;
+        // 识别出原生值类型和函数、undefined null|NaN|undefined|string|number|boolean
+        // if ((t = typeof o) !== "object") return t;
+        if (o === undefined) return undefined;
         // 识别出原生类型
         if ((c = classOf(o)) !== "Object") return c;
         // 返回自定义类型构造函数名字
@@ -714,6 +650,12 @@
             return n;
         return "Object";
     };
+
+    /**
+     * 复制对象属性
+     * @param {Object} obj1 对象一
+     * @param {Object} [obj2] 对象二
+     */
     Sprying.extend = function(obj1,/*{object,optional}*/obj2){
             for(var i= 1,l=arguments.length;i<l;i++){
                 var obj_from = arguments[i];
@@ -722,13 +664,13 @@
                     obj1[pro] = obj_from[pro];
                 }
             }
-    };
-    Sprying.extend = Sprying.fn.extend = function(obj){
-        if(!obj) return null;
-        for(var pro in obj){
-            if(!obj[pro]) continue;
-            this[pro] = obj[pro];
+        if(arguments.length === 1){
+            for(var pro in obj){
+                if(!obj[pro]) continue;
+                this[pro] = obj[pro];
+            }
         }
-    }
-    Sprying.extend(window.Sprying,Sprying);
+    };
+    Sprying.fn.extend = Sprying.extend;
+    Sprying.extend(window.Sprying,/**@lends window.Sprying*/Sprying);
 })();

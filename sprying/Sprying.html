@@ -29,29 +29,30 @@
         }
     </style>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="./es5-safe.js"></script>
     <script type="text/javascript" src="./Sprying.js"></script>
     <script type="text/javascript">
         $(function () {
             var $input = $('input'), $tip = $('#float');
             $input.each(function (index) {
-                window.console && console.log('当前索引:' + index + '\n值:' + this.value);
-                $tip[0].innerHTML += '当前索引:' + index + '<br/>值:' + this.value + '<br/>';
+                window.console && console.log('当前索引:' + index + ' 值:' + this.value);
+                $tip[0].innerHTML += '当前索引:' + index + ' 值:' + this.value + '<br/>';
                 float.scrollTop = float.scrollHeight-float.clientHeight;
             });
-            $(' body div#wrap #myBtn.tclass.my,#myInput,#wrap').bind('click', function (event) {
+            $('#wrap,body div#wrap #myBtn.tclass.my,#myInput').bind('click', function (event) {
                 window.console && console.log(this.id);
                 $tip[0].innerHTML += this.id + '<br/>';
                 float.scrollTop = float.scrollHeight-float.clientHeight;
             });
         });
-        var $ready = $(function () {
+        $(function () {
             console.log('before body ,$(fns) 2');
             $('#float')[0].innerHTML += 'before body ,$(fns) 2' + '<br/>';
             float.scrollTop = float.scrollHeight-float.clientHeight;
         });
         setTimeout(function () {
             console.log('setTime');
-            document.getElementById('float').innerHTML += 'setTime'
+            document.getElementById('float').innerHTML += 'setTime <br>'
             float.scrollTop = float.scrollHeight-float.clientHeight;
         }, 0)
     </script>
