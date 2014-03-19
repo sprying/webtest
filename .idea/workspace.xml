@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="webstorm提交gitHub测试">
+    <list id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="webstorm提交gitHub测试">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    </list>
+    <list id="0a7ef4ee-9083-49e2-850c-2d73a4eed887" name="New changelist" comment="New changelist">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.01 - Event listener example.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.02 - Other examples of bridges.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.03 - Bridging multiple classes together.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.04 - Building an XHR connection queue.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.05 - XHR connection queue example page.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsPatterns/Chapter08/8.06 - Where have bridges been used?.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsLearning/closure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsLearning/simpleThis.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/closure.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/constructor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/fuc_param.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/function.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function/useThis.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/function/constructor.html" afterPath="$PROJECT_DIR$/JsLearning/constructor.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/function/fuc_param.html" afterPath="$PROJECT_DIR$/JsLearning/objRefer.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/function/function.html" afterPath="$PROJECT_DIR$/JsLearning/function.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/function/useThis.html" afterPath="$PROJECT_DIR$/JsLearning/this.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JsLearning/arrayFurther.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/other/formate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interView/meituan.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list default="true" id="e97e4de2-a96b-4304-8933-a22ef224aaca" name="New changelist1" comment="update sprying" />
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/attributes_inherited.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1365554901984" ignored="false" />
@@ -51,7 +47,7 @@
     <file path="/getter_settr.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1363785568781" ignored="false" />
     <file path="/enumeration.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1363856464593" ignored="false" />
     <file path="/test.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1373849757171" ignored="false" />
-    <file path="/closure.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393498024433" ignored="false" />
+    <file path="/closure.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394193136661" ignored="false" />
     <file path="/11.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1365518939140" ignored="false" />
     <file path="D:/workspace/MH/symh/search_data.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1364289304843" ignored="false" />
     <file path="D:/workspace/MH/symh/components/mh/MH.search.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1364289509593" ignored="false" />
@@ -73,7 +69,7 @@
     <file path="/Array.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366899142203" ignored="false" />
     <file path="/MH.window.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366446045281" ignored="false" />
     <file path="/class1.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366238354453" ignored="false" />
-    <file path="/Sprying.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392358301277" ignored="false" />
+    <file path="/Sprying.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395103150148" ignored="false" />
     <file path="/param_check.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366444543328" ignored="false" />
     <file path="$PROJECT_DIR$/../webapp/symh/components/mh/MH.window.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366446050593" ignored="false" />
     <file path="$PROJECT_DIR$/../webapp/components/base/es5-safe.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366452022750" ignored="false" />
@@ -91,9 +87,9 @@
     <file path="D:/miniui/source/components/DataGrid/DataGrid.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366893821906" ignored="false" />
     <file path="D:/miniui/source/components/Component/Component.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366894713890" ignored="false" />
     <file path="/jQuery_selector.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1366900449296" ignored="false" />
-    <file path="/RegExp.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1367107431562" ignored="false" />
+    <file path="/RegExp.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394336172470" ignored="false" />
     <file path="/throw.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1367031849593" ignored="false" />
-    <file path="/Sprying.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1368187614296" ignored="false" />
+    <file path="/Sprying.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395102260480" ignored="false" />
     <file path="$PROJECT_DIR$/../miniUI/source/components/Tree/Tree.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1367853611296" ignored="false" />
     <file path="/function.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1368188273109" ignored="false" />
     <file path="/object_ie8.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1368194845281" ignored="false" />
@@ -145,7 +141,7 @@
     <file path="/aLink.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378902556328" ignored="false" />
     <file path="/scrollTop.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378940634953" ignored="false" />
     <file path="/relative.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378922410281" ignored="false" />
-    <file path="/Dummy.txt" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393484122259" ignored="false" />
+    <file path="/Dummy.txt" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395243966527" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/Test123/test.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378953232515" ignored="false" />
     <file path="/dateDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378962718531" ignored="false" />
     <file path="/menu.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378988241671" ignored="false" />
@@ -175,7 +171,7 @@
     <file path="$PROJECT_DIR$/../sweb/src/main/webapp/WEB-INF/views/livechat.jsp" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1388677265540" ignored="false" />
     <file path="/livechat.jsp" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1388658314889" ignored="false" />
     <file path="/chat.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1387893262764" ignored="false" />
-    <file path="/3float.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1388035699804" ignored="false" />
+    <file path="/3float.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394151199809" ignored="false" />
     <file path="/floatStatic.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1388036225752" ignored="false" />
     <file path="/chat.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389978112591" ignored="false" />
     <file path="/chat.json.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1388156459485" ignored="false" />
@@ -232,7 +228,7 @@
     <file path="/pieChart.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389527583717" ignored="false" />
     <file path="/pieChart.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389527652507" ignored="false" />
     <file path="$PROJECT_DIR$/../git/bootstrap-wysiwyg/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389596997420" ignored="false" />
-    <file path="/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392606800962" ignored="false" />
+    <file path="/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394180199896" ignored="false" />
     <file path="$PROJECT_DIR$/../git/bootstrap-wysiwyg/bootstrap-wysiwyg.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389589698866" ignored="false" />
     <file path="/bootstrap-wysiwyg.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389589215385" ignored="false" />
     <file path="/editor.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1389599729196" ignored="false" />
@@ -277,8 +273,8 @@
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2013-10-27-闭包学习.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1391429838438" ignored="false" />
     <file path="/2013-10-27-闭包学习.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1391429838438" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/core-samples/2011-12-29-jekyll-introduction.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1391428002559" ignored="false" />
-    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/rss.xml" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392611924273" ignored="false" />
-    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/atom.xml" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392611924273" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/rss.xml" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394266469544" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/atom.xml" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393897839676" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/tags.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392214044340" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/twitter/css/1.4.0/bootstrap.css" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392096869511" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/blog/2013/10/27/闭包学习/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1391427505348" ignored="false" />
@@ -360,7 +356,7 @@
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/sprying/js/bootstrap.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392086897465" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/sprying/js/bootstrap.min.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392608609130" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/sprying/google-code-prettify/prettify.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1391791730713" ignored="false" />
-    <file path="$PROJECT_DIR$/../git/sprying.github.io/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392602500031" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393947800221" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/sprying/css/font-awesome.min.css" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392096869507" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/sprying/css/font-awesome-ie7.css" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392096869508" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/assets/themes/mark-reid/css/syntax.css" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392086897466" ignored="false" />
@@ -381,21 +377,38 @@
     <file path="$PROJECT_DIR$/../git/examples/app/hello.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392531446799" ignored="false" />
     <file path="/hello.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392531441934" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/page2/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392602089926" ignored="false" />
-    <file path="$PROJECT_DIR$/../git/sprying.github.io/resume/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392619104338" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/resume/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394180199896" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/canvas/img.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392604086509" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/canvas/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393435070570" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/canvas/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392610287990" ignored="false" />
     <file path="/README" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392644143378" ignored="false" />
-    <file path="/.gitignore" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393473401921" ignored="false" />
+    <file path="/.gitignore" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395243632924" ignored="false" />
     <file path="/ie6_select_bug.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393204977415" ignored="false" />
-    <file path="/anheng.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393230183023" ignored="false" />
+    <file path="/anheng.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393582112755" ignored="false" />
     <file path="/listing-1.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393373669531" ignored="false" />
     <file path="/main.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393376561547" ignored="false" />
     <file path="/main1.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393376659946" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/javascript/2014/02/16/Makethewebfaster/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393435070572" ignored="false" />
-    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/resume/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393435070574" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/resume/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395140533360" ignored="false" />
     <file path="/simpleThis.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393560397116" ignored="false" />
     <file path="/this.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393561583448" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395243928787" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2013-10-27-什么是闭包.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393569010961" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2013-10-27-JavaScript中的this.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393569010961" ignored="false" />
+    <file path="/cnBlogs.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393897291852" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2014-2-17-Ps处理明信片、照片.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393897070906" ignored="false" />
+    <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2014-3-4-Ps_your_face.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393897839676" ignored="false" />
+    <file path="/closure_use1.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394189822329" ignored="false" />
+    <file path="/inpTip.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394339850753" ignored="false" />
+    <file path="/alicampus.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394340546837" ignored="false" />
+    <file path="/arrayFurther.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394548708892" ignored="false" />
+    <file path="/midHeight.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394752419337" ignored="false" />
+    <file path="/midHeight2.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394752495140" ignored="false" />
+    <file path="/middle1.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1394811903063" ignored="false" />
+    <file path="/meituan.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395243137890" ignored="false" />
+    <file path="/meituan_2.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395145014634" ignored="false" />
+    <file path="/jsonDemo.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395148445777" ignored="false" />
+    <file path="/meituan_3.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395150327047" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,37 +428,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="closure.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JsLearning/closure.html">
+      <file leaf-file-name="formate.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/other/formate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="602" selection-end="602" vertical-scroll-proportion="-15.0">
+            <state line="237" column="21" selection-start="7070" selection-end="7070" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="this.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JsLearning/this.html">
+      <file leaf-file-name="Sprying.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sprying/Sprying.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="41" selection-start="885" selection-end="885" vertical-scroll-proportion="-0.04403409">
+            <state line="22" column="55" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simpleThis.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JsLearning/simpleThis.html">
+      <file leaf-file-name="meituan.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interView/meituan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="23" selection-start="513" selection-end="514" vertical-scroll-proportion="-11.25">
+            <state line="33" column="95" selection-start="931" selection-end="931" vertical-scroll-proportion="-20.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JsLearning/function.html">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="29" selection-start="311" selection-end="311" vertical-scroll-proportion="-6.25">
+            <state line="5" column="9" selection-start="52" selection-end="52" vertical-scroll-proportion="0.15306123">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="meituan_2.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interView/meituan_2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="18" selection-start="584" selection-end="584" vertical-scroll-proportion="-11.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="23" selection-start="198" selection-end="208" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="-5.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="meituan_3.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interView/meituan_3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="431" selection-end="431" vertical-scroll-proportion="-9.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sprying.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sprying/Sprying.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="54" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="midHeight2.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/midHeight2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="35" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -470,29 +537,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/inExample/in-min.js" />
-        <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/interViewQuestion/ie6_select_bug.html" />
-        <option value="$PROJECT_DIR$/interViewQuestion/anheng.html" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/leaker.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/leaker1.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/main.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/leaker2.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/main2.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/main1.js" />
-        <option value="$PROJECT_DIR$/JsResearch/memoryLose/listing-1.html" />
+        <option value="$PROJECT_DIR$/interView/inpTip.html" />
+        <option value="$PROJECT_DIR$/interView/alicampus.html" />
+        <option value="$PROJECT_DIR$/JsLearning/arrayFurther.html" />
+        <option value="$PROJECT_DIR$/css/midHeight.html" />
+        <option value="$PROJECT_DIR$/css/midHeight2.html" />
+        <option value="$PROJECT_DIR$/css/middle/middle1.html" />
+        <option value="$PROJECT_DIR$/other/formate.js" />
+        <option value="$PROJECT_DIR$/sprying/es5-safe.js" />
+        <option value="$PROJECT_DIR$/sprying/Sprying.html" />
+        <option value="$PROJECT_DIR$/sprying/Sprying.js" />
+        <option value="$PROJECT_DIR$/interView/jsonDemo.js" />
+        <option value="$PROJECT_DIR$/interView/meituan_2.html" />
+        <option value="$PROJECT_DIR$/interView/meituan_3.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/interView/meituan.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/function/closure.html" />
-        <option value="$PROJECT_DIR$/function/useThis.html" />
-        <option value="$PROJECT_DIR$/JsLearning/simpleThis.html" />
-        <option value="$PROJECT_DIR$/JsLearning/this.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -566,7 +632,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -595,42 +660,75 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JsLearning" />
+              <option name="myItemId" value="sprying" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JsPatterns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chapter08" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webtest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interView" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="135" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="140" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="174" />
     <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="165" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="830" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="159" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="170" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="848" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="897" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="178" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="164" />
     <property name="GoToClass.includeJavaFiles" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="options.lastSelected" value="Errors" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -647,11 +745,11 @@
       <recent name="$PROJECT_DIR$/plugins/bootstrap/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/work/cnBlogs" />
+      <recent name="$PROJECT_DIR$/sprying" />
       <recent name="$PROJECT_DIR$/JsLearning" />
       <recent name="$PROJECT_DIR$/work" />
       <recent name="$PROJECT_DIR$/JsPlugins" />
-      <recent name="$PROJECT_DIR$/JsSkill" />
-      <recent name="$PROJECT_DIR$/jsLearning" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.attributes_inherited.html">
@@ -710,6 +808,9 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="" />
+      <changelist id="0a7ef4ee-9083-49e2-850c-2d73a4eed887" name="New changelist" comment="" />
+      <changelist id="" name="New changelist1" comment="" />
+      <changelist id="e97e4de2-a96b-4304-8933-a22ef224aaca" name="New changelist1" comment="" />
       <created>1363313104296</created>
       <updated>1363313104296</updated>
     </task>
@@ -785,7 +886,39 @@
       <created>1393473696923</created>
       <updated>1393473696923</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="调整结构">
+      <created>1393562605506</created>
+      <updated>1393562605506</updated>
+    </task>
+    <task id="LOCAL-00020" summary="测试例子提交">
+      <created>1394548963595</created>
+      <updated>1394548963595</updated>
+    </task>
+    <task id="LOCAL-00021" summary="test">
+      <created>1395149519803</created>
+      <updated>1395149519803</updated>
+    </task>
+    <task id="LOCAL-00022" summary="test">
+      <created>1395151540528</created>
+      <updated>1395151540528</updated>
+    </task>
+    <task id="LOCAL-00023" summary="首页导航">
+      <created>1395243293767</created>
+      <updated>1395243293767</updated>
+    </task>
+    <task id="LOCAL-00024" summary="cnBlogs">
+      <created>1395243787086</created>
+      <updated>1395243787086</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update sprying">
+      <created>1395243919261</created>
+      <updated>1395243919261</updated>
+    </task>
+    <task id="LOCAL-00026" summary="实现高度居中的方法">
+      <created>1395243969738</created>
+      <updated>1395243969738</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -809,25 +942,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32711443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2553802" sideWeight="0.6742532" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30631277" sideWeight="0.8233831" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26685795" sideWeight="0.6728856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36332768" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.67081606" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918397" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257468" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32462686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="96" y="96" width="1174" height="546" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17661692" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -875,8 +1008,8 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="webstorm提交gitHub测试" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现高度居中的方法" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
@@ -893,6 +1026,13 @@
     <MESSAGE value="结构调整" />
     <MESSAGE value="结构调整&#10;" />
     <MESSAGE value="webstorm提交gitHub测试" />
+    <MESSAGE value="调整结构" />
+    <MESSAGE value="测试例子提交" />
+    <MESSAGE value="test" />
+    <MESSAGE value="首页导航" />
+    <MESSAGE value="cnBlogs" />
+    <MESSAGE value="update sprying" />
+    <MESSAGE value="实现高度居中的方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -904,117 +1044,114 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JsResearch/memoryLose/main1.js">
+    <entry file="file://$PROJECT_DIR$/interView/alicampus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="8" selection-start="239" selection-end="239" vertical-scroll-proportion="0.25896415">
+        <state line="3" column="33" selection-start="30" selection-end="57" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsResearch/memoryLose/listing-1.html">
+    <entry file="file://$PROJECT_DIR$/JsLearning/arrayFurther.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.20576131">
+        <state line="40" column="26" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Sprying.js">
+    <entry file="file://$PROJECT_DIR$/sprying/jQuery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="739" column="67" selection-start="22537" selection-end="22537" vertical-scroll-proportion="6.257732">
+        <state line="6" column="34" selection-start="197" selection-end="198" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interViewQuestion/ie6_select_bug.html">
+    <entry file="file://$PROJECT_DIR$/css/text-indent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="26" selection-start="285" selection-end="285" vertical-scroll-proportion="0.16238159">
+        <state line="12" column="12" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interViewQuestion/mogujie.html">
+    <entry file="file://$PROJECT_DIR$/css/midHeight.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="625" selection-end="625" vertical-scroll-proportion="0.26196808">
+        <state line="13" column="83" selection-start="293" selection-end="293" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsPatterns/Chapter08/8.01 - Event listener example.js">
+    <entry file="file://$PROJECT_DIR$/css/middle/middle1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="28" selection-start="634" selection-end="634" vertical-scroll-proportion="0.44458762">
+        <state line="18" column="68" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsPatterns/Chapter08/8.02 - Other examples of bridges.js">
+    <entry file="file://$PROJECT_DIR$/other/formate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="51" selection-start="130" selection-end="130" vertical-scroll-proportion="0.13530928">
+        <state line="237" column="21" selection-start="7070" selection-end="7070" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsPatterns/Chapter08/8.05 - XHR connection queue example page.html">
+    <entry file="file://$PROJECT_DIR$/sprying/Sprying.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="277" selection-end="277" vertical-scroll-proportion="0.13962767">
-          <folding>
-            <marker date="1196161226000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1196161226000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/throw.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="51" column="54" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/closure.html">
+    <entry file="file://$PROJECT_DIR$/css/midHeight2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="602" selection-end="602" vertical-scroll-proportion="-15.0">
+        <state line="10" column="35" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/constructor.html">
+    <entry file="file://$PROJECT_DIR$/interView/meituan_3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="219" selection-end="219" vertical-scroll-proportion="0.14914773">
+        <state line="15" column="0" selection-start="431" selection-end="431" vertical-scroll-proportion="-9.375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/objRefer.html">
+    <entry file="file://$PROJECT_DIR$/interView/meituan_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="7" selection-start="382" selection-end="382" vertical-scroll-proportion="0.40482953">
+        <state line="19" column="18" selection-start="584" selection-end="584" vertical-scroll-proportion="-11.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/trycatch.html">
+    <entry file="file://$PROJECT_DIR$/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="319" selection-end="319" vertical-scroll-proportion="0.21306819">
+        <state line="12" column="23" selection-start="198" selection-end="208" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/function.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="311" selection-end="311" vertical-scroll-proportion="-6.25">
+        <state line="9" column="13" selection-start="88" selection-end="88" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/simpleThis.html">
+    <entry file="file://$PROJECT_DIR$/sprying/Sprying.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="23" selection-start="513" selection-end="514" vertical-scroll-proportion="-11.25">
+        <state line="22" column="55" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsLearning/this.html">
+    <entry file="file://$PROJECT_DIR$/interView/meituan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="41" selection-start="885" selection-end="885" vertical-scroll-proportion="-0.04403409">
+        <state line="33" column="95" selection-start="931" selection-end="931" vertical-scroll-proportion="-20.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="52" selection-end="52" vertical-scroll-proportion="0.15306123">
           <folding />
         </state>
       </provider>

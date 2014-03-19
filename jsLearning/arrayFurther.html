@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        var arrA = ['abcd', 'efg', 'hi', 'j', ''];
+        arrA.sort();
+        console.log(arrA);
+
+        var arrA1 = [1, 2, 5, 4, 3];
+        arrA1.sort(function(a,b){return a-b;})
+        console.log(arrA1.toString())
+
+        arrA1.sort(function(a,b){return b-a;})
+        console.log(arrA1.toString())
+
+        var arr = [1,'ab',{'pro':'newGood'},function(){},null];
+        arr.reverse();
+
+        Array.prototype.unique = function(){
+            var temp = {};
+            for(var i= 0,l = this.length;i<l;i++){
+                if(!temp[this[i]]){
+                    temp[this[i]] = true;
+                }
+            }
+            this.length = 0;
+            for (var i in temp)
+                this[this.length] = i;
+            return this;
+        }
+        var cc = [1,2,3] ,bb = ['a',[],{},2,3];
+        var res = cc.concat(bb);
+        res.unique(); // 结果 {} []不是想要的
+    </script>
+</head>
+<body>
+
+</body>
+</html>
