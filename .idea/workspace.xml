@@ -4,13 +4,20 @@
     <list id="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" name="Default" comment="webstorm提交gitHub测试">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
-    <list id="0a7ef4ee-9083-49e2-850c-2d73a4eed887" name="New changelist" comment="New changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/other/formate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list id="0a7ef4ee-9083-49e2-850c-2d73a4eed887" name="New changelist" comment="New changelist" />
     <list default="true" id="e97e4de2-a96b-4304-8933-a22ef224aaca" name="New changelist1" comment="update sprying">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interView/meituan.html" afterPath="$PROJECT_DIR$/interView/meituan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interView/meituan_3.html" afterPath="$PROJECT_DIR$/interView/meituan_3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/class/simple-inherit.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/webtest.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsPlugins/backbone/demo2/js/backbone.localStorage.js" afterPath="$PROJECT_DIR$/JsPlugins/backbone/demo2/js/backbone.localStorage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JsPlugins/backbone/demo2/js/todos.js" afterPath="$PROJECT_DIR$/JsPlugins/backbone/demo2/js/todos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,7 +143,7 @@
     <file path="/aLink.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378902556328" ignored="false" />
     <file path="/scrollTop.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378940634953" ignored="false" />
     <file path="/relative.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378922410281" ignored="false" />
-    <file path="/Dummy.txt" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395669321260" ignored="false" />
+    <file path="/Dummy.txt" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395669338185" ignored="false" />
     <file path="$USER_HOME$/WebstormProjects/Test123/test.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378953232515" ignored="false" />
     <file path="/dateDemo.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378962718531" ignored="false" />
     <file path="/menu.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1378988241671" ignored="false" />
@@ -377,7 +384,7 @@
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/canvas/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393435070570" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/canvas/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392610287990" ignored="false" />
     <file path="/README" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1392644143378" ignored="false" />
-    <file path="/.gitignore" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395243632924" ignored="false" />
+    <file path="/.gitignore" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395670069661" ignored="false" />
     <file path="/ie6_select_bug.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393204977415" ignored="false" />
     <file path="/anheng.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393582112755" ignored="false" />
     <file path="/listing-1.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393373669531" ignored="false" />
@@ -387,7 +394,6 @@
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_site/resume/index.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395140533360" ignored="false" />
     <file path="/simpleThis.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393560397116" ignored="false" />
     <file path="/this.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393561583448" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395244057773" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2013-10-27-什么是闭包.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393569010961" ignored="false" />
     <file path="$PROJECT_DIR$/../git/sprying.github.io/_posts/2013-10-27-JavaScript中的this.md" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393569010961" ignored="false" />
     <file path="/cnBlogs.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1393897291852" ignored="false" />
@@ -404,6 +410,7 @@
     <file path="/meituan_2.html" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395145014634" ignored="false" />
     <file path="/jsonDemo.js" changelist="0ebcf2d3-1356-4615-8a3d-7891a33e77bc" time="1395148445777" ignored="false" />
     <file path="/meituan_3.html" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395544694020" ignored="false" />
+    <file path="$PROJECT_DIR$/.gitignore" changelist="e97e4de2-a96b-4304-8933-a22ef224aaca" time="1395670098963" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +442,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="48" selection-start="52" selection-end="52" vertical-scroll-proportion="0.10302198">
+            <state line="5" column="13" selection-start="74" selection-end="74" vertical-scroll-proportion="0.10668563">
               <folding />
             </state>
           </provider>
@@ -503,9 +510,9 @@
         <option value="$PROJECT_DIR$/interView/jsonDemo.js" />
         <option value="$PROJECT_DIR$/interView/meituan_2.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/interView/meituan.html" />
         <option value="$PROJECT_DIR$/interView/meituan_3.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -615,7 +622,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="interView" />
+              <option name="myItemId" value="JsPlugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1061,7 +1068,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="48" selection-start="52" selection-end="52" vertical-scroll-proportion="0.10302198">
+        <state line="5" column="13" selection-start="74" selection-end="74" vertical-scroll-proportion="0.10668563">
           <folding />
         </state>
       </provider>
