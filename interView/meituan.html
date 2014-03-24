@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function sortX(arr1, arr2) {
+            var arr3 = [],
+                    begin1 = 0,
+                    begin2 = 0;
+            for (var i = 0, len = arr1.length; i < len; i++) {
+                for (var j = begin1, l = arr2.length; j < l; j++) {
+                    if (arr1[i] > arr2[j]) {
+                        arr3.push(arr2[j]);
+                        begin1++;
+                    } else {
+                        arr3.push(arr1[i]);
+                        begin2++;
+                        break;
+                    }
+                }
+
+            }
+
+
+            for (var h = begin1; h < l; h++) {
+                arr3.push(arr2[h]);
+            }
+            for (var m = begin2; m < len; m++) {
+                arr3.push(arr1[m]);
+            }
+            return arr3;
+        }
+
+        function sortZ(arr1, arr2) {
+            var arr3 = [],
+                    begin1 = 0,
+                    begin2 = 0;
+            for (var i = 0, len = arr1.length; i < len; i++) {
+                for (var j = begin1, l = arr2.length; j < l; j++) {
+                    if (arr1[i] <= arr2[j]) {
+                        arr3.push(arr1[i]);
+                        continue;
+                    } else {
+                        arr3.push(arr2[j]);
+                        begin1++;
+                    }
+                }
+                if(begin1 = l){
+
+                }
+            }
+            return arr3;
+        }
+
+        var rtnArr1 = sortX([1, 3, 4], [5, 6, 7]),
+                rtnArr2 = sortX([1, 2, 3, 4, 5, 8], [2, 3, 4]),
+                rtnArr3 = sortX([5, 6, 7], [2, 3, 4]);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
