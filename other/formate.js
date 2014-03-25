@@ -402,4 +402,8 @@ KISSY.add('gallery/form/1.3/uploader/queue', function (S, Node, Base) {
     }});
 
     return Queue;
+
+    var queue = new Queue();
+    queue.clear()
 }, {requires:['node', 'base']});
+
