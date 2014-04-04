@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../scripts/es5-safe.js"></script>
+    <script>
+        /**=======第二题、版本比较========*/
+        var compare = (function () {
+            var obj = {
+                'stable': 2,
+                'rc': 1
+            };
+
+            /**
+             * 转换版本字符串为数值
+             */
+            function calNum(verStr) {
+                // 没有类似stable后缀的版本，加.0
+                if (!/\-/.test(verStr)) {
+                    verStr += '.0';
+                }
+                // 有后缀的替换成数字
+                verStr = verStr.replace(/-([^\-]+)/, function (str, $1) {
+                    return '.' + obj[$1] || 0;
+                });
+                // 获取结果子表达式
+                var rtnNum = 0;
+                var arr = /(\d+)\.(\d+)\.(\d+)\.(\d+)/.exec(verStr);
+                arr.splice(0, 1);
+
+                arr.forEach(function (item, i) {
+                    rtnNum += Number(item) * Math.pow(100, (3 - i));
+                });
+                return rtnNum;
+            }
+
+            return function (v1, v2) {
+                var tempArr = [v1, v2].map(function (item) {
+                    return calNum(item);
+                })
+                return tempArr[0] > tempArr[1] ? 1 : tempArr[0] < tempArr[1] ? -1 : 0;
+            }
+        })();
+        console.log(compare('3.5.1', '3.2.1'));
+        console.log(compare('3.5.1', '3.5.2'));
+        console.log(compare('3.5.1', '3.5.1'));
+        console.log(compare('3.5.1-stable', '3.5.1-rc'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

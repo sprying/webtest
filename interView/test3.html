@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        /**=======一面、计算某个数的阶乘尾数有多少个0========*/
+        function calZeroNum(number){
+            var l = 0,res = 5,zeroNum = 0,num5;
+            while(res<=number){
+                l++;
+                num5 = Math.floor(number / res);
+                zeroNum += num5 * l;
+                res = res * 5;
+            }
+            return zeroNum;
+        }
+        console.log(calZeroNum(4));
+        console.log(calZeroNum(55));
+        console.log(calZeroNum(255));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

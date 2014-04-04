@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../scripts/es5-safe.js"></script>
+    <script>
+        /**=======第一题、找出数组中的变位词========*/
+        var v = "apple", //变位词
+            arr = ['apple','stop','spto','pplea','ealpp'];
+
+        /**
+         * 由数组[‘a’,'p','p','l','e']生成各种可能组合
+         */
+        function build(arr,itemArr,rtnArr){
+            var copyArr,tempArr;
+            !itemArr && (itemArr = [],rtnArr = [])
+            arr.forEach(function(item,i){
+                tempArr = arr.slice();
+                tempArr.splice(i,1);
+                copyArr = itemArr.slice();
+                copyArr.push(item);
+                if(tempArr.length)  build(tempArr,copyArr,rtnArr);
+                else rtnArr.push(copyArr);
+            })
+            return rtnArr;
+        }
+        /**
+         * 对生成的组合去重
+         */
+        Array.prototype.unique = function(){
+            var tempObj = {},tempArr = [];
+            this.forEach(function(item,i){
+                 if(!tempObj[item]){
+                     tempArr.push(item);
+                     tempObj[item] = 1;
+                 }
+            })
+            return tempArr;
+        }
+
+
+        // 生成字符串数组
+        var charArr= [];
+        for(var i = 0,len = v.length;i<len;i++){
+            charArr.push(v[i]);
+        }
+
+        var res = build(charArr);
+        var res2 = res.unique().map(function(item){
+            return item.join('');
+        });
+
+        var arr = ['apple','stop','spto','pplea','ealpp'];
+        arr.forEach(function(item,i){
+            var pos = res2.indexOf(item);
+            (pos+1) && window.console && console.log('pos:'+i+', '+'value:'+item);
+        })
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
