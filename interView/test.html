@@ -15,15 +15,15 @@
              * 由数组[‘a’,'p','p','l','e']生成各种可能组合
              */
             function build(arr,itemArr,rtnArr){
-                var copyArr,tempArr;
                 !itemArr && (itemArr = [],rtnArr = [])
                 arr.forEach(function(item,i){
-                    tempArr = arr.slice();
-                    tempArr.splice(i,1);
-                    copyArr = itemArr.slice();
-                    copyArr.push(item);
-                    if(tempArr.length)  build(tempArr,copyArr,rtnArr);
-                    else rtnArr.push(copyArr);
+                    var linkedArr,nextArr;
+                    nextArr = arr.slice();
+                    nextArr.splice(i,1);
+                    linkedArr = itemArr.slice();
+                    linkedArr.push(item);
+                    if(nextArr.length)  build(nextArr,linkedArr,rtnArr);
+                    else rtnArr.push(linkedArr);
                 })
                 return rtnArr;
             }
