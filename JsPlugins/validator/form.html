@@ -24,7 +24,7 @@
 </head>
 <body>
 <form id="shareForm">
-    <labe for="telNO" class="text-left">手机号码:</labe><input type="text" id="telNO" name="telNO" data-msg-required=“不能为空” data-tip="密码由6位数字组成"/>
+    <labe for="telNO" class="text-left">手机号码:</labe><input type="text" id="telNO" name="telNO"/>
     <label class="tip">请输入手机号码</label>
     <label for="name1" class="text-left">备注:</label><input type="text" id="name1" name="name1"/>
     <label class="tip">xxxxx</label>
@@ -33,6 +33,17 @@
 <script src="scripts/jquery.js"></script>
 <script src="./scripts/jquery.validate.js"></script>
 <script>
+    var $input = $('input'); 
+    $input.keydown(function(evt){
+        if(evt.keyCode == 13){
+            if($(this).is(':submit')){
+                $(this).click();
+            }
+            var index = $input.index(this) + 1;
+            evt.preventDefault();
+            $('input:eq('+index+')').focus();
+        }
+    })
     jQuery.validator.addMethod('phone',function(value,element){
        return this.optional(element) || /^(13[0-9]{9}|145[0-9]{8}|147[0-9]{8}|15[0-9]{9}|170[0-9]{8}|18[0-9]{9})$/.test(value)
     },'请输入有效的手机号');
@@ -45,6 +56,11 @@
     jQuery.validator.setDefaults({
 
     })
+    jQuery.extend(jQuery.validator.messages, {
+        required:'不能为空',
+        number:'请输入数字',
+        minlength:jQuery.validator.format('最小长度必须为{0}位')
+    });
      $('#shareForm').validate({
           rules:{
               telNO:{
@@ -67,16 +83,15 @@
              $(element).nextAll('.tip').show();
              $(element).removeClass(errorClass).addClass(validClass);
          },
-         messages:{
+         /*messages:{
              telNO:{required:'不能为空',number:'请输入数字'},
              name1:{minlength:jQuery.validator.format('最小长度必须为{0}位')}
-         },
+         },*/
          submitHandler:function(form){
-             alert(1);
+            console.log(1);
          },
          success: function(label,element) {
              //label.removeClass('error').addClass("valid").text("Ok!")
-             debugger;
              var pos = $(element).position();
              $(element).parent().append('<span style="position:absolute;left: '+(Number(pos.left)+240)+'px;top:'+(Number(pos.top)+5)+'px">OK</span>');
          }
