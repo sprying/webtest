@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+         .text-left{
+             float: left;
+         }
+         input{
+             margin-left:100px ;
+             display: block;
+         }
+        label.error{
+            display: block;
+            margin:5px 0 5px 100px ;
+            color: red;
+        }
+        .tip{
+            margin:5px 0 5px 100px ;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form id="shareForm">
+    <labe for="telNO" class="text-left">手机号码:</labe><input type="text" id="telNO" name="telNO" data-msg-required=“不能为空” data-tip="密码由6位数字组成"/>
+    <label class="tip">请输入手机号码</label>
+    <label for="name1" class="text-left">备注:</label><input type="text" id="name1" name="name1"/>
+    <label class="tip">xxxxx</label>
+    <input type="submit" value="提交"/>
+</form>
+<script src="scripts/jquery.js"></script>
+<script src="./scripts/jquery.validate.js"></script>
+<script>
+    jQuery.validator.addMethod('phone',function(value,element){
+       return this.optional(element) || /^(13[0-9]{9}|145[0-9]{8}|147[0-9]{8}|15[0-9]{9}|170[0-9]{8}|18[0-9]{9})$/.test(value)
+    },'请输入有效的手机号');
+    jQuery.validator.addMethod('nameRule',function(value,element){
+        return this.optional(element) || !/^_*$|^\d*$/.test(value)
+    },'不能全为下划线或者数字');
+    jQuery.validator.addMethod('equalNum',function(value,element,attrs){
+        return this.optional(element) || new RegExp('^.\{'+attrs+'\}$').test(value)
+    },jQuery.validator.format('长度必须为{0}位'));
+    jQuery.validator.setDefaults({
+
+    })
+     $('#shareForm').validate({
+          rules:{
+              telNO:{
+                  required:true,
+                  number:true,
+                  equalNum:11,
+                  phone:true
+              },
+              name1:{
+                  minlength:2,
+                  nameRule:true
+
+              }
+          },
+         highlight:function(element,errorClass,validClass){
+             $(element).nextAll('.tip:eq(0)').hide();
+             $(element).removeClass(validClass).addClass(errorClass);
+         },
+         unhighlight:function(element,errorClass,validClass){
+             $(element).nextAll('.tip').show();
+             $(element).removeClass(errorClass).addClass(validClass);
+         },
+         messages:{
+             telNO:{required:'不能为空',number:'请输入数字'},
+             name1:{minlength:jQuery.validator.format('最小长度必须为{0}位')}
+         },
+         submitHandler:function(form){
+             alert(1);
+         },
+         success: function(label,element) {
+             //label.removeClass('error').addClass("valid").text("Ok!")
+             debugger;
+             var pos = $(element).position();
+             $(element).parent().append('<span style="position:absolute;left: '+(Number(pos.left)+240)+'px;top:'+(Number(pos.top)+5)+'px">OK</span>');
+         }
+
+     })
+</script>
+</body>
+</html>

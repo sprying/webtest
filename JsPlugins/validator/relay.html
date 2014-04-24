@@ -27,7 +27,14 @@
     $( "#myform" ).validate({
         rules: {
             details: {
-                required: "#other:checked"
+                required: "#other:checked",
+                minlength:2
+            }
+        },
+        messages:{
+            details:{
+                required:'不能为空',
+                minlength:'最小长度要为2字符'
             }
         }
     });

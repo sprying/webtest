@@ -23,11 +23,10 @@ $(function () {
         },
         validate:function(attributes){
             if(!attributes){
-
-            }else if(attributes&&(attributes.title.search(/^[a-zA-Z_]\w*/)+1)){
-            }else{
                 alert('请输入合法名字');
                 return "Error!";
+            }else if(attributes&&(attributes.title.search(/^[a-zA-Z_]\w*/)+1)){
+            }else{
             }
         },
         // Toggle the `done` state of this todo item.
