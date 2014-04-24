@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../scripts/jquery-1.4.4.js"></script>
+    <script>
+        var eventObj = (function () {
+            var cacheEve = {},
+                hasFired = [],
+                cacheData = {};
+            return {
+                on: function (name, fns) {
+                    var arr = cacheEve[name] || (cacheEve[name] = []);
+                    $.isArray(name) && name.sort();
+                    arr.push(fns);
+                    return this;
+                },
+                fire: function (name) {
+                    var forEachBreak = new Error("StopIteration"),
+                            self = this,
+                            arr,
+                            temp,
+                            callData = {};
+                    !(hasFired.indexOf(name) + 1) && hasFired.push(name);
+                    cacheData[name] = [].slice.call(arguments, 1);
+                    for (var v in cacheEve) {
+                        temp = v.split(',');
+                        if (temp.length && temp.indexOf(name) + 1) {
+                            try {
+                                temp.forEach(function (elem, i) {
+                                    if (hasFired.indexOf(elem) + 1) {
+                                        callData[elem] = cacheData[elem];
+                                    } else {
+                                        throw forEachBreak;
+                                    }
+                                });
+                                arr = cacheEve[v];
+                                arr.forEach(function (item, index) {
+                                    item.call(null, callData);
+                                });
+                            } catch (e) {
+                                if (e === forEachBreak) {
+                                }
+                                else
+                                    throw e;
+                            }
+                        }
+                    }
+                    return this;
+                }
+            }
+        })();
+        eventObj.on('love',function (data) {
+            console.log('I love you forever, ' + data['love']);
+        }).on(['love', 'hate'], function (data) {
+                    console.log('The more I love you ,the more I hate you when break up! Print out the params:' + data['love'] + ',' + data['hate']);
+                })
+
+        eventObj.fire('love', 'sprying').fire('hate', 'history');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://i.shipin7.com/assets/up/src/core/jquery.js?20140228"></script>
+
+</head>
+<body>
+<div>
+<form id="fform" style="position: fixed">
+    <input id="inp" type="text" value="fads">
+    <input type="submit" value="submit">
+</form>
+<div class="mainContent" style="position: fixed;display: none;">
+    <div class="fromScreen">dfas</div>
+</div>
+</div>
+<script>
+    $('#fform').submit(function(){
+        event.preventDefault ? event.preventDefault() : window.event.returnValue = false;
+        console.log(1);
+        $('#fform').hide();
+        $('.mainContent').show();
+        return false;
+    })
+   // $(".mainContent").trigger("focus");  // Call this before the hide.
+
+    $(function(){
+        $('#inp').focus();
+    })
+    function fads(){
+        console.log(1);
+        $('.fform').hide();
+    }
+</script>
+</body>
+</html>

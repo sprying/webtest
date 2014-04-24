@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script src="./demo2/js/underscore.js"></script>
+
+    <script type="text/template" id="stats-template">
+        <div class="view">
+            <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+            <label><%- title %></label>
+            <a class="destroy"></a>
+        </div>
+        <input class="edit" type="text" value="<%- title %>"/>
+    </script>
+
+    <script type="text/template" id="fasdf">
+        <b class="offline"></b>
+        <a href={%= toMonitor %} target="_self" class="play"></a>
+        <div class="pic"><img src={%= picSrc %} onerror="javascript:this.src=\'/assets/imgs/cameraList/img_error_big.png\';" /></div>
+        '<a class="name ellipsis" href="{%= toMonitor %}" target="_self" title="{%= name %}">{%=name%}</a>'+
+        '<% if(isShared == "OWNER"){%>'+
+        '<a class="inviteUserItem" data-cameraid = "{%=cameraId%}" title="邀请好友"></a>'+
+        '<span class="already-share">已分享</span>'+
+        '<a href="{%=shareUrl%}" class="text-share-info">详情..</a>'+
+        '<%} else if(isShared == "CUSTOMER")%>'+
+        '<a href="###" class="quitShare" data-cameraid = "{%=cameraId%}" title="退出共享"></a>',
+
+    </script>
+    <script>
+        var str = $('#stats-template').html();
+        var nn = _.template(str);
+        var out = nn({
+            title:'fda',
+            done:true
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
