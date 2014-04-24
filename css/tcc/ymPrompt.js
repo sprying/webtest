@@ -1,9 +1,4 @@
 /**
- * User: fangyc
- * Date: 13-8-22
- * Time: 下午5:18
- */
-/**
  * ymPrompt.js 消息提示组件
  * @author netman8410@163.com
  */

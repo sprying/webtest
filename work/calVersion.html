@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../scripts/jquery-1.4.4.js"></script>
+    <script>
+        var typeObj = {
+            'C1':'V4.2.1',
+            'C2':'V5.1.11',
+            'C3':'V5.1.1',
+            'C4':'V5.1.01',
+            'F1':'V5.0.1'
+        },
+
+            version = 'V5.1.09 build 140228';
+
+        var Vversion = calculateNum(version);
+
+        function calculateNum(versionStr){
+            var version = /^V(\d+)\.(\d+)\.(\d+)/.exec(versionStr),
+                versionN = 0;
+            version.splice(0,1);
+            $(version).each(function(i,item){
+                versionN += Number(item) * Math.pow(1000,2-i);
+            })
+            return versionN;
+        }
+
+        for(var v in typeObj){
+            typeObj[v] = calculateNum(typeObj[v]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

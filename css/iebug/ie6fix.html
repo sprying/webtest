@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        if(!ie)
+        {
+            /**
+             * ie equals one of false|6|7|8|9 values, ie5 is fucked down.
+             * Based on the method: https://gist.github.com/527683
+             */
+            var ie = function ()
+            {
+                var v = 4,
+                        div = document.createElement('div'),
+                        i = div.getElementsByTagName('i');
+                do {
+                    div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->';
+                } while (i[0]);
+                return v > 5 ? v : false;
+            }();
+        }
+        /*
+         *fixed ie
+         *http://stackoverflow.com/questions/3348914/using-bottom-expression-0-for-ie-6-fixed-positioning
+         *element
+         *isbottom
+         */
+        function fixFixed(element, isbottom)
+        {
+            if(ie==6 || document.documentMode==5)
+            {
+                var root= document.compatMode==='CSS1Compat'? document.documentElement : document.body;
+                function setPosition(fixedtop) {
+                    if (isbottom)
+                        element.style.top= (root.scrollTop+root.clientHeight-element.offsetHeight)+'px';
+                    else
+                        element.style.top= (root.scrollTop)+'px';
+                }
+                element.style.position= 'absolute';
+                window.attachEvent('onscroll', setPosition);
+                window.attachEvent('onresize', setPosition);
+                window.setInterval(setPosition, 5000);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="fixed">
+
+</div>
+</body>
+</html>
