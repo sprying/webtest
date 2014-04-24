@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/lib/underscore.js"></script>
-    <script type="text/javascript" src="js/lib/backbone.js"></script>
+    <script type="text/javascript" src="./demo1/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="./demo1/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="./demo1/js/lib/backbone.js"></script>
     <script type="text/javascript">
         var app = Backbone.View.extend({
             tagName:'h3',
@@ -27,7 +27,7 @@
         });
 
         $(function(){
-            $('body').append(new app().render().el);
+            $('body').append(new app().el);
         });
     </script>
 </head>

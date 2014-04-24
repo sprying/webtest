@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        test = "你好abc"
+        str = ""
+        for( i=0;    i<test.length; i++ )
+        {
+            temp = test.charCodeAt(i).toString(16);
+            str    += "\\u"+ new Array(5-String(temp).length).join("0") +temp;
+        }
+        document.write (str)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
