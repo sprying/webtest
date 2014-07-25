@@ -21,23 +21,23 @@
                             self = this,
                             arr,
                             temp,
-                            callData = {};
+                            callData = [];
                     !(hasFired.indexOf(name) + 1) && hasFired.push(name);
-                    cacheData[name] = [].slice.call(arguments, 1);
+                    cacheData[name] = [].slice.call(arguments, 1)[0];
                     for (var v in cacheEve) {
                         temp = v.split(',');
                         if (temp.length && temp.indexOf(name) + 1) {
                             try {
                                 temp.forEach(function (elem, i) {
                                     if (hasFired.indexOf(elem) + 1) {
-                                        callData[elem] = cacheData[elem];
+                                        callData.push(cacheData[elem]);
                                     } else {
                                         throw forEachBreak;
                                     }
                                 });
                                 arr = cacheEve[v];
                                 arr.forEach(function (item, index) {
-                                    item.call(null, callData);
+                                    item.apply(null, callData);
                                 });
                             } catch (e) {
                                 if (e === forEachBreak) {
@@ -52,9 +52,9 @@
             }
         })();
         eventObj.on('love',function (data) {
-            console.log('I love you forever, ' + data['love']);
-        }).on(['love', 'hate'], function (data) {
-                    console.log('The more I love you ,the more I hate you when break up! Print out the params:' + data['love'] + ',' + data['hate']);
+            console.log('I love you forever, ' + data);
+        }).on(['love', 'hate'], function (love,hate) {
+                    console.log('The more I love you ,the more I hate you when break up! Print out the params:' + love + ',' + hate);
                 })
 
         eventObj.fire('love', 'sprying').fire('hate', 'history');
