@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8" />
+
+<title>试验</title>
+
+<script type="text/javascript" src="../../scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="angular.js"></script>
+
+</head>
+<body>
+<div ng-controller="BoxCtrl">
+	<div style="width: 100px; height: 100px; background-color: red;"
+		ng-click="click()"></div>
+	<p>{{ w }} x {{ h }}</p>
+	<p>W: <input type="text" ng-model="w" /></p>
+	<p>H: <input type="text" ng-model="h" /></p>
+</div>
+<div ng-controller="TestCtrl">
+	{{ data | filter: f }} <br />
+	<hr>
+    {{ data | filter: '!B' }} <br />
+<hr	
+	{{ data | orderBy: 'age' }} <br/>
+<hr>
+    {{ data | orderBy: 'age' }} <br />
+</div>
+
+
+<script type="text/javascript">
+var TestCtrl = function($scope){
+	$scope.data = [
+	{name: 'B', age: 4},  
+	{name: 'A', age: 1},  
+	{name: 'D', age: 3},  
+	{name: 'C', age: 3},  
+	];
+
+	$scope.f = function(e){
+		return e.age > 2;
+	}
+}
+
+var BoxCtrl = function($scope, $element){
+
+	//$element 就是一个 jQuery 对象
+	var e = $element.children().eq(0);
+	$scope.w = e.width();
+	$scope.h = e.height();
+
+	$scope.click = function(){
+		$scope.w = parseInt($scope.w) + 10;
+		$scope.h = parseInt($scope.h) + 10;
+	}
+
+	$scope.$watch('w',
+			function(to, from){
+			e.width(to);
+			}
+			);
+
+	$scope.$watch('h',
+			function(to, from){
+			e.height(to);
+			}
+			);
+}
+
+angular.bootstrap(document.documentElement);
+</script>
+</body>
+</html>
