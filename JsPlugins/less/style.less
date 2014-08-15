@@ -1,0 +1,210 @@
+#header {
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p { font-size: 12px;
+    a { text-decoration: none;
+      &:hover { border-width: 1px }
+    }
+  }
+}
+@import "common.less";
+@page-width:960px;
+@line-color:#ddd;
+@nav-desc-color:#808080;
+@org-color:#f93;
+#inc_topnav{
+  .nav-box ul{
+    margin: 0;
+    padding: 0;
+  }
+}
+.page-nav{
+  position: absolute;
+  left: 50%;
+  top:0;
+  z-index: 1;
+  width: @page-width;
+  margin-left: -@page-width/2;
+  padding-bottom: 10px;
+  border-bottom: 1px solid @line-color;
+  .tab_video{
+    width: 95px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    color: @org-color;
+    text-align: center;
+    background: url(../imgs/icon_03.png) no-repeat;
+    &.tab_current{
+      color: white;
+      background-position: 0 0;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .trigger{
+    margin-right: 10px;
+    span{
+      color: @nav-desc-color;
+      font-size: 15px;
+      margin-right: 6px;
+    }
+    i{
+      font-size: 18px;
+      color: #999;
+      cursor: pointer;
+    }
+    &.current{
+      color: @org-color;
+    }
+  }
+  &.affix-top{
+    top:80px;
+    padding: 0 0 10px;
+  }
+  &.affix{
+    left: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color:rgba(128,128,128,0.7) ;
+    box-shadow: 0 2px 5px #888;
+    span{
+      color:white;
+    }
+    i{
+      color: #ddd;
+    }
+  }
+}
+.holder {
+  position: relative;
+  width: @page-width;
+  margin: 127px auto 60px;
+  .top-ad {
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    h1 {
+      font: 18px bold;
+      color: @org-color;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 13px;
+      color: #666;
+    }
+  }
+  .error-tip{
+    text-align: center;
+  }
+  .no-list{
+    font-size: 24px;
+    line-height: 1.5;
+    color: #a4a4a4;
+    text-align: center;
+    margin: 50px 0;
+  }
+  .more-loading{
+    width: 96px;
+    margin: 0 auto;
+    display: block;
+    line-height: 30px;
+    font-size: 16px;
+    color:#333;
+    text-align: center;
+  }
+  .marginTop90{
+    margin-top: 90px!important;
+  }
+  .item-list{
+    @column-right:12px;
+    @column-bottom:12px;
+    @column-num:4;
+    @column-width:(@page-width - (@column-num - 1) * @column-right) / @column-num;
+    width: @page-width + @column-right;
+    .column{
+      width:@column-width;
+      float:left;
+      margin-right: @column-right;
+      .item{
+        @item-border:1px;
+        @item-padding-h:3px;
+        @gray-color:#666;
+        position: relative;
+        width: @column-width - @item-border * 2 - @item-padding-h * 2;
+        padding: 7px @item-padding-h @item-padding-h 3px;
+        margin-bottom: @column-bottom;
+        border: @item-border solid #eee;
+        background-color: #F6F6F6;
+        box-shadow: 0 1x 3px rgba(0,0,0,0.1);
+        &good tt{
+          position: absolute;
+          top: 13px;
+          left: 3px;
+          width: 47px;
+          height: 20px;
+          background: url(../imgs/good.png) no-repeat;
+        }
+        .over{
+          display: block;
+          height: 158px;
+          .pic{
+            width: 208px;
+            height: 152px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+        .item .name,.item .address,.item .user,.item .count,.item .lastTalk{
+          padding-left: 5px;
+        }
+        .name{
+          display: block;
+          color: #000;
+          font:14px bold;
+          line-height: 1;
+        }
+        .address{
+          color: @gray-color;
+          font-size: 12px;
+        }
+        .count{
+          height: 23px;
+          color: #000;
+          font-size: 12px;
+          span {
+            display: block;
+            float: left;
+            width: 40px;
+            height: 18px;
+            padding-left: 20px;
+            background: url(../imgs/count.png) no-repeat;
+            &click{
+              background-position: 0 1px;
+            }
+            &link{
+              background-position: 0 -27px;
+            }
+            &talk{
+              background-position: 0 -56px;
+            }
+          }
+        }
+        .last-talk{
+          font-size: 12px;
+          line-height: 18px;
+          color: @gray-color;
+          span{
+            color: #000;
+          }
+        }
+     }
+    }
+  }
+  p.more-loading{
+    margin:0 auto;
+  }
+}

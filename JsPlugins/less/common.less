@@ -1,0 +1,167 @@
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+
+// Box sizing
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model; // Safari <= 5
+  -moz-box-sizing: @box-model; // Firefox <= 19
+  box-sizing: @box-model;
+}
+
+// Single side border-radius
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+  box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+.transition-delay(@transition-delay1,@transition-delay2) {
+  -webkit-transition-delay: @transition-delay1,@transition-delay2;
+  -moz-transition-delay: @transition-delay1,@transition-delay2;
+  -o-transition-delay: @transition-delay1,@transition-delay2;
+  transition-delay: @transition-delay1,@transition-delay2;
+}
+.transition-duration(@transition-duration1 , @transition-duration2 ) {
+  -webkit-transition-duration: @transition-duration1 , @transition-duration2;
+  -moz-transition-duration: @transition-duration1 , @transition-duration2;
+  -o-transition-duration: @transition-duration1 , @transition-duration2;
+  transition-duration: @transition-duration1 , @transition-duration2;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+  -moz-transform: scale(@ratio);
+  -ms-transform: scale(@ratio);
+  -o-transform: scale(@ratio);
+  transform: scale(@ratio);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+  -moz-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+.skew(@x, @y) {
+  -webkit-transform: skew(@x, @y);
+  -moz-transform: skew(@x, @y);
+  -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twitter/bootstrap/issues/4885
+  -o-transform: skew(@x, @y);
+  transform: skew(@x, @y);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  -moz-transform: translate3d(@x, @y, @z);
+  -o-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}
+
+.transition-property( @p1, @p2){
+  -webkit-transition-property: @p1,@p2;
+  -moz-transition-property: @p1,@p2;
+  -o-transition-property: @p1,@p2;
+  transition-property: @p1,@p2;
+}
+
+// Backface visibility
+//
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+.backface-visibility(@visibility){
+  -webkit-backface-visibility: @visibility;
+  -moz-backface-visibility: @visibility;
+  backface-visibility: @visibility;
+}
+
+// User select
+//
+// For selecting text on the page
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select;
+  -o-user-select: @select;
+  user-select: @select;
+}
+
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: ~"alpha(opacity=@{opacity-ie})"; // IE8
+}
+
+// Placeholder text
+.placeholder(@color: @input-color-placeholder) {
+  &:-moz-placeholder            { color: @color; } // Firefox 4-18
+  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
+// Resize anything
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+.content-columns(@width, @count, @gap) {
+  -webkit-column-width: @width;
+  -moz-column-width: @width;
+  column-width: @width;
+  -webkit-column-count: @count;
+  -moz-column-count: @count;
+  column-count: @count;
+  -webkit-column-gap: @gap;
+  -moz-column-gap: @gap;
+  column-gap: @gap;
+}
+
+// Optional hyphenation
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+  -moz-hyphens: @mode;
+  -ms-hyphens: @mode;
+  -o-hyphens: @mode;
+  hyphens: @mode;
+}
