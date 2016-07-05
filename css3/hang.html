@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .shakingCloud {
+        background:url(./cloud.png) no-repeat bottom center;
+        height:250px;
+        width:200px;
+        -webkit-animation:swing 1s infinite ease-in-out;
+        -webkit-transform-origin:top;
+    }
+    @keyframes swing {
+        0%{transform:rotate(-3deg)}
+        50%{transform:rotate(3deg)}
+        100%{transform:rotate(-3deg)}
+    }
+    @-webkit-keyframes swing {
+        0%{-webkit-transform:rotate(-3deg)}
+        50%{-webkit-transform:rotate(3deg)}
+        100%{-webkit-transform:rotate(-3deg)}
+    }
+    .shakingCloud span {
+        position:absolute;
+        bottom:41px;
+        left:72px;
+        width:60px;
+        height:30px;
+        text-align:center;
+        font-size:27px;
+        font-weight:bold;
+        color:#f00;
+    }
+</style>
+<body>
+<div class="shakingCloud"><span>PM</span></div>
+</body>
+</html>

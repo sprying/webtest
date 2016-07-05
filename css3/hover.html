@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .block{
+            width: 200px;
+            height: 200px;
+            background: #ff8000;
+            border: 1px solid #e6e6e6;
+        }
+        .block .beauty{
+            position: relative;
+            margin-top: 30px;
+        }
+        .block .beauty-bd{
+            position: absolute;
+            top: 0px;
+            left: 40px;
+            width: 40px;
+            height: 0px;
+            background: #66f;
+        }
+        .block .beauty-bd .content{
+            opacity: 0;
+        }
+        .beauty.beauty-hover .beauty-bd{
+            top: -30px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            transition: all 0.2s ease-out;
+        }
+        .beauty.beauty-hover .beauty-bd .content{
+            opacity: 1;
+            -moz-transition: opacity 0.2s ease-out 0.5s;
+            -webkit-transition: opacity 0.2s ease-out 0.5s;
+            -ms-transition: opacity 0.2s ease-out 0.5s;
+            -o-transition: opacity 0.2s ease-out 0.5s;
+            transition: opacity 0.2s ease-out 0.5s;
+        }
+    </style>
+</head>
+<body>
+//TODO
+mouse事件使用有问题
+<div class="block">
+    <div class="beauty" id="wrapper">
+        <div class="beauty-hd">
+            <label for="">名字：</label>
+            <span id="hover">hover显示</span>
+        </div>
+        <div class="beauty-bd">
+            <div class="content">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+   hover.onmouseenter = function(e){
+       wrapper.className = "beauty beauty-hover"
+   }
+    hover.onmouseleave = function(e){
+        wrapper.className = "beauty"
+    }
+</script>
+</body>
+</html>
