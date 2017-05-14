@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script>
+  // http://g.alicdn.com/thx/brix-release/1.0.0-beta.9/brix-base/dist/base-debug.js
+
+  var _ = {}
+  var toString = Object.prototype.toString
+
+  _.each = function(obj, iterator, context) {
+    if (obj === null || obj === undefined) return obj
+    if (obj.forEach) {
+      obj.forEach(iterator, context);
+    } else if (obj.length === +obj.length) {
+      for (var i = 0, length = obj.length; i < length; i++) {
+        iterator.call(context, obj[i], i, obj)
+      }
+    } else {
+      for (var prop in obj) {
+        iterator.call(context, obj[prop], prop, obj)
+      }
+    }
+    return obj
+  }
+
+  _.each('Boolean Number String Function Array Date RegExp Object Error'.split(' '), function(name) {
+    _['is' + name] = function(obj) {
+      return toString.call(obj) == '[object ' + name + ']'
+    }
+  })
+  _.extend = function() {
+    var target = arguments[0]
+    var index = 1
+    var length = arguments.length
+    var deep = false
+    var options, name, src, copy, clone
+
+    if (typeof target === "boolean") {
+      deep = target
+      target = arguments[index] || {}
+      index++
+    }
+
+    if (typeof target !== "object" && typeof target !== "function") {
+      target = {}
+    }
+
+    if (length === 1) {
+      target = this
+      index = 0
+    }
+
+    for (; index < length; index++) {
+      options = arguments[index]
+      if (!options) continue
+
+      for (name in options) {
+        src = target[name]
+        copy = options[name]
+
+        if (target === copy) continue
+        if (copy === undefined) continue
+
+        if (deep && (_.isArray(copy) || _.isObject(copy))) {
+          if (_.isArray(copy)) clone = src && _.isArray(src) ? src : []
+          if (_.isObject(copy)) clone = src && _.isObject(src) ? src : {}
+
+          target[name] = _.extend(deep, clone, copy)
+        } else {
+          target[name] = copy
+        }
+      }
+    }
+
+    return target
+  }
+
+  /*
+   This function is loosely inspired by Backbone.js.
+   http://backbonejs.org
+   */
+  function extend(protoProps, staticProps) {
+    var parent = this
+
+    // 构造函数 Initialize constructor
+    var constructor = protoProps && protoProps.hasOwnProperty('constructor') ?
+        protoProps.constructor : // 自定义构造函数 Custom constructor
+        parent // 父类构造函数 Base constructor
+
+    // 子类 Subclass
+    var child = function () {
+      parent.__x_created_with = child.__x_created_with
+      var instance = constructor.apply(this, arguments) || this
+
+      // instance.options vs parameter options
+      var options = arguments[0]
+      if (options && !instance.hasOwnProperty('options')) {
+        instance.options = _.extend(true, {}, this.options, options)
+      }
+
+      // 如果模块带有 __x_created_with，则一切初始化行为都交给第三方；否则调用 .create() 方法。
+      // If the child module has a property named as __x_created_with, the third-library will be response for the rest of initialization actions.
+      // If not, the child module will call the `.create()`.
+      if (!child.__x_created_with && instance.created && instance.constructor === child) {
+        instance.created.apply(instance, instance.created.length ? [instance.options] : []) // @edit
+      }
+
+      return instance
+    }
+
+    // 静态属性 Static properties
+    _.extend(child, parent, staticProps)
+
+    // 原型链 Build prototype chain.
+    var Surrogate = function () {
+//      this.constructor = constructor // @remove
+    }
+    Surrogate.prototype = parent.prototype
+    child.prototype = new Surrogate()
+    child.prototype.constructor = child // @add
+
+    // 原型属性 Copy prototype properties from the parameter protoProps to the prototype of child
+    if (protoProps) _.extend(child.prototype, protoProps)
+
+    // Add keyword __super__
+    child.__super__ = parent.prototype
+
+    child.extend = extend
+
+    return child
+  }
+
+  function Brix(){}
+  Brix.prototype = {
+    created: function(){
+      if(this.init) this.init()
+      if(this.render) this.render()
+    },
+    constructor: Brix // @add
+  }
+  Brix.extend = extend
+
+  var Suggest = Brix.extend({
+    options: {
+      property1: 1
+    },
+    init: function(){
+      console.log('Suggest init')
+    },
+    render: function(){
+
+    }
+  })
+
+  var EXSuggest = Suggest.extend({
+    options: {
+      property2: 2
+    },
+    init: function(){
+      console.log('EXSuggest init')
+    },
+    render: function(){
+
+    }
+  }, {
+    create: function(){
+      new this()
+    }
+  })
+
+  var suggest = new EXSuggest({
+    property3: 3
+  })
+  // 结果
+  // EXSuggest init
+  // EXSuggest init
+  // created 方式有问题，会调用两次 EXSuggest init
+
+  // constructor指向有问题，所以在console打印的不对，但不影响使用
+
+  // options只能指向最近prototype.options和当前构造函数的options，继承中父类设置的都无效了
+
+  // 加了constructor: Brix
+
+
+</script>
+</body>
+</html>

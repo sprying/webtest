@@ -40,7 +40,7 @@
 
         }
         Person1.prototype = {
-            constructor: Person1
+            constructor: Person1,
             country:"China"
         }
         var person11 = new Person1();
@@ -62,11 +62,11 @@
 
         var anotherPerson = object(person);
         anotherPerson.name = "Greg";
-        anotherPerson.friends.push("Rob");
+        anotherPerson.friends.push("Rob"); // 改到person上
 
         var yetAnotherPerson = object(person);
         yetAnotherPerson.name = "Linda";
-        yetAnotherPerson.friends.push("Barbie");
+        yetAnotherPerson.friends.push("Barbie"); // 改到person上
         yetAnotherPerson.friends=["Barbie"]; // 定义了yetAnotherPerson新的friends属性
 
         // 最终结果与yetAnotherPerson相同
@@ -79,14 +79,12 @@
         function SuperType(){
             this.property = true;
         }
-        SuperType.prototype.superMethod = function(){
-
-        }
-        function SupType(){
+        SuperType.prototype.superMethod = function(){}
+        function SubType(){
             this.supProperty =false;
         }
-        SupType.prototype = new SuperType();
-        var supType = new SupType();
+        SubType.prototype = new SuperType();
+        var subType = new SubType();
 
         /**
          * 组合
@@ -129,6 +127,7 @@
             key:"new Person's prototype"
         };
         var person22 = new Person("sprying");
+        // 结论：之前的实例还是用之前，变化后新生成实例用新的
     </script>
 </head>
 <body>
