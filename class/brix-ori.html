@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script src="//g.alicdn.com/thx/brix-release/1.0.0-beta.9/require-config-debug.js"></script>
+
+<script>
+  require(['brix/base'], function(Base){
+    var First = Base.extend({
+      options: {
+        property1: 1
+      },
+      init: function(){
+        console.log('First init')
+      }
+    }, {
+      create: function(){
+        return new this()
+      }
+    })
+
+    var Second = First.extend({
+      options: {
+        property2: 2,
+        property3: 3
+      },
+      init: function(){
+        console.log('Second init')
+      },
+      render: function(){
+        console.log('Second render')
+      }
+    })
+
+    console.log('--new Second--')
+    window.second = new Second({
+      property3: 31,
+      property4: 4
+    })
+    console.log('==========')
+
+    console.log('--Second.create--')
+    window.another = Second.create()
+
+    // 有两问题，实例化过程中init、render执行了两次
+    // 在chrome console中输入second，它的继承显示有错误，虽然不影响结果。
+  })
+</script>
+</body>
+</html>
