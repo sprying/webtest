@@ -106,8 +106,9 @@
       // 如果模块带有 __x_created_with，则一切初始化行为都交给第三方；否则调用 .create() 方法。
       // If the child module has a property named as __x_created_with, the third-library will be response for the rest of initialization actions.
       // If not, the child module will call the `.create()`.
-      if (!child.__x_created_with && instance.created && instance.constructor === child) {
-        instance.created.apply(instance, instance.created.length ? [instance.options] : []) // @edit
+      //if (!child.__x_created_with && instance.created) {
+      if (!child.__x_created_with && instance.created && instance.constructor === child) { // @edit
+        instance.created.apply(instance, instance.created.length ? [instance.options] : [])
       }
 
       return instance
@@ -173,19 +174,9 @@
     }
   })
 
-  var suggest = new EXSuggest({
+  new EXSuggest({
     property3: 3
   })
-  // 结果
-  // EXSuggest init
-  // EXSuggest init
-  // created 方式有问题，会调用两次 EXSuggest init
-
-  // constructor指向有问题，所以在console打印的不对，但不影响使用
-
-  // options只能指向最近prototype.options和当前构造函数的options，继承中父类设置的都无效了
-
-  // 加了constructor: Brix
 
 
 </script>

@@ -48,6 +48,7 @@
 
     // 有两问题，实例化过程中init、render执行了两次
     // 在chrome console中输入second，它的继承显示有错误，虽然不影响结果。
+    // options是最近prototype.options和当前构造函数的第一个参数组合，继承中父类设置的都无效了
   })
 </script>
 </body>
