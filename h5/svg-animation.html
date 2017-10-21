@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="//g.alicdn.com/thx/cube/1.2.1/neat-min.css">
+  <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <script src="https://cdn.bootcss.com/mustache.js/2.3.0/mustache.js"></script>
+  <title>Title</title>
+</head>
+<body>
+
+<style>
+  @font-face {
+    font-family: 'iconfont';  /* project id 430794 */
+    src: url('//at.alicdn.com/t/font_430794_2s0vyfo9v7r885mi.eot');
+    src: url('//at.alicdn.com/t/font_430794_2s0vyfo9v7r885mi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_430794_2s0vyfo9v7r885mi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_430794_2s0vyfo9v7r885mi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_430794_2s0vyfo9v7r885mi.svg#iconfont') format('svg');
+  }
+
+  .iconfont{
+    font-family: iconfont;
+    font-style: normal;
+  }
+
+  .wrappers {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin: .4rem auto 0;
+    position: relative
+  }
+
+  .wrappers .progress {
+    width: 5.6rem;
+    height: 5.6rem;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg)
+  }
+
+  .wrappers .circle {
+    fill: none;
+    /*stroke-width: .74rem; // iphone5 下有问题，只能改成px */
+    /*stroke-width: 15.8px;*/
+    stroke-linejoin: round
+  }
+
+  .wrappers .circle.c1 {
+    stroke: #e5e5e5
+  }
+
+  .wrappers .text {
+    font-size: .24rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3.6rem;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+    /*color: #fff;*/
+  }
+
+  .wrappers .text .number {
+    font-size: 1.5rem;
+    line-height: 1
+  }
+
+  .wrappers .text .desc {
+    font-size: .5rem
+  }
+
+  .score-info {
+    margin: .4rem 1.2rem
+  }
+  .score-info ul{
+    /*font-size: 0;  */
+    display: -webkit-box;
+    display: flex;
+  }
+
+  .score-info li {
+    -webkit-box-flex: 1;
+    flex: 1;
+    padding: 0 .2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .score-info li .number {
+    font-size: 1.2rem;
+    line-height: 1
+  }
+
+  .score-info li .desc {
+    font-size: .45rem;
+    line-height: .7rem
+  }
+
+  .score-info li .desc .iconfont {
+    font-size: .5rem;
+    margin-right: .1rem
+  }
+
+  .score-info li .double-icon {
+    display: block;
+    width: 1.72rem;
+    height: .72rem;
+    background: url(https://gw.alicdn.com/tfs/TB1RkdYhqagSKJjy0FgXXcRqFXa-86-36.png);
+    background-size: cover;
+    margin-top: -2.6rem;
+    margin-left: .7rem;
+    position: relative
+  }
+</style>
+<script>
+  ;(function (root) {
+    var docEl = document.documentElement,
+      timer = null;
+
+    function changeRem() {
+      root.rem = docEl.getBoundingClientRect().width / 15;
+      docEl.style.fontSize = root.rem + 'px';
+    }
+
+    root.addEventListener('resize', function () {
+      clearTimeout(timer);
+      timer = setTimeout(changeRem, 300);
+    });
+    root.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        clearTimeout(timer);
+        timer = setTimeout(changeRem, 300);
+      }
+    });
+    changeRem();
+  })(window, undefined)
+</script>
+
+
+<div id="J_container"></div>
+
+<script type="text/plain" id="pieTmpl">
+<div class="wrappers">
+  <svg class="progress">
+    <circle class="circle c1" cx="{{rx}}" cy="{{ry}}" r="{{r}}" style="stroke-dasharray:{{p}},{{p}};stroke-width: {{strokeWidth}}px;"></circle>
+    {{#circles}}
+    <circle id="J_pie_circle_2{{index}}" class="circle c2" cx="{{rx}}" cy="{{ry}}" stroke="{{color}}" r="{{r}}"
+            style="stroke-dasharray: 0, {{p}};stroke-width: {{strokeWidth}}px;"></circle>
+    {{/circles}}
+  </svg>
+  <div class="text"><p id="J_total_number" class="number">0</p>
+    <p class="desc">当前影响力分</p>
+  </div>
+</div>
+
+<div class="score-info">
+  <ul>
+    {{#items}}
+    <li style="color: {{color}};width: {{w}};">
+      <p id="J_pie_number_{{index}}" class="number">0</p>
+      <p class="desc"><i class="iconfont">{{{icon}}}</i><span class="title">{{title}}</span></p>
+    </li>
+    {{/items}}
+  </ul>
+</div>
+
+
+</script>
+<script>
+  // rem做单位有问题，到最后只保留stroke-width用rem，结果发现在iphone 5下也有问题
+
+  // 分数文案
+  var textList = ['活跃分', '精准分', '基础分', '历史分']
+  // icon字体
+  var iconList = ['&#xe69b;','&#xe704;', '&#xe600;', '&#xe633;']
+
+  // 颜色
+  var colorList = [
+    '#31e6fb', // 活跃分
+    '#ff0d21', // 精准分
+    '#f5dd1e', // 基础分
+    '#24d0a1' // 历史分
+  ]
+  // 每秒大概执行requestAnimationFrame 67次
+  var timesPerSecond = 67
+  // 半径
+  var radius = 2.38 * rem
+
+  // 圆环的宽度
+  var strokeWidth = 0.74 * rem
+
+  // 数目
+  var numberList = [302, 0, 20, 26]
+  // 周长
+  var perimeter = radius * 2 * 3.14
+
+  // 圆环的圆心横坐标
+  var rx = 2.8 * rem
+
+  // 圆环的圆心纵坐标
+  var ry = 2.8 * rem
+
+  // 总数目
+  var totalNumber = numberList.reduce(function (pre, cur) {
+    return pre + cur
+  })
+  // 转为长度
+  var number2Perimeter = numberList.map(function (cur) {
+    return (cur / totalNumber) * perimeter
+  })
+
+  // 圆环起始位置
+  var begin = 0
+  var readyList = number2Perimeter.map(function (cur, k) {
+    var end = begin + cur
+    var info = {
+      index: k,
+      start: begin,
+      end: end,
+      number: numberList[k],
+      numSpeed: numberList[k] / timesPerSecond,
+      speed: cur / timesPerSecond // 每次执行时长度跳跃
+    }
+    begin = end
+    return info
+  })
+
+  // 渲染文案数字部分数组
+  var itemList = readyList.map(function (v, k) {
+    return $.extend({
+      index: k,
+      w: 100 / readyList.length + '%',
+      color: colorList[k],
+      title: textList[k],
+      icon: iconList[k]
+    }, v)
+  })
+
+  // 渲染的数据
+  var renderData = {
+    r: radius,
+    p: perimeter,
+    rx: rx,
+    ry: ry,
+    circles: readyList.slice().reverse(),
+    items: itemList,
+    strokeWidth: strokeWidth
+  }
+
+
+  $('#J_container').html(Mustache.render($('#pieTmpl').html(), renderData))
+
+  // 上一个扇形长度
+  var curTotal = 0
+  requestAnimationFrame(function loop2(p1) {
+    var isContinuous = false
+    var nextBegin = true
+
+    $.each(readyList, function (k, v) {
+
+      if (nextBegin && !v.isCompleted) {
+        nextBegin = false
+        if (v.progress === undefined) {
+          $('#J_pie_circle_2' + k).css({
+            "stroke": colorList[k]
+          })
+          v.cur = 0
+        }
+        v.progress = v.progress !== undefined ? (v.progress + v.speed) : v.start
+
+        var cur = Math.round(v.cur += v.numSpeed)
+        if (cur >= numberList[k]) {
+          v.cur = cur = numberList[k]
+        }
+        $('#J_pie_number_' + k).text(cur)
+        $('#J_total_number').text(curTotal + cur)
+
+        if (v.progress >= v.end) {
+          v.progress = v.end
+          v.isCompleted = true
+
+          if (k <= readyList.length - 1) {
+            nextBegin = true
+            curTotal += numberList[k]
+
+            $('#J_pie_number_' + k).text(numberList[k])
+            $('#J_total_number').text(curTotal)
+          }
+        } else {
+          isContinuous = true
+        }
+        $('#J_pie_circle_2' + k).css({
+          "stroke-dasharray": v.progress + ", " + perimeter
+        })
+      }
+    })
+
+    if (isContinuous) {
+      requestAnimationFrame(loop2)
+    }
+  })
+</script>
+
+
+<style>
+  .experiment{
+    margin-top: 40px;
+  }
+  .experiment .diagram{
+    width: 140px;
+    height: 140px;
+    position: relative;
+    margin: 10px auto 0;
+  }
+  .experiment .progress {
+    width: 140px;
+    height: 140px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .experiment .circle {
+    fill: none;
+    stroke-width: 15.8px;
+    stroke-linejoin: round;
+  }
+</style>
+<section class="experiment">
+  <!-- 5 1 1 1-->
+  <p>
+  本来打算每个svg都偏移相应弧度,这样每个都从0点开始了,每个都耗时1s, 前4个动画等待时间分别是0,1,2,3,最后发现偏移弧度后，不在一个圆上了。只能在iphone 6屏幕下线上正常
+  </p>
+  <div class="diagram">
+    <svg class="progress">
+      <circle class="circle c1" cx="68.75" cy="68.75" r="59.5" style="stroke-dasharray:373.66,373.66"></circle>
+      style="stroke-dasharray: 28, 373.66;"></circle>
+    </svg>
+    <svg class="progress co1" style="transform:rotate(-90deg);">
+      <circle id="J_pie_circle_0" class="circle c2 ani" cx="68.75" cy="68.75" stroke="#31e6fb" r="59.5"
+              style="stroke-dasharray: 233.59, 373.66;"></circle><!-- 140.16 -->
+    </svg>
+    <svg class="progress co1" style="transform:rotate(135deg);">
+      <circle id="J_pie_circle_1" class="circle c2" cx="68.75" cy="68.75" stroke="#ff0d21" r="59.5"
+              style="stroke-dasharray: 46.71, 373.66;"></circle>
+    </svg>
+    <svg class="progress co1" style="transform:rotate(180deg);">
+      <circle id="J_pie_circle_2" class="circle c2 ani" cx="68.75" cy="68.75" stroke="#f5dd1e" r="59.5"
+              style="stroke-dasharray: 46.71, 373.66;"></circle>
+    </svg>
+    <svg class="progress co1" style="transform:rotate(225deg);">
+      <circle id="J_pie_circle_3" class="circle c2 ani" cx="68.75" cy="68.75" stroke="#24d0a1" r="59.5"
+              style="stroke-dasharray: 46.71, 373.66;"></circle>
+    </svg>
+    <div class="text" style="display: none;">
+      <p class="number">0</p>
+      <p class="desc">当前影响力分</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
