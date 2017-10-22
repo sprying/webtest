@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="//g.alicdn.com/thx/cube/1.2.1/neat-min.css">
+  <script src="https://g.alicdn.com/kg/hairlines/0.0.1/index.js"></script>
+  <title>Title</title>
+</head>
+<body>
+
+<style>
+  .border-1 {
+    border: 1px solid #999;
+    height: 80px;
+    margin: 20px 40px;
+  }
+
+  .border-2 {
+    border: 0.5px solid #999;
+    height: 80px;
+    margin: 20px 40px;
+  }
+  .hairlines .border-2 {
+    border-width: 0.5px;
+  }
+  .border-3 {
+    margin: 20px 40px;
+    border-image: url("https://gw.alicdn.com/tfs/TB17X1NlGagSKJjy0FhXXcrbFXa-6-6.png") 2 repeat;
+    border-style: solid;
+    height: 80px;
+  }
+</style>
+
+正常1px宽度
+<div class="border-1">
+
+</div>
+为了在 ios8 以上能使用 0.5px 解决 1px 显示太粗的问题，不支持 0.5px 的终端降级为 1px。本组件几行代码的功能就是判断如果支持 0.5px 的终端就在其html节点上添加  hairlines class。
+<div class="border-2">
+
+</div>
+使用border-image
+下面并没有解决，下次再试
+<div class="border-3">
+
+</div>
+采用的border-image是下面的图片预览效果
+<img src="https://gw.alicdn.com/tfs/TB1s1mulPihSKJjy0FeXXbJtpXa-515-232.png" alt="">
+</body>
+</html>
