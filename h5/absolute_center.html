@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Title</title>
+  <script>
+    // rem的计算
+    ;(function (root) {
+      var docEl = document.documentElement,
+        timer = null;
+
+      function changeRem() {
+        root.rem = docEl.getBoundingClientRect().width / 15;
+        docEl.style.fontSize = root.rem + 'px';
+      }
+
+      root.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(changeRem, 300);
+      });
+      root.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          clearTimeout(timer);
+          timer = setTimeout(changeRem, 300);
+        }
+      });
+      changeRem();
+    })(window, undefined);
+  </script>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper{
+      position: relative;
+      height: 20.12rem;
+      background: url('http://gw.alicdn.com/tfs/TB1fcNggqagSKJjy0FhXXcrbFXa-750-1006.jpg');
+      overflow: hidden;
+    }
+    .wrapper p {
+      font-size: .5rem;
+    }
+    .center {
+      position: absolute;
+      width: 10rem;
+      top: 8rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 8rem;
+      background: #00A33F;
+      display: flex;
+      justify-content: center;
+    }
+
+    .center:after {
+      content: '';
+      position: absolute;
+      width: 15rem;
+      height: 8.36rem;
+      background: url('http://gw.alicdn.com/tfs/TB1eaDZrgMPMeJjy1XcXXXpppXa-750-418.png') 0 0 no-repeat;
+      background-size: 15rem 8.36rem;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+  <h4>绝对定位后，还水平居中</h4>
+  <p>伪元素after内容平铺，如果定义了flex，和flex的水平居中，内容会平铺，不会从父元素的原点开始。但是在ios下面不会这样，要设置left的负值，但发发现即使设置了，还是有些许水平滚动条</p>
+  <div class="center">
+  </div>
+</div>
+</body>
+</html>
