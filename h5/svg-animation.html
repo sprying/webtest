@@ -206,7 +206,7 @@
   var totalNumber = numberList.reduce(function (pre, cur) {
     return pre + cur
   })
-  // 转为长度
+  // 转为圆环周长的占比长度
   var number2Perimeter = numberList.map(function (cur) {
     return (cur / totalNumber) * perimeter
   })
@@ -217,11 +217,11 @@
     var end = begin + cur
     var info = {
       index: k,
-      start: begin,
-      end: end,
+      start: begin, // 起始的位置
+      end: end, // 结束的位置
       number: numberList[k],
-      numSpeed: numberList[k] / timesPerSecond,
-      speed: cur / timesPerSecond // 每次执行时长度跳跃
+      numSpeed: numberList[k] / timesPerSecond, // 每次执行时数字跳跃
+      speed: cur / timesPerSecond // 每次执行时圆环的周长长度跳跃
     }
     begin = end
     return info
@@ -231,7 +231,7 @@
   var itemList = readyList.map(function (v, k) {
     return $.extend({
       index: k,
-      w: 100 / readyList.length + '%',
+      w: 100 / readyList.length + '%', // 数字显示的每区块宽度占比
       color: colorList[k],
       title: textList[k],
       icon: iconList[k]
@@ -252,11 +252,11 @@
 
   $('#J_container').html(Mustache.render($('#pieTmpl').html(), renderData))
 
-  // 上一个扇形长度
+  // 扇形的上一个部分长度
   var curTotal = 0
   requestAnimationFrame(function loop2(p1) {
-    var isContinuous = false
-    var nextBegin = true
+    var isContinuous = false // 是否继续动画
+    var nextBegin = true // 是否开始下一个部分
 
     $.each(readyList, function (k, v) {
 
@@ -270,8 +270,8 @@
         }
         v.progress = v.progress !== undefined ? (v.progress + v.speed) : v.start
 
-        var cur = Math.round(v.cur += v.numSpeed)
-        if (cur >= numberList[k]) {
+        var cur = Math.round(v.cur += v.numSpeed) // 四舍五入，数字每次都是整数整数的更新
+        if (cur >= numberList[k]) { // 精度问题超出，重置
           v.cur = cur = numberList[k]
         }
         $('#J_pie_number_' + k).text(cur)
@@ -333,7 +333,7 @@
 <section class="experiment">
   <!-- 5 1 1 1-->
   <p>
-  本来打算每个svg都偏移相应弧度,这样每个都从0点开始了,每个都耗时1s, 前4个动画等待时间分别是0,1,2,3,最后发现偏移弧度后，不在一个圆上了。只能在iphone 6屏幕下线上正常
+  本来打算每个svg都偏移相应弧度,这样每个都从0点开始了,每个都耗时1s, 前4个动画等待时间分别是0,1,2,3,最后发现偏移弧度后，不在一个圆上了。
   </p>
   <div class="diagram">
     <svg class="progress">
