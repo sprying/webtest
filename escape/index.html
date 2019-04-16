@@ -1,0 +1,88 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+</head>
+<body>
+a<!--直接输出-->
+&#97;<!--十进制输出-->
+&#x61;<!--十六进制输出-->
+
+<div>
+  <span onclick="alert('"')">点击弹出双引号，弹不了</span>
+  <br/>
+
+  <span onclick="alert('&quot;')">点击弹出双引号</span>
+  <br/>
+
+  <span onclick="alert('\"')">点击弹出双引号，弹不了</span>
+  <br/>
+
+  <span onclick="alert('&#34;')">点击弹出双引号</span>
+  <br/>
+
+  <span onclick="alert(&#39&#34&#39)">点击弹出双引号1</span><!--&#39;单引号　　&#34;双引号-->
+  <br/>
+
+  <span onclick="alert('&#39;')">点击弹窗单引号，弹不了</span>
+  <br/>
+
+  <span onclick="alert(&#34&#39&#34)">点击弹窗单引号1</span>
+  <br/>
+
+  <span onclick="alert('\'')">点击弹窗单引号</span>
+  <br/>
+
+  <span onclick="alert('\&#39;')">点击弹窗单引号</span>
+  &在js的字符串中并不需要转义的，这里比较奇怪
+  <br/>
+
+
+  <span onclick='alert("&#34;")'>点击弹出双引号，弹不了</span>
+  <br/>
+
+  <span onclick='alert("\&#34;")'>点击弹出双引号</span>
+  <br/>
+
+  <span onclick='alert("\"")'>点击弹出双引号</span>
+  <br/>
+
+  <span onclick='alert("&quot;")'>点击弹出双引号，弹不了</span>
+  <br/>
+
+  <span onclick='alert("\&quot;")'>点击弹出双引号</span>
+  <br/>
+
+  <span onclick='alert("\'")'>点击弹出单引号，弹不了</span>
+  <br/>
+
+  <span onclick='alert("\"&#39;")'>点击弹出单引号和双引号</span>
+  <br/>
+
+  <span onclick='alert(&#39&#34&#39)'>点击弹出双引号1</span><!--&#39;单引号　　&#34;双引号-->
+  <br/>
+
+  <span onclick='alert(&#34&#39&#34)'>点击弹出双引号1</span><!--&#39;单引号　　&#34;双引号-->
+  <br/>
+
+  <span onclick='alert(&#34;&#39;&#34;&#34;)'>点击弹出单引号和双引号，弹不了</span>
+  <br/>
+
+  <span onclick='alert("\"\&#39;")'>点击弹出单引号和双引号</span>
+  <br/>
+
+  结论： 弹出的内容，都转成&#类似这种实体编码，转码规则就是内容跟内层的不一样，就可以。但是内容里有两种引号就不行了。
+  内容中的引号，不能跟外面两层一样，不转义的使用
+  内容中的引号，如果跟内层的一样，可以使用\转，\后面也可以再用实体转码后的，不用\就全部要使用实体转码了
+
+  最后结论，单引号和双引号都可以同时出现在内容里，包括内容的是什么引号，里面对应的引号可以加\，另外一个引号，则一定要&#转码，或者双引号使用&quot;
+
+  在js中如果反斜杠后面跟的不需要反斜杠转义的字符，那么这个反斜杠是被丢弃的
+
+  <p>
+    最后结论，单引号和双引号都可以同时出现在内容里，我们只需要对单、双引号前面加上一个反斜杠\然后再对单、双引号实体编码即可。
+  </p>
+
+
+</div>
+</body>
+</html>

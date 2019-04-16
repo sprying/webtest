@@ -1,9 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <style type="text/css">
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge"/>
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        overflow: visible;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #f7f7f7;
+        border: 1px solid #efefef;
+    }
+
+    ::-webkit-scrollbar-track:hover {
+        background-color: #f5f5f5
+    }
+
+    ::-webkit-scrollbar-track:horizontal:hover {
+    }
+
+    ::-webkit-scrollbar-track:vertical:hover {
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #e6e6e6;
+        min-height: 25px;
+        min-width: 25px;
+        border: 1px solid #e0e0e0;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #d9d9d9;
+        border-color: #d0d0d0
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background-color: #c2c2c2;
+        border-color: #b7b7b7
+    }
+
+    ::-webkit-scrollbar-resizer {
+    }
+    html{
+        margin-bottom: 35px;
+    }
+    body{
+        border: 1px solid #fe0;
+    }
         #wrap{
             width: 200px;
             height: 200px;
@@ -21,7 +66,7 @@
             margin: 10px;
             padding: 10px;
             overflow: auto;
-            border: 1px solid #000000;
+            border: 2px solid #000000;
             *position: relative;
         }
         #pic{
@@ -33,7 +78,7 @@
             margin: 10px;
             padding: 20px;
             background: #0000ff;
-            border: 1px solid #000000;
+            border: 3px solid #000000;
         }
         #showView{
             margin: 300px 0 0 0;
@@ -41,7 +86,7 @@
             height: 100px;
             background: #ff0000;
             padding: 10px;
-            border: 1px solid black;
+            border: 5px solid black;
         }
         #bottom{
             position: fixed;
@@ -73,6 +118,26 @@
         #btn:hover{
             opacity: 1;
         }
+        #coverOver{
+            background: #bcf;
+            position: absolute;
+            left: 10px;
+            top: 4px;
+            width: 80px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            box-shadow: -3px -2px 30px 2px #888888 inset;
+            opacity: 0.8;
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+        }
+        #btn:hover{
+            opacity: 1;
+        }
     </style>
     <!--[if IE 6]>
     <script type="text/javascript" src="../../scripts/firebug-lite/build/firebug-lite.js"></script>
@@ -83,29 +148,201 @@
 </head>
 <body>
 <div id="wrap">
+    <span>#wrap</span>
     <div id="inner">
+        <span>#inner</span>
         <div id="pic">
-            <div id="showView">123</div>
+            <span>#pic</span>
+            <div id="showView"><span>#showView</span></div>
         </div>
     </div>
 </div>
+#wrap>>#inner>>#pic>>#showView
+<div id="widthShow"></div>
+<ul>
+    <li>#wrap 宽度（不包括margin） width: 222px; 计算方法getBoundingClientRect()/offsetWidth</li>
+    <li>#inner 宽度（不包括margin） width: 425px; 计算方法getBoundingClientRect()/offsetWidth</li>
+    <li>#pic 宽度（不包括margin） width: 646px; 计算方法getBoundingClientRect()/offsetWidth</li>
+    <li>#showPic 宽度（不包括margin） width: 130px; 计算方法getBoundingClientRect()/offsetWidth</li>
+</ul>
+<h4>scrollWidth 含义</h4>
+<p>所包括内容的宽度(不包括margin) + 包括内容的margin-left + 自己的padding-left</p>
+
+<div id="scrollWidth"></div>
+<h4>clientWidth</h4>
+<p>不包括边框，有滚动条不包括滚动条</p>
+<div id="clientWidthT"></div>
 <div id="bottom">
     <div id="float" style="float: left;height: 50%;margin-bottom: -14px"></div>
-    <div id="btn" onclick="doScroll();">显示红色</div>
+    <button id="coverOver">展开</button>
+    <div id="btn">显示红色</div>
 </div>
-</body>
-</html>
+<script id="clientTempl" type="x-tmpl-mustache">
+<ul id="widthShowUl">
+    <li>页面宽度document.documentElement.clientWidth {{htmlWidth}}，它不包括滚动条宽度</li>
+    <li>$(window).width {{windowWidth1}}，处理行为与documentElement一致</li>
+    <li>document.body.clientWidth{{bodyWidth1}}，当一般dom元素处理</li>
+    <li>$(wrap).width，去掉边框、padding后宽度{{wrapWidth}}</li>
+    <li>给wrap设置 box-sizing:border-box;后 $(wrap).width，仍然是去掉边框、padding后宽度</li>
+    <li>wrap.clientWidth {{wrapClient}}，本身宽度220px,有了滚动条之后，减去10px</li>
+    <li><a href="javascript:void(0);" onclick="chgCss()">更多</a></li>
+</ul>
+</script>
+<script id="template2" type="x-tmpl-mustache">
+    <li>页面宽度，去掉滚动条样式设置，document.documentElement.clientWidth {{width1}};</li>
+    <li>页面宽度，html设置边框，document.documentElement.clientWidth {{width2}}px;</li>
+</script>
+<script id="scrollTempl" type="x-tmpl-mustache">
+<ul>
+    <li>#wrap scrollWidth: {{wrap}}px</li>
+    <li>#inner scrollWidth: {{inner}}px</li>
+    <li>#pic scrollWidth {{pic}}px</li>
+    <li>#showPic scrollWidth {{showPic}}px</li>
+</ul>
+</script>
+<script src="//cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+<script>
+    /**
+     * Insert CSS keyframe rule
+     */
+    function insertCSS(rule) {
+        if (document.styleSheets && document.styleSheets.length) {
+            try {
+                document.styleSheets[0].insertRule(rule, 0);
+            }
+            catch (ex) {
+                console.warn(ex.message, rule);
+            }
+        }
+        else {
+            var style = document.createElement("style");
+            style.innerHTML = rule;
+            document.head.appendChild(style);
+        }
+        return;
+    }
+    /**
+     * Delete CSS keyframe rule
+     */
+    function deleteCSS(ruleName) {
+        var cssrules = (document.all) ? "rules" : "cssRules",
+                i;
+        for (i = 0; i < document.styleSheets[0][cssrules].length; i += 1) {
+            var rule = document.styleSheets[0][cssrules][i];
+            if (rule.name === ruleName || rule.selectorText === ruleName) {
+                document.styleSheets[0].deleteRule(i);
+                if (this.debug) {
+                    console.log("Deleted keyframe: " + ruleName);
+                }
+                break;
+            }
+        }
+        return;
+    }
+</script>
 <script type="text/javascript">
+    var _getWidth = function (){
+        var isCompat = document.compatMode == 'CSS1Compat';
+        var bodyWidth = isCompat ? document.documentElement.clientWidth:document.body.clientWidth;
+        var menuWidth = document.getElementsByClassName('menu')[0].offsetWidth
+        return bodyWidth - menuWidth
+    }
+    function chgCss(){
+        deleteCSS("::-webkit-scrollbar");
+        insertCSS("html{border:4px solid #f0f;}")
+        setTimeout(function(){
+            var template = $('#template2').html()
+            Mustache.parse(template);   // optional, speeds up future uses
+            var rendered = Mustache.render(template, {
+                width1: document.documentElement.clientWidth,
+                width2: document.documentElement.clientWidth
+            });
+            $("#widthShowUl").append(rendered)
+        }, 100)
+    }
+    function showClientWidth(){
+        var template = $('#clientTempl').html()
+        Mustache.parse(template);   // optional, speeds up future uses
+        var rendered = Mustache.render(template, {
+            htmlWidth: document.documentElement.clientWidth,
+            windowWidth1: $(window).width(),
+            bodyWidth1: document.body.clientWidth,
+            wrapWidth: $(wrap).width(),
+            wrapClient: wrap.clientWidth
+        });
+        $('#clientWidthT').html(rendered);
+    }
+    function showScrollWidth(){
+        var template = $('#scrollTempl').html()
+        Mustache.parse(template);   // optional, speeds up future uses
+        var rendered = Mustache.render(template, {
+            wrap: wrap.scrollWidth,
+            inner: inner.scrollWidth,
+            pic: pic.scrollWidth,
+            showPic: showView.scrollWidth
+        });
+        $('#scrollWidth').html(rendered);
+    }
+    /**
+     * 方法一：计算dom相对文档的坐标
+     * @param e
+     * @returns {{left: number, top: number}}
+     */
     function getElementPostion(e){
-        var x =0,y=0;
+        var topArr = [],
+            leftArr = [],
+            x = y = 0;
+        x += e.offsetLeft
+        console.log(e.id + ' offsetLeft:' + e.offsetLeft)
+        y += e.offsetTop
+        console.log(e.id + ' offsetTop:' + e.offsetTop)
+        e = e.offsetParent;
         while(e != null){
-            x += e.offsetLeft + e.clientTop;
-            y += e.offsetTop + e.clientLeft;
+            topArr.push(e.clientTop)
+            console.log((e.id || e.tagName) + ' clientTop:' + e.clientTop)
+            leftArr.push(e.clientLeft)
+            console.log((e.id || e.tagName) + ' clientLeft:' + e.clientLeft)
+            x += e.offsetLeft
+            console.log((e.id || e.tagName) + ' offsetLeft:' + e.offsetLeft)
+            y += e.offsetTop
+            console.log((e.id || e.tagName) + ' offsetTop:' + e.offsetTop)
             e = e.offsetParent;
         }
+        // 最后一个dom是body，body.clientLeft一般是0，body前的dom的border大小，已经包含在offsetLeft
+        if(topArr.length >= 1){
+            topArr.splice(-1,1)
+            leftArr.splice(-1,1)
+        }
+        topArr.forEach(function(v){
+            x += v
+        })
+        leftArr.forEach(function(v){
+            y += v
+        })
         return {left:x,top:y}
     }
-    function getElementPos(elt){
+    /**
+     * 方法二：计算dom相对文档的坐标
+     * @param elm
+     * @returns {{left: number, top: number}}
+     */
+    function abPos(elm){
+        var x = 0, y = 0
+        var box = elm.getBoundingClientRect()
+        while(elm != null){
+            x += elm.scrollLeft
+            y += elm.scrollTop
+            elm = elm.offsetParent
+        }
+        return {left: x + box.left, top: y + box.top}
+    }
+    /**
+     * 计算dom的视窗坐标
+     * @param elt
+     * @returns {{left: number, top: number}}
+     */
+    function relativePos(elt){
         var x = 0,y = 0,e =elt;
         if(e!=null){
             x += e.offsetLeft;
@@ -135,16 +372,70 @@
                 i = 1;
             }
         }
+
+        var j = 1;
+        coverOver.onclick = function(){
+            if(j === 1){
+                doOver()
+                coverOver.innerText = '折叠'
+            }else {
+                coverOver.innerText = '展开'
+                doCascading()
+            }
+            j = j ^ 1
+        };
+        [wrap,inner].forEach(function(dom){
+            var srlTimer
+            dom.onscroll = function(){
+                srlTimer && clearTimeout(srlTimer)
+                srlTimer = setTimeout(function(){
+                    console.log('#'+dom.id+'的水平滚动条偏移：' + dom.scrollLeft + ', 垂直滚动条偏移：' + dom.scrollTop)
+                }, 100)
+            }
+        })
     }
+//    doOver()
+    printPos('init')
+    showScrollWidth()
+    showClientWidth()
+    console.log('计算出来的坐标，是相对html')
+//    $(document.body).append('<div style="position:absolute;left:385px;top:683px;width:100px;height:100px;background:#f96;border:5px solid #ff0;padding:10px;"></div>')//测试计算的文档坐标是否准确
+
     function doScroll(){
         inner.scrollLeft=getElementPostion(showView).left-getElementPostion(inner).left;
         inner.scrollTop=getElementPostion(showView).top-getElementPostion(inner).top;
         wrap.scrollLeft=getElementPostion(inner).left-getElementPostion(wrap).left;
         wrap.scrollTop=getElementPostion(inner).top-getElementPostion(wrap).top;
-        wrap.scrollLeft=getElementPostion(inner).left-getElementPostion(wrap).left+getElementPos(showView).left-getElementPos(wrap).left;
-        wrap.scrollTop=getElementPostion(inner).top-getElementPostion(wrap).top+getElementPos(showView).top-getElementPos(wrap).top;
+
+        // inner滚动条并没有将showView滚动至inner顶部，因为showView在inner中属于偏向尾部，无法滚动至顶部
+        // 既然无法改变inner，就改变wrap
+        wrap.scrollLeft=getElementPostion(inner).left-getElementPostion(wrap).left+relativePos(showView).left-relativePos(wrap).left;
+        wrap.scrollTop=getElementPostion(inner).top-getElementPostion(wrap).top+relativePos(showView).top-relativePos(wrap).top;
+        printPos('scroll')
     }
     function resetScroll(){
         wrap.scrollTop = wrap.scrollLeft = inner.scrollLeft = inner.scrollTop = 0;
     }
+
+    function doCascading(){
+        wrap.style.overflow = 'auto'
+        inner.style.overflow = 'auto'
+        printPos('折叠')
+        showScrollWidth()
+    }
+    function doOver(){
+        wrap.style.overflow = 'initial'
+        inner.style.overflow = 'initial'
+        printPos('撑开')
+        showScrollWidth()
+    }
+
+    function printPos(type){
+        console.log(type)
+        console.log(getElementPostion(showView))
+        console.log(abPos(showView))
+        console.log($(showView).offset())
+    }
 </script>
+</body>
+</html>

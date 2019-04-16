@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="//g.alicdn.com/mm/pat/latest/pat.js"></script>
+  <title>Title</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+
+<script type="javascript/template" id="J_tmpl">
+  <ul>
+    <li t-for="item in lists" t-if="item.name=='1'">{{item.name}}
+      <span>1 judge</span>
+    </li>
+  </ul>
+  <input type="text" value="{{inp}}">局部更新时候，input并没有发现加id，奇怪，但是我在业务中看到了。
+</script>
+
+<script>
+  //debug会包括更多的信息，但是只有daily版本有效果
+  Pat.config({
+    debug:true
+  })
+
+  var p2 = new Pat({
+    el:'test',
+    data:{
+      lists:[{
+        name:'1',
+        text:'11111',
+        hell:null
+      },{
+        name:'2',
+        text:'22222',
+        hell:null
+      }],
+      inp: 'af'
+    },
+    template:document.getElementById('J_tmpl').innerHTML
+  })
+</script>
+</body>
+</html>
