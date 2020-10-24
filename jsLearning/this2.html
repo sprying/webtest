@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <script type="text/javascript">
+      const primaryObj = {
+        a: 1,
+        render () {
+          util(this.method2())
+        },
+        method () {
+          return this.a
+        },
+        method2 () {
+          const { method } = this
+          setTimeout(() => {
+            console.log(`setTimeout this.method: ${this.method()}`)
+            console.log(`setTimeout method: ${method()}`)
+          }, 0)
+          return {
+            b: 2,
+            method: this.method,
+            method3: () => this.method()
+          }
+        }
+      }
+
+      const util = ({ b, method, method3 }) => {
+        console.log(`util method: ${method()}`)
+        console.log(`util method3: ${method3()}`)
+      }
+
+      primaryObj.render()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
